@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 1c7e74f343ff4074bb5bf0bc69e729d8
+  m_SerializeEntries:
+  - m_GUID: 49c65281d200be94387d7809f3947387
+    m_Address: Assets/Scenes/LoadingLevel2.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5bf350dd22dac074ea65b9a32d9f2416
+    m_Address: Assets/Scenes/Level3.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6025146f2da1bd148b9ffedb1b20ce22
+    m_Address: Assets/Scenes/LoadingLevel1.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6a4bdaae9edd4484c814f20789f02c3f
+    m_Address: Assets/Scenes/LoadingLevel3.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a3f596295ec6385438000f9001a4d21a
+    m_Address: Assets/Scenes/Level2.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: adcb06af8404f3d4c9166a701dd2b978
+    m_Address: Assets/Scenes/Level1.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: d28140175e7672740a7d26f3e9b5b743, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: fd814d85fd154f44b9b7b32ed083810f, type: 2}
+    - {fileID: 11400000, guid: 56036a48c8720c446bb8735080adce3c, type: 2}

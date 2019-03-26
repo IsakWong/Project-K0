@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: b424b30c26027e1439cec7d87209af14
+timeCreated: 1513047526
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Lightmorning
+  fontNames:
+  - Lightmorning
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

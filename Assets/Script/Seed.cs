@@ -7,6 +7,7 @@ using UnityEngine.Serialization;
 public interface IObtainer
 {
     void Obtain(IObtainTarget target);
+    void OnObtained(IObtainTarget target);
     Component GetComponent();
     GameObject GetGameObject();
     
@@ -16,6 +17,8 @@ public interface IObtainTarget
 {
     void GetObtained(IObtainer obtainer);
     void Released(IObtainer obtainer);
+    
+    bool IsObtained();
     
 }
 
@@ -46,6 +49,10 @@ public class Seed : InteractableItem, IObtainTarget
 
     [FormerlySerializedAs("seed_state")] public SeedState seedState = SeedState.OnGround;
 
+    public bool IsObtained()
+    {
+        return Obtainer != null && RealObtainer != null;
+    }
     void Start()
     {
         _audio = GetComponent<AudioSource>();
@@ -81,7 +88,8 @@ public class Seed : InteractableItem, IObtainTarget
         GetComponent<Collider>().isTrigger = false;
         GetComponent<Rigidbody>().isKinematic = false;
         GetComponent<Rigidbody>().WakeUp();
-        GetComponent<Rigidbody>().velocity = RealObtainer.GetTransform().forward * 3;
+        if(RealObtainer != null)
+            GetComponent<Rigidbody>().velocity = RealObtainer.GetTransform().forward * 3;
         RealObtainer = null;
         Obtainer = null;
         seedState = SeedState.OnGround;

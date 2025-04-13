@@ -215,6 +215,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 321197096}
     m_Modifications:
     - target: {fileID: 100000, guid: 0f0e9e9fd0ee27547a0d93320e183633, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 0f0e9e9fd0ee27547a0d93320e183633, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -289,6 +293,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: f970d2264723e8e48b8173ada928d7ed, type: 3}
       propertyPath: m_Name
       value: "\u6865 (1)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f970d2264723e8e48b8173ada928d7ed, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: f970d2264723e8e48b8173ada928d7ed, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -459,6 +467,10 @@ PrefabInstance:
     - target: {fileID: 4956269810924034, guid: 06060c1b5ef65d74893a86323a6d4509, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400948678556938212, guid: 06060c1b5ef65d74893a86323a6d4509, type: 3}
+      propertyPath: m_Constraints
+      value: 80
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -1662,7 +1674,7 @@ MonoBehaviour:
     m_Bits: 64
   stopNaNPropagation: 1
   finalBlitToCameraTarget: 0
-  antialiasingMode: 3
+  antialiasingMode: 1
   temporalAntialiasing:
     jitterSpread: 0.75
     sharpness: 0.25
@@ -3442,6 +3454,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
+    - target: {fileID: 54272244077672016, guid: d2485a73da79e534c803fa7245bcc4f7, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     - target: {fileID: 3249487598866575978, guid: d2485a73da79e534c803fa7245bcc4f7, type: 3}
       propertyPath: Input
       value: 
@@ -3450,6 +3466,18 @@ PrefabInstance:
       propertyPath: Center
       value: 
       objectReference: {fileID: 1608582717}
+    - target: {fileID: 4486840959701840169, guid: d2485a73da79e534c803fa7245bcc4f7, type: 3}
+      propertyPath: m_Height
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4486840959701840169, guid: d2485a73da79e534c803fa7245bcc4f7, type: 3}
+      propertyPath: m_Radius
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4486840959701840169, guid: d2485a73da79e534c803fa7245bcc4f7, type: 3}
+      propertyPath: m_Center.y
+      value: 0.09
+      objectReference: {fileID: 0}
     - target: {fileID: 8441586483469237454, guid: d2485a73da79e534c803fa7245bcc4f7, type: 3}
       propertyPath: m_UIInputModule
       value: 
@@ -4970,7 +4998,7 @@ GameObject:
   - component: {fileID: 1420978991}
   - component: {fileID: 1420978990}
   - component: {fileID: 1420978989}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5472,6 +5500,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: f970d2264723e8e48b8173ada928d7ed, type: 3}
       propertyPath: m_Name
       value: "\u6865 (2)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f970d2264723e8e48b8173ada928d7ed, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: f970d2264723e8e48b8173ada928d7ed, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -6128,6 +6160,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 321197096}
     m_Modifications:
+    - target: {fileID: 100000, guid: f970d2264723e8e48b8173ada928d7ed, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: f970d2264723e8e48b8173ada928d7ed, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
@@ -6984,7 +7020,7 @@ GameObject:
   - component: {fileID: 2004199758}
   - component: {fileID: 2004199757}
   - component: {fileID: 2004199756}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

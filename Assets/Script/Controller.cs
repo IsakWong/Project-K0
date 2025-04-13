@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public class Controller : MonoBehaviour, IObtainer
 {
-    public float walk_speed;
-    public float rotation_speed;
+    public float MaxWalSpeed = 5.0f;
+    public float MaxRotateDegree = 360;
     public PlayerInput Input;
 
     public bool isshadow;
@@ -15,17 +16,15 @@ public class Controller : MonoBehaviour, IObtainer
     private float time = 0.0f;
     // private Animator animator;
 
-    private Vector3 direction;
-    private Vector3 v = Vector3.zero;
-    private float m_TurnAmount = 0;
     public Transform Center;
 
     private bool isRotate = false;
 
     private Vector3 velocity;
+
     private void Move(Vector2 move)
     {
-        var s1 = move * walk_speed;
+        var s1 = move * MaxWalSpeed;
         velocity = rigidBody.velocity;
         velocity.x = s1.x;
         velocity.z = s1.y;
@@ -34,22 +33,26 @@ public class Controller : MonoBehaviour, IObtainer
         cameraFoward.y = 0;
         velocity.x = cameraFoward.x;
         velocity.z = cameraFoward.z;
-
-        direction = -transform.InverseTransformDirection(move);
-        m_TurnAmount = Mathf.Atan2(direction.x, direction.z);
-
-        if (direction.magnitude != 0)
-        {
-            isRotate = true;
-        }
-        else
-        {
-            isRotate = false;
-        }
     }
 
     void Interation(InputAction.CallbackContext context)
     {
+        if(waterCount > 0)
+        {
+            var colliders2 = Physics.OverlapSphere(transform.position, 1.0f, 1 << LayerMask.NameToLayer("Seed"),
+                QueryTriggerInteraction.Collide);
+            foreach (var collider in colliders2)
+            {
+                var item = collider.gameObject.GetComponent<Seed>();
+                if (item is Seed)
+                {
+                    var seed = item as Seed;
+                    if(seed.seedState == Seed.SeedState.OnGround)
+                        seed.Grow();
+                    return;
+                }
+            }
+        }
         if (Current != null)
         {
             Current.Released(this);
@@ -57,71 +60,105 @@ public class Controller : MonoBehaviour, IObtainer
         }
         else
         {
-            var colliders = Physics.OverlapSphere(transform.position, 1.0f, 1 << LayerMask.NameToLayer("Interactable"), QueryTriggerInteraction.Collide);
+            var colliders = Physics.OverlapSphere(transform.position, 1.0f, 1 << LayerMask.NameToLayer("Interactable"),
+                QueryTriggerInteraction.Collide);
             foreach (var collider in colliders)
             {
                 var item = collider.gameObject.GetComponent<InteractableItem>();
-                if(item is Seed)
+                if (item is IObtainTarget)
                 {
-                    var seed = item as Seed;         
-                    Obtain(seed);
+                    var interactableItem = item as IObtainTarget;
+                    if(!interactableItem.IsObtained())
+                        Obtain(interactableItem);
+                    return;
                 }
-            }   
+            }
+            
         }
     }
-    
+
     // Use this for initialization
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
         Input.actions.FindAction("Move").performed += ctx => Move(ctx.ReadValue<Vector2>());
         Input.actions.FindAction("Move").canceled += ctx => Move(ctx.ReadValue<Vector2>());
+        Input.actions.FindAction("Jump").performed += Jump;
         Input.actions.FindAction("Interaction").performed += Interation;
 
-        
+
         //animator = GetComponent<Animator>();
         // rigidbody = GetComponent<Rigidbody>();
     }
 
-    private void FixedUpdate()
+    private void Jump(InputAction.CallbackContext context)
     {
-        if (rigidBody != null)
-            rigidBody.WakeUp();
+        if (DetectGround())
+        {
+            rigidBody.AddForce(new Vector3(0, 5.0f, 0), ForceMode.VelocityChange);
+            // animator.SetTrigger("Jump");
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private float _water;
+
+    public float waterCount
     {
-        rigidBody.velocity = velocity;
-        if (isRotate)
+        get => _water;
+        set
         {
-            Vector3 d_w = this.transform.TransformDirection(new Vector3(0, 0, 1));
-            Vector3 temp = Vector3.SmoothDamp(d_w, direction, ref v, 1f);
-
-
-            this.transform.Rotate(0, m_TurnAmount * rotation_speed * Time.deltaTime * 50.0f, 0);
+            _water = value;
+            float scale = _water / 5.0f + 1.0f;
+            transform.localScale = new Vector3(scale, scale, scale);
         }
+    }
 
+    private bool DetectGround()
+    {
+        return Physics.Raycast(transform.position, -transform.up, out RaycastHit hit, 1.0f,
+            1 << LayerMask.NameToLayer("Ground"), QueryTriggerInteraction.Ignore);
+    }
 
-        time += Time.deltaTime;
-
-        if (time > 2.0f)
-        {
-            // m_rigidbody.AddForce(new Vector3(0, 300.0f, 0));
-            // Debug.Log("jump");
-
-            time = 0;
-        }
+    private void FixedUpdate()
+    {
+        var v = velocity;
+        v.y = rigidBody.velocity.y;
+        rigidBody.velocity = v;
+        if(velocity.magnitude != 0)
+            RotateTowards(velocity, MaxRotateDegree * Time.fixedDeltaTime, false);
     }
 
     private IObtainTarget Current;
+
     public void Obtain(IObtainTarget target)
     {
-        if(Current != null)
+        if (Current != null)
             Current.Released(this);
         Current = target;
-        if(Current != null)
+        if (Current != null)
             Current.GetObtained(this);
+    }
+
+    public void RotateTowards(Vector3 worldDirection, float maxDegreesDelta, bool updateYawOnly = true)
+    {
+        Vector3 characterUp = transform.up;
+
+        if (updateYawOnly)
+            worldDirection = worldDirection.projectedOnPlane(characterUp);
+
+        if (worldDirection == Vector3.zero)
+            return;
+        Quaternion targetRotation = Quaternion.LookRotation(worldDirection, characterUp);
+        transform.localRotation =
+            Quaternion.RotateTowards(transform.localRotation, targetRotation, maxDegreesDelta);
+    }
+    public void OnObtained(IObtainTarget target)
+    {
+        if (target is Water)
+        {
+            var w = target as Water;
+            waterCount = w.WaterAmount;
+        }
     }
 
     public Component GetComponent()

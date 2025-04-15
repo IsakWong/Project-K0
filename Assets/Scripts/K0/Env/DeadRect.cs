@@ -16,7 +16,7 @@ public class DeadRect : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<Controller>() != null)
+        if (other.GetComponent<K0PlayerController>() != null)
         {
             DefeatClick.Current.Defeat();
         }

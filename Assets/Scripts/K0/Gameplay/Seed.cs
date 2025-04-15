@@ -1,28 +1,30 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public interface IObtainer
+public interface IAbsorbSource
 {
-    void Obtain(IObtainTarget target);
-    void OnObtained(IObtainTarget target);
+    void Absorb(IAbsorbTarget target);
+    void OnTargetAbsorbed(IAbsorbTarget target);
+    
     Component GetComponent();
     GameObject GetGameObject();
-    
     Transform GetTransform();
 } 
-public interface IObtainTarget
+
+public interface IAbsorbTarget
 {
-    void GetObtained(IObtainer obtainer);
-    void Released(IObtainer obtainer);
+    void GetAbsorbed(IAbsorbSource absorbSource);
+    void Released(IAbsorbSource absorbSource);
     
-    bool IsObtained();
+    bool IsAbsorbed();
     
 }
 
-public class Seed : InteractableItem, IObtainTarget
+public class Seed : InteractableItem, IAbsorbTarget
 {
     public float need_water = 10.0f;
     public float num_water = 0;
@@ -36,8 +38,8 @@ public class Seed : InteractableItem, IObtainTarget
     // Use this for initialization
     public enum SeedType
     {
-        putong,
-        tantiao
+        PlatformTree,
+        JumpTree
     }
 
     public enum SeedState
@@ -49,9 +51,9 @@ public class Seed : InteractableItem, IObtainTarget
 
     [FormerlySerializedAs("seed_state")] public SeedState seedState = SeedState.OnGround;
 
-    public bool IsObtained()
+    public bool IsAbsorbed()
     {
-        return Obtainer != null && RealObtainer != null;
+        return _absorbSource != null && _realAbsorbSource != null;
     }
     void Start()
     {
@@ -62,10 +64,10 @@ public class Seed : InteractableItem, IObtainTarget
     }
 
     private Transform ObtainerCenter;
-    private IObtainer Obtainer = null;
-    private IObtainer RealObtainer = null;
+    private IAbsorbSource _absorbSource = null;
+    private IAbsorbSource _realAbsorbSource = null;
 
-    public void GetObtained(IObtainer obtainer)
+    public void GetAbsorbed(IAbsorbSource absorbSource)
     {
         GetComponent<Collider>().isTrigger = true;
         GetComponent<Rigidbody>().isKinematic = true;
@@ -77,28 +79,34 @@ public class Seed : InteractableItem, IObtainTarget
                 break;
             case SeedState.OnGround:
                 seedState = SeedState.Floating;
-                ObtainerCenter = obtainer.GetTransform();
-                Obtainer = obtainer;
+                ObtainerCenter = absorbSource.GetTransform();
+                var t = DOTween.To(
+                    () => transform.position - ObtainerCenter.position, // Value getter
+                    x => transform.position = x + ObtainerCenter.position, // Value setter
+                    Vector3.zero, 
+                    0.5f);
+                t.SetTarget(transform);
+                _absorbSource = absorbSource;
                 break;
         }
     }
 
-    public void Released(IObtainer obtainer)
+    public void Released(IAbsorbSource absorbSource)
     {
         GetComponent<Collider>().isTrigger = false;
         GetComponent<Rigidbody>().isKinematic = false;
         GetComponent<Rigidbody>().WakeUp();
-        if(RealObtainer != null)
-            GetComponent<Rigidbody>().velocity = RealObtainer.GetTransform().forward * 3;
-        RealObtainer = null;
-        Obtainer = null;
+        if(_realAbsorbSource != null)
+            GetComponent<Rigidbody>().velocity = _realAbsorbSource.GetTransform().forward * 3;
+        _realAbsorbSource = null;
+        _absorbSource = null;
         seedState = SeedState.OnGround;
         
     }
 
     public void Grow()
     {
-        if (type == SeedType.putong)
+        if (type == SeedType.PlatformTree)
         {
             _audio.Play();
             GameObject tree = (GameObject)Instantiate(Resources.Load("生长平台树_p"));
@@ -113,7 +121,7 @@ public class Seed : InteractableItem, IObtainTarget
             Destroy(this.gameObject);
             SeedUI.Current.AddSeed();
         }
-        if (type == SeedType.tantiao)
+        if (type == SeedType.JumpTree)
         {
             _audio.Play();
             GameObject tree = (GameObject)Instantiate(Resources.Load("弹跳棉花树"));
@@ -130,15 +138,13 @@ public class Seed : InteractableItem, IObtainTarget
         {
             case SeedState.OnGround:
                 break;
-            case SeedState.Floating:
-                transform.position = Vector3.SmoothDamp(transform.position,
-                    ObtainerCenter.position, ref _upSpeed, 0.1f);
+            case SeedState.Floating:               
                 var delta = (transform.position - ObtainerCenter.position);
                 delta.y = 0;
                 if(delta.magnitude < 0.1f)
                 {
                     seedState = SeedState.Fixed;
-                    RealObtainer = Obtainer;
+                    _realAbsorbSource = _absorbSource;
                 }
                 break;
             case SeedState.Fixed:

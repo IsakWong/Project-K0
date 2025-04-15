@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using K1.Gameplay;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 
-public class Controller : MonoBehaviour, IObtainer
+public class K0PlayerController : ControllerBase, IAbsorbSource
 {
     public float MaxWalSpeed = 5.0f;
     public float MaxRotateDegree = 360;
@@ -65,11 +66,11 @@ public class Controller : MonoBehaviour, IObtainer
             foreach (var collider in colliders)
             {
                 var item = collider.gameObject.GetComponent<InteractableItem>();
-                if (item is IObtainTarget)
+                if (item is IAbsorbTarget)
                 {
-                    var interactableItem = item as IObtainTarget;
-                    if(!interactableItem.IsObtained())
-                        Obtain(interactableItem);
+                    var interactableItem = item as IAbsorbTarget;
+                    if(!interactableItem.IsAbsorbed())
+                        Absorb(interactableItem);
                     return;
                 }
             }
@@ -124,19 +125,21 @@ public class Controller : MonoBehaviour, IObtainer
         var v = velocity;
         v.y = rigidBody.velocity.y;
         rigidBody.velocity = v;
-        if(velocity.magnitude != 0)
-            RotateTowards(velocity, MaxRotateDegree * Time.fixedDeltaTime, false);
+        if (velocity.magnitude != 0)
+        {
+            RotateTowards(velocity, MaxRotateDegree * Time.fixedDeltaTime, true);
+        }
     }
 
-    private IObtainTarget Current;
+    private IAbsorbTarget Current;
 
-    public void Obtain(IObtainTarget target)
+    public void Absorb(IAbsorbTarget target)
     {
         if (Current != null)
             Current.Released(this);
         Current = target;
         if (Current != null)
-            Current.GetObtained(this);
+            Current.GetAbsorbed(this);
     }
 
     public void RotateTowards(Vector3 worldDirection, float maxDegreesDelta, bool updateYawOnly = true)
@@ -152,7 +155,7 @@ public class Controller : MonoBehaviour, IObtainer
         transform.localRotation =
             Quaternion.RotateTowards(transform.localRotation, targetRotation, maxDegreesDelta);
     }
-    public void OnObtained(IObtainTarget target)
+    public void OnTargetAbsorbed(IAbsorbTarget target)
     {
         if (target is Water)
         {

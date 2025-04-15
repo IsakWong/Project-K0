@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using K0;
 using UnityEngine;
 
 public class MainMenuClick : MonoBehaviour
@@ -31,6 +32,9 @@ public class MainMenuClick : MonoBehaviour
     public void OnStartClick()
     {
         _target = TargetCameras[1];
+        var k0GameMode = KGameCore.Instance.CurrentGameMode as K0GameMode;
+        k0GameMode.StartK0Game();
+        
         var start = transform.parent.GetChild(1);
         start.GetComponent<Animator>().SetBool("move_in", true);
         start.GetComponent<Animator>().SetBool("move_out", false);

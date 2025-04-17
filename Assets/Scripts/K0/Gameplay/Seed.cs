@@ -5,26 +5,8 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public interface IAbsorbSource
-{
-    void Absorb(IAbsorbTarget target);
-    void OnTargetAbsorbed(IAbsorbTarget target);
-    
-    Component GetComponent();
-    GameObject GetGameObject();
-    Transform GetTransform();
-} 
 
-public interface IAbsorbTarget
-{
-    void GetAbsorbed(IAbsorbSource absorbSource);
-    void Released(IAbsorbSource absorbSource);
-    
-    bool IsAbsorbed();
-    
-}
-
-public class Seed : InteractableItem, IAbsorbTarget
+public class Seed : InteractableItem
 {
     public float need_water = 10.0f;
     public float num_water = 0;
@@ -51,10 +33,6 @@ public class Seed : InteractableItem, IAbsorbTarget
 
     [FormerlySerializedAs("seed_state")] public SeedState seedState = SeedState.OnGround;
 
-    public bool IsAbsorbed()
-    {
-        return _absorbSource != null && _realAbsorbSource != null;
-    }
     void Start()
     {
         _audio = GetComponent<AudioSource>();
@@ -63,46 +41,7 @@ public class Seed : InteractableItem, IAbsorbTarget
         // this.GetComponent<Rigidbody>().e
     }
 
-    private Transform ObtainerCenter;
-    private IAbsorbSource _absorbSource = null;
-    private IAbsorbSource _realAbsorbSource = null;
-
-    public void GetAbsorbed(IAbsorbSource absorbSource)
-    {
-        GetComponent<Collider>().isTrigger = true;
-        GetComponent<Rigidbody>().isKinematic = true;
-        switch (seedState)
-        {
-            case SeedState.Fixed:
-                break;
-            case SeedState.Floating:
-                break;
-            case SeedState.OnGround:
-                seedState = SeedState.Floating;
-                ObtainerCenter = absorbSource.GetTransform();
-                var t = DOTween.To(
-                    () => transform.position - ObtainerCenter.position, // Value getter
-                    x => transform.position = x + ObtainerCenter.position, // Value setter
-                    Vector3.zero, 
-                    0.5f);
-                t.SetTarget(transform);
-                _absorbSource = absorbSource;
-                break;
-        }
-    }
-
-    public void Released(IAbsorbSource absorbSource)
-    {
-        GetComponent<Collider>().isTrigger = false;
-        GetComponent<Rigidbody>().isKinematic = false;
-        GetComponent<Rigidbody>().WakeUp();
-        if(_realAbsorbSource != null)
-            GetComponent<Rigidbody>().velocity = _realAbsorbSource.GetTransform().forward * 3;
-        _realAbsorbSource = null;
-        _absorbSource = null;
-        seedState = SeedState.OnGround;
-        
-    }
+  
 
     public void Grow()
     {

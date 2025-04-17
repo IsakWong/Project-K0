@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using K1.Gameplay;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -36,30 +37,10 @@ public class K0PlayerController : ControllerBase, IAbsorbSource
         velocity.z = cameraFoward.z;
     }
 
+    private Sequence seq;
     void Interation(InputAction.CallbackContext context)
     {
-        if(waterCount > 0)
-        {
-            var colliders2 = Physics.OverlapSphere(transform.position, 1.0f, 1 << LayerMask.NameToLayer("Seed"),
-                QueryTriggerInteraction.Collide);
-            foreach (var collider in colliders2)
-            {
-                var item = collider.gameObject.GetComponent<Seed>();
-                if (item is Seed)
-                {
-                    var seed = item as Seed;
-                    if(seed.seedState == Seed.SeedState.OnGround)
-                        seed.Grow();
-                    return;
-                }
-            }
-        }
-        if (Current != null)
-        {
-            Current.Released(this);
-            Current = null;
-        }
-        else
+        if(context.performed)
         {
             var colliders = Physics.OverlapSphere(transform.position, 1.0f, 1 << LayerMask.NameToLayer("Interactable"),
                 QueryTriggerInteraction.Collide);
@@ -69,12 +50,63 @@ public class K0PlayerController : ControllerBase, IAbsorbSource
                 if (item is IAbsorbTarget)
                 {
                     var interactableItem = item as IAbsorbTarget;
-                    if(!interactableItem.IsAbsorbed())
-                        Absorb(interactableItem);
+                    if (!interactableItem.IsAbsorbed())
+                    {
+                        seq = DOTween.Sequence();
+                        seq.Append(interactableItem.GetTransform().DOShakeRotation(1f, 10));
+                        seq.SetLoops(-1);
+                        seq.Play();
+                    }
                     return;
                 }
             }
             
+        }
+        if(context.canceled)
+        {
+            if (seq != null && seq.IsActive())
+            {
+                seq.Kill();
+                seq = null;
+            }
+            if(waterCount > 0)
+            {
+                var colliders2 = Physics.OverlapSphere(transform.position, 1.0f, 1 << LayerMask.NameToLayer("Seed"),
+                    QueryTriggerInteraction.Collide);
+                foreach (var collider in colliders2)
+                {
+                    var item = collider.gameObject.GetComponent<Seed>();
+                    if (item is Seed)
+                    {
+                        var seed = item as Seed;
+                        if(seed.seedState == Seed.SeedState.OnGround)
+                            seed.Grow();
+                        return;
+                    }
+                }
+            }
+            if (Current != null)
+            {
+                Current.Released(this);
+                Current = null;
+            }
+            else
+            {
+                var colliders = Physics.OverlapSphere(transform.position, 1.0f, 1 << LayerMask.NameToLayer("Interactable"),
+                    QueryTriggerInteraction.Collide);
+                foreach (var collider in colliders)
+                {
+                    var item = collider.gameObject.GetComponent<InteractableItem>();
+                    if (item is IAbsorbTarget)
+                    {
+                        var interactableItem = item as IAbsorbTarget;
+                        if(!interactableItem.IsAbsorbed())
+                            Absorb(interactableItem);
+                        return;
+                    }
+                }
+            
+            }
         }
     }
 
@@ -86,6 +118,7 @@ public class K0PlayerController : ControllerBase, IAbsorbSource
         Input.actions.FindAction("Move").canceled += ctx => Move(ctx.ReadValue<Vector2>());
         Input.actions.FindAction("Jump").performed += Jump;
         Input.actions.FindAction("Interaction").performed += Interation;
+        Input.actions.FindAction("Interaction").canceled += Interation;
 
 
         //animator = GetComponent<Animator>();
@@ -94,11 +127,7 @@ public class K0PlayerController : ControllerBase, IAbsorbSource
 
     private void Jump(InputAction.CallbackContext context)
     {
-        if (DetectGround())
-        {
-            rigidBody.AddForce(new Vector3(0, 5.0f, 0), ForceMode.VelocityChange);
-            // animator.SetTrigger("Jump");
-        }
+        rigidBody.AddForce(new Vector3(0, 5.0f, 0), ForceMode.VelocityChange);
     }
 
     private float _water;
@@ -122,13 +151,19 @@ public class K0PlayerController : ControllerBase, IAbsorbSource
 
     private void FixedUpdate()
     {
+        if (velocity != Vector3.zero)
+        {
+            var q = velocity - transform.forward;
+            q.y = 0;
+            if (q.magnitude >= 0.01f)
+            {
+                RotateTowards(velocity, MaxRotateDegree * Time.fixedDeltaTime, true);
+            } 
+        }           
         var v = velocity;
         v.y = rigidBody.velocity.y;
         rigidBody.velocity = v;
-        if (velocity.magnitude != 0)
-        {
-            RotateTowards(velocity, MaxRotateDegree * Time.fixedDeltaTime, true);
-        }
+        
     }
 
     private IAbsorbTarget Current;
@@ -168,12 +203,10 @@ public class K0PlayerController : ControllerBase, IAbsorbSource
     {
         return this;
     }
-
     public GameObject GetGameObject()
     {
         return gameObject;
     }
-
     public Transform GetTransform()
     {
         return transform;

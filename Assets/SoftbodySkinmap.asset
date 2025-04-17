@@ -1,0 +1,5668 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca6ebc904cae74824a9329f2f41de1ed, type: 3}
+  m_Name: SoftbodySkinmap
+  m_EditorClassIdentifier: 
+  particlesOnVertices:
+    influences:
+      serializedContents:
+      - index: 4
+        weight: 0.35987812
+      - index: 5
+        weight: 0.18021697
+      - index: 6
+        weight: 0.17947747
+      - index: 35
+        weight: 0.13973653
+      - index: 25
+        weight: 0.10328144
+      - index: 84
+        weight: 0.037409436
+      - index: 5
+        weight: 0.3353736
+      - index: 35
+        weight: 0.16772768
+      - index: 84
+        weight: 0.16553019
+      - index: 4
+        weight: 0.16553012
+      - index: 57
+        weight: 0.16553009
+      - index: 95
+        weight: 0.00030826166
+      - index: 4
+        weight: 0.3495892
+      - index: 6
+        weight: 0.21108373
+      - index: 5
+        weight: 0.19757526
+      - index: 35
+        weight: 0.11181761
+      - index: 84
+        weight: 0.07143555
+      - index: 95
+        weight: 0.058498666
+      - index: 6
+        weight: 0.38255638
+      - index: 4
+        weight: 0.18891656
+      - index: 107
+        weight: 0.18283361
+      - index: 7
+        weight: 0.1828335
+      - index: 8
+        weight: 0.059129238
+      - index: 95
+        weight: 0.00373071
+      - index: 6
+        weight: 0.29071656
+      - index: 7
+        weight: 0.21872622
+      - index: 4
+        weight: 0.2033523
+      - index: 107
+        weight: 0.097776525
+      - index: 25
+        weight: 0.09566187
+      - index: 21
+        weight: 0.09376645
+      - index: 107
+        weight: 0.2414324
+      - index: 7
+        weight: 0.24143225
+      - index: 8
+        weight: 0.22035897
+      - index: 6
+        weight: 0.21148889
+      - index: 106
+        weight: 0.04264379
+      - index: 9
+        weight: 0.0426437
+      - index: 4
+        weight: 0.32373857
+      - index: 35
+        weight: 0.1809221
+      - index: 5
+        weight: 0.17969288
+      - index: 25
+        weight: 0.14842366
+      - index: 6
+        weight: 0.14502048
+      - index: 7
+        weight: 0.022202317
+      - index: 5
+        weight: 0.3353736
+      - index: 35
+        weight: 0.16772768
+      - index: 84
+        weight: 0.16553019
+      - index: 4
+        weight: 0.16553012
+      - index: 57
+        weight: 0.16553009
+      - index: 95
+        weight: 0.00030826166
+      - index: 7
+        weight: 0.341237
+      - index: 6
+        weight: 0.1640687
+      - index: 17
+        weight: 0.15042047
+      - index: 8
+        weight: 0.14875637
+      - index: 107
+        weight: 0.09911634
+      - index: 21
+        weight: 0.09640107
+      - index: 8
+        weight: 0.33972958
+      - index: 107
+        weight: 0.1486977
+      - index: 7
+        weight: 0.14869763
+      - index: 106
+        weight: 0.13981965
+      - index: 9
+        weight: 0.13981955
+      - index: 10
+        weight: 0.08323593
+      - index: 25
+        weight: 0.19438137
+      - index: 4
+        weight: 0.19286714
+      - index: 6
+        weight: 0.19195421
+      - index: 7
+        weight: 0.18137677
+      - index: 21
+        weight: 0.17953329
+      - index: 17
+        weight: 0.05988722
+      - index: 9
+        weight: 0.25071812
+      - index: 7
+        weight: 0.23130202
+      - index: 17
+        weight: 0.22102898
+      - index: 8
+        weight: 0.21863395
+      - index: 107
+        weight: 0.039547205
+      - index: 10
+        weight: 0.038769748
+      - index: 8
+        weight: 0.25727764
+      - index: 10
+        weight: 0.24279676
+      - index: 106
+        weight: 0.20343713
+      - index: 9
+        weight: 0.20343696
+      - index: 107
+        weight: 0.046525743
+      - index: 7
+        weight: 0.04652567
+      - index: 4
+        weight: 0.27442595
+      - index: 35
+        weight: 0.22509539
+      - index: 25
+        weight: 0.18177119
+      - index: 5
+        weight: 0.17919004
+      - index: 6
+        weight: 0.09930229
+      - index: 57
+        weight: 0.040215157
+      - index: 5
+        weight: 0.3353736
+      - index: 35
+        weight: 0.16772768
+      - index: 84
+        weight: 0.16553019
+      - index: 4
+        weight: 0.16553012
+      - index: 57
+        weight: 0.16553009
+      - index: 95
+        weight: 0.00030826166
+      - index: 21
+        weight: 0.25807273
+      - index: 7
+        weight: 0.2561138
+      - index: 17
+        weight: 0.23843667
+      - index: 25
+        weight: 0.100091316
+      - index: 6
+        weight: 0.09961459
+      - index: 9
+        weight: 0.047670923
+      - index: 9
+        weight: 0.35885978
+      - index: 17
+        weight: 0.15030076
+      - index: 8
+        weight: 0.14863321
+      - index: 10
+        weight: 0.13040367
+      - index: 18
+        weight: 0.12939675
+      - index: 7
+        weight: 0.082405925
+      - index: 10
+        weight: 0.3819704
+      - index: 106
+        weight: 0.13907045
+      - index: 9
+        weight: 0.13907033
+      - index: 108
+        weight: 0.12163973
+      - index: 11
+        weight: 0.12163961
+      - index: 8
+        weight: 0.09660935
+      - index: 25
+        weight: 0.3053233
+      - index: 21
+        weight: 0.22473027
+      - index: 4
+        weight: 0.1629075
+      - index: 35
+        weight: 0.10927677
+      - index: 7
+        weight: 0.098881125
+      - index: 30
+        weight: 0.09888105
+      - index: 17
+        weight: 0.3393508
+      - index: 21
+        weight: 0.14893948
+      - index: 7
+        weight: 0.14569782
+      - index: 9
+        weight: 0.14242417
+      - index: 20
+        weight: 0.14074956
+      - index: 18
+        weight: 0.082838066
+      - index: 9
+        weight: 0.26043057
+      - index: 11
+        weight: 0.23123468
+      - index: 10
+        weight: 0.2098142
+      - index: 18
+        weight: 0.20848462
+      - index: 17
+        weight: 0.04566145
+      - index: 8
+        weight: 0.044374578
+      - index: 10
+        weight: 0.2615497
+      - index: 12
+        weight: 0.25339445
+      - index: 108
+        weight: 0.23840614
+      - index: 11
+        weight: 0.23840596
+      - index: 106
+        weight: 0.0041219024
+      - index: 9
+        weight: 0.0041218163
+      - index: 35
+        weight: 0.2741327
+      - index: 4
+        weight: 0.22867548
+      - index: 25
+        weight: 0.19589435
+      - index: 5
+        weight: 0.1805187
+      - index: 57
+        weight: 0.06897077
+      - index: 43
+        weight: 0.051807955
+      - index: 5
+        weight: 0.3353736
+      - index: 35
+        weight: 0.16772768
+      - index: 84
+        weight: 0.16553019
+      - index: 4
+        weight: 0.16553012
+      - index: 57
+        weight: 0.16553009
+      - index: 95
+        weight: 0.00030826166
+      - index: 21
+        weight: 0.34524179
+      - index: 25
+        weight: 0.16445714
+      - index: 17
+        weight: 0.14911129
+      - index: 24
+        weight: 0.14911114
+      - index: 7
+        weight: 0.09603941
+      - index: 30
+        weight: 0.0960393
+      - index: 17
+        weight: 0.25588143
+      - index: 18
+        weight: 0.24186675
+      - index: 9
+        weight: 0.20658584
+      - index: 20
+        weight: 0.2045834
+      - index: 21
+        weight: 0.047354482
+      - index: 7
+        weight: 0.043728158
+      - index: 11
+        weight: 0.39943925
+      - index: 19
+        weight: 0.13938476
+      - index: 12
+        weight: 0.1375199
+      - index: 10
+        weight: 0.13198851
+      - index: 18
+        weight: 0.1307456
+      - index: 9
+        weight: 0.060921993
+      - index: 12
+        weight: 0.38766718
+      - index: 109
+        weight: 0.15145141
+      - index: 13
+        weight: 0.15145132
+      - index: 108
+        weight: 0.13131244
+      - index: 11
+        weight: 0.1313123
+      - index: 105
+        weight: 0.046805322
+      - index: 25
+        weight: 0.3594573
+      - index: 30
+        weight: 0.16989842
+      - index: 21
+        weight: 0.16817157
+      - index: 35
+        weight: 0.14380714
+      - index: 4
+        weight: 0.102568366
+      - index: 24
+        weight: 0.056097206
+      - index: 20
+        weight: 0.2514123
+      - index: 21
+        weight: 0.23571686
+      - index: 17
+        weight: 0.21748035
+      - index: 24
+        weight: 0.21748023
+      - index: 26
+        weight: 0.03895515
+      - index: 18
+        weight: 0.038955078
+      - index: 18
+        weight: 0.37962514
+      - index: 9
+        weight: 0.14048968
+      - index: 20
+        weight: 0.13925624
+      - index: 11
+        weight: 0.12330246
+      - index: 22
+        weight: 0.122099176
+      - index: 17
+        weight: 0.09522716
+      - index: 19
+        weight: 0.24310243
+      - index: 12
+        weight: 0.24060237
+      - index: 11
+        weight: 0.22911696
+      - index: 13
+        weight: 0.22688998
+      - index: 109
+        weight: 0.030962767
+      - index: 23
+        weight: 0.029325532
+      - index: 109
+        weight: 0.26099122
+      - index: 13
+        weight: 0.26099107
+      - index: 12
+        weight: 0.21522608
+      - index: 14
+        weight: 0.20362784
+      - index: 105
+        weight: 0.029581951
+      - index: 19
+        weight: 0.029581806
+      - index: 35
+        weight: 0.3005955
+      - index: 4
+        weight: 0.1707281
+      - index: 25
+        weight: 0.16987728
+      - index: 5
+        weight: 0.16822037
+      - index: 57
+        weight: 0.095650144
+      - index: 43
+        weight: 0.0949286
+      - index: 5
+        weight: 0.3353736
+      - index: 35
+        weight: 0.16772768
+      - index: 84
+        weight: 0.16553019
+      - index: 4
+        weight: 0.16553012
+      - index: 57
+        weight: 0.16553009
+      - index: 95
+        weight: 0.00030826166
+      - index: 21
+        weight: 0.24083842
+      - index: 30
+        weight: 0.23901033
+      - index: 24
+        weight: 0.22251372
+      - index: 25
+        weight: 0.21007358
+      - index: 29
+        weight: 0.044487283
+      - index: 20
+        weight: 0.043076612
+      - index: 20
+        weight: 0.35956287
+      - index: 17
+        weight: 0.14664684
+      - index: 24
+        weight: 0.14664683
+      - index: 26
+        weight: 0.13101389
+      - index: 18
+        weight: 0.13101384
+      - index: 21
+        weight: 0.08511572
+      - index: 18
+        weight: 0.2583737
+      - index: 19
+        weight: 0.2506886
+      - index: 11
+        weight: 0.24073379
+      - index: 22
+        weight: 0.23821871
+      - index: 9
+        weight: 0.0063809804
+      - index: 20
+        weight: 0.0056040785
+      - index: 13
+        weight: 0.35843775
+      - index: 14
+        weight: 0.15317166
+      - index: 19
+        weight: 0.14171542
+      - index: 12
+        weight: 0.14042819
+      - index: 109
+        weight: 0.10453813
+      - index: 23
+        weight: 0.1017088
+      - index: 14
+        weight: 0.4223092
+      - index: 15
+        weight: 0.18946299
+      - index: 109
+        weight: 0.18427393
+      - index: 13
+        weight: 0.18427381
+      - index: 12
+        weight: 0.013802769
+      - index: 98
+        weight: 0.005877372
+      - index: 25
+        weight: 0.2954521
+      - index: 30
+        weight: 0.22325294
+      - index: 35
+        weight: 0.19128373
+      - index: 39
+        weight: 0.099800065
+      - index: 21
+        weight: 0.095706955
+      - index: 43
+        weight: 0.09450422
+      - index: 24
+        weight: 0.3393509
+      - index: 21
+        weight: 0.14893939
+      - index: 30
+        weight: 0.1456978
+      - index: 29
+        weight: 0.14242402
+      - index: 20
+        weight: 0.14074978
+      - index: 26
+        weight: 0.08283813
+      - index: 20
+        weight: 0.26103717
+      - index: 22
+        weight: 0.23185709
+      - index: 26
+        weight: 0.21087353
+      - index: 18
+        weight: 0.2108735
+      - index: 17
+        weight: 0.042679347
+      - index: 24
+        weight: 0.042679347
+      - index: 19
+        weight: 0.38792637
+      - index: 23
+        weight: 0.15207046
+      - index: 13
+        weight: 0.14844601
+      - index: 11
+        weight: 0.13443743
+      - index: 22
+        weight: 0.13253468
+      - index: 12
+        weight: 0.044585
+      - index: 14
+        weight: 0.31795868
+      - index: 13
+        weight: 0.21777515
+      - index: 15
+        weight: 0.17369847
+      - index: 28
+        weight: 0.105731815
+      - index: 109
+        weight: 0.09454733
+      - index: 23
+        weight: 0.09028853
+      - index: 15
+        weight: 0.4021106
+      - index: 16
+        weight: 0.18155791
+      - index: 14
+        weight: 0.17882074
+      - index: 33
+        weight: 0.15929008
+      - index: 98
+        weight: 0.039110463
+      - index: 28
+        weight: 0.039110314
+      - index: 35
+        weight: 0.32239807
+      - index: 5
+        weight: 0.16138741
+      - index: 43
+        weight: 0.13209851
+      - index: 25
+        weight: 0.13209847
+      - index: 4
+        weight: 0.1260088
+      - index: 57
+        weight: 0.12600878
+      - index: 5
+        weight: 0.3353736
+      - index: 35
+        weight: 0.16772768
+      - index: 84
+        weight: 0.16553019
+      - index: 4
+        weight: 0.16553012
+      - index: 57
+        weight: 0.16553009
+      - index: 95
+        weight: 0.00030826166
+      - index: 24
+        weight: 0.25588152
+      - index: 26
+        weight: 0.2418668
+      - index: 29
+        weight: 0.20658562
+      - index: 20
+        weight: 0.20458372
+      - index: 21
+        weight: 0.04735439
+      - index: 30
+        weight: 0.043728087
+      - index: 22
+        weight: 0.4009221
+      - index: 19
+        weight: 0.13610174
+      - index: 27
+        weight: 0.13610172
+      - index: 26
+        weight: 0.13269523
+      - index: 18
+        weight: 0.13269521
+      - index: 20
+        weight: 0.061483998
+      - index: 23
+        weight: 0.27809674
+      - index: 13
+        weight: 0.27577764
+      - index: 19
+        weight: 0.23167555
+      - index: 28
+        weight: 0.092458814
+      - index: 14
+        weight: 0.092159964
+      - index: 12
+        weight: 0.029831404
+      - index: 15
+        weight: 0.34872076
+      - index: 33
+        weight: 0.19977124
+      - index: 16
+        weight: 0.17628539
+      - index: 14
+        weight: 0.16163215
+      - index: 28
+        weight: 0.08804941
+      - index: 54
+        weight: 0.025541
+      - index: 16
+        weight: 0.3625081
+      - index: 76
+        weight: 0.1613412
+      - index: 54
+        weight: 0.16016063
+      - index: 15
+        weight: 0.15916474
+      - index: 33
+        weight: 0.15682527
+      - index: 1
+        weight: 0
+      - index: 28
+        weight: 0.20842773
+      - index: 14
+        weight: 0.20615454
+      - index: 13
+        weight: 0.17662665
+      - index: 23
+        weight: 0.17481323
+      - index: 15
+        weight: 0.138129
+      - index: 33
+        weight: 0.095848836
+      - index: 19
+        weight: 0.24122316
+      - index: 27
+        weight: 0.24122305
+      - index: 23
+        weight: 0.2330643
+      - index: 22
+        weight: 0.23141076
+      - index: 13
+        weight: 0.026539413
+      - index: 32
+        weight: 0.026539281
+      - index: 26
+        weight: 0.37962502
+      - index: 29
+        weight: 0.14048952
+      - index: 20
+        weight: 0.13925648
+      - index: 31
+        weight: 0.12330234
+      - index: 22
+        weight: 0.12209936
+      - index: 24
+        weight: 0.09522725
+      - index: 15
+        weight: 0.28742388
+      - index: 33
+        weight: 0.240422
+      - index: 16
+        weight: 0.17068437
+      - index: 28
+        weight: 0.12835261
+      - index: 14
+        weight: 0.12535366
+      - index: 54
+        weight: 0.047763493
+      - index: 16
+        weight: 0.3625081
+      - index: 76
+        weight: 0.1613412
+      - index: 54
+        weight: 0.16016063
+      - index: 15
+        weight: 0.15916474
+      - index: 33
+        weight: 0.15682527
+      - index: 1
+        weight: 0
+      - index: 23
+        weight: 0.36354047
+      - index: 28
+        weight: 0.15341695
+      - index: 19
+        weight: 0.14040042
+      - index: 27
+        weight: 0.14040032
+      - index: 13
+        weight: 0.10112098
+      - index: 32
+        weight: 0.1011208
+      - index: 26
+        weight: 0.2583737
+      - index: 27
+        weight: 0.25068867
+      - index: 31
+        weight: 0.24073355
+      - index: 22
+        weight: 0.23821896
+      - index: 29
+        weight: 0.006380838
+      - index: 20
+        weight: 0.0056042494
+      - index: 28
+        weight: 0.33112225
+      - index: 23
+        weight: 0.22203918
+      - index: 33
+        weight: 0.14919299
+      - index: 14
+        weight: 0.10677048
+      - index: 15
+        weight: 0.09636023
+      - index: 13
+        weight: 0.09451482
+      - index: 27
+        weight: 0.38792646
+      - index: 23
+        weight: 0.15207057
+      - index: 32
+        weight: 0.14844596
+      - index: 31
+        weight: 0.13443726
+      - index: 22
+        weight: 0.13253486
+      - index: 37
+        weight: 0.044584904
+      - index: 33
+        weight: 0.284951
+      - index: 15
+        weight: 0.2343971
+      - index: 16
+        weight: 0.16779524
+      - index: 28
+        weight: 0.15666997
+      - index: 14
+        weight: 0.08082272
+      - index: 54
+        weight: 0.07536405
+      - index: 16
+        weight: 0.3625081
+      - index: 76
+        weight: 0.1613412
+      - index: 54
+        weight: 0.16016063
+      - index: 15
+        weight: 0.15916474
+      - index: 33
+        weight: 0.15682527
+      - index: 1
+        weight: 0
+      - index: 23
+        weight: 0.2624412
+      - index: 32
+        weight: 0.26025242
+      - index: 27
+        weight: 0.21863313
+      - index: 28
+        weight: 0.20406622
+      - index: 37
+        weight: 0.028151903
+      - index: 19
+        weight: 0.026455069
+      - index: 28
+        weight: 0.41379932
+      - index: 32
+        weight: 0.17848508
+      - index: 33
+        weight: 0.17709787
+      - index: 23
+        weight: 0.17665288
+      - index: 15
+        weight: 0.040323745
+      - index: 27
+        weight: 0.013641052
+      - index: 33
+        weight: 0.33381125
+      - index: 15
+        weight: 0.18815671
+      - index: 28
+        weight: 0.16735749
+      - index: 16
+        weight: 0.16734709
+      - index: 54
+        weight: 0.108757
+      - index: 46
+        weight: 0.03457048
+      - index: 16
+        weight: 0.3625081
+      - index: 76
+        weight: 0.1613412
+      - index: 54
+        weight: 0.16016063
+      - index: 15
+        weight: 0.15916474
+      - index: 33
+        weight: 0.15682527
+      - index: 1
+        weight: 0
+      - index: 29
+        weight: 0.26043054
+      - index: 31
+        weight: 0.23123462
+      - index: 36
+        weight: 0.20981404
+      - index: 26
+        weight: 0.20848458
+      - index: 24
+        weight: 0.045661587
+      - index: 34
+        weight: 0.044374563
+      - index: 31
+        weight: 0.39943928
+      - index: 27
+        weight: 0.13938487
+      - index: 37
+        weight: 0.13751984
+      - index: 36
+        weight: 0.13198839
+      - index: 26
+        weight: 0.13074562
+      - index: 29
+        weight: 0.060922
+      - index: 27
+        weight: 0.24310246
+      - index: 37
+        weight: 0.2406022
+      - index: 31
+        weight: 0.22911687
+      - index: 32
+        weight: 0.22689001
+      - index: 41
+        weight: 0.030962782
+      - index: 23
+        weight: 0.029325627
+      - index: 32
+        weight: 0.35945854
+      - index: 28
+        weight: 0.15076019
+      - index: 27
+        weight: 0.14211895
+      - index: 37
+        weight: 0.14082798
+      - index: 41
+        weight: 0.10483579
+      - index: 23
+        weight: 0.101998515
+      - index: 28
+        weight: 0.3132372
+      - index: 32
+        weight: 0.21546663
+      - index: 33
+        weight: 0.18691091
+      - index: 46
+        weight: 0.10150865
+      - index: 41
+        weight: 0.093545
+      - index: 23
+        weight: 0.08933154
+      - index: 29
+        weight: 0.3588599
+      - index: 24
+        weight: 0.15030088
+      - index: 34
+        weight: 0.14863315
+      - index: 36
+        weight: 0.13040356
+      - index: 26
+        weight: 0.12939677
+      - index: 30
+        weight: 0.0824059
+      - index: 33
+        weight: 0.34695217
+      - index: 16
+        weight: 0.1565777
+      - index: 28
+        weight: 0.14556368
+      - index: 54
+        weight: 0.13756905
+      - index: 15
+        weight: 0.13643968
+      - index: 46
+        weight: 0.076897666
+      - index: 16
+        weight: 0.3625081
+      - index: 76
+        weight: 0.1613412
+      - index: 54
+        weight: 0.16016063
+      - index: 15
+        weight: 0.15916474
+      - index: 33
+        weight: 0.15682527
+      - index: 1
+        weight: 0
+      - index: 29
+        weight: 0.25071806
+      - index: 30
+        weight: 0.23130202
+      - index: 24
+        weight: 0.22102909
+      - index: 34
+        weight: 0.2186339
+      - index: 39
+        weight: 0.039547183
+      - index: 36
+        weight: 0.0387697
+      - index: 30
+        weight: 0.3423019
+      - index: 25
+        weight: 0.1614603
+      - index: 24
+        weight: 0.15088989
+      - index: 34
+        weight: 0.14922056
+      - index: 39
+        weight: 0.09942563
+      - index: 21
+        weight: 0.096701786
+      - index: 35
+        weight: 0.20042111
+      - index: 43
+        weight: 0.18897913
+      - index: 25
+        weight: 0.1889791
+      - index: 39
+        weight: 0.18146674
+      - index: 30
+        weight: 0.18146668
+      - index: 34
+        weight: 0.05868717
+      - index: 39
+        weight: 0.26092365
+      - index: 30
+        weight: 0.26092362
+      - index: 34
+        weight: 0.23814893
+      - index: 43
+        weight: 0.09695871
+      - index: 25
+        weight: 0.09695866
+      - index: 29
+        weight: 0.0460864
+      - index: 34
+        weight: 0.33972955
+      - index: 39
+        weight: 0.14869772
+      - index: 30
+        weight: 0.1486977
+      - index: 29
+        weight: 0.1398196
+      - index: 38
+        weight: 0.13981958
+      - index: 36
+        weight: 0.08323588
+      - index: 35
+        weight: 0.30059546
+      - index: 57
+        weight: 0.17072812
+      - index: 43
+        weight: 0.1698773
+      - index: 5
+        weight: 0.16822039
+      - index: 4
+        weight: 0.09565017
+      - index: 25
+        weight: 0.094928585
+      - index: 5
+        weight: 0.3353736
+      - index: 35
+        weight: 0.16772768
+      - index: 84
+        weight: 0.16553019
+      - index: 4
+        weight: 0.16553012
+      - index: 57
+        weight: 0.16553009
+      - index: 95
+        weight: 0.00030826166
+      - index: 43
+        weight: 0.29545203
+      - index: 39
+        weight: 0.22325289
+      - index: 35
+        weight: 0.19128367
+      - index: 30
+        weight: 0.0998
+      - index: 48
+        weight: 0.09570715
+      - index: 25
+        weight: 0.09450418
+      - index: 34
+        weight: 0.25727764
+      - index: 36
+        weight: 0.24279672
+      - index: 29
+        weight: 0.20343712
+      - index: 38
+        weight: 0.20343706
+      - index: 39
+        weight: 0.046525758
+      - index: 30
+        weight: 0.046525735
+      - index: 39
+        weight: 0.34230185
+      - index: 43
+        weight: 0.1614603
+      - index: 42
+        weight: 0.15088995
+      - index: 34
+        weight: 0.1492205
+      - index: 30
+        weight: 0.099425554
+      - index: 48
+        weight: 0.096701965
+      - index: 35
+        weight: 0.27413273
+      - index: 57
+        weight: 0.22867553
+      - index: 43
+        weight: 0.19589439
+      - index: 5
+        weight: 0.1805187
+      - index: 4
+        weight: 0.0689708
+      - index: 25
+        weight: 0.051807918
+      - index: 5
+        weight: 0.3353736
+      - index: 35
+        weight: 0.16772768
+      - index: 84
+        weight: 0.16553019
+      - index: 4
+        weight: 0.16553012
+      - index: 57
+        weight: 0.16553009
+      - index: 95
+        weight: 0.00030826166
+      - index: 43
+        weight: 0.3594572
+      - index: 39
+        weight: 0.16989836
+      - index: 48
+        weight: 0.16817173
+      - index: 35
+        weight: 0.14380707
+      - index: 57
+        weight: 0.10256834
+      - index: 42
+        weight: 0.05609724
+      - index: 38
+        weight: 0.25071812
+      - index: 39
+        weight: 0.23130204
+      - index: 42
+        weight: 0.22102922
+      - index: 34
+        weight: 0.2186339
+      - index: 30
+        weight: 0.03954714
+      - index: 36
+        weight: 0.038769685
+      - index: 36
+        weight: 0.38197038
+      - index: 29
+        weight: 0.13907044
+      - index: 38
+        weight: 0.13907039
+      - index: 31
+        weight: 0.1216397
+      - index: 40
+        weight: 0.12163965
+      - index: 34
+        weight: 0.09660937
+      - index: 57
+        weight: 0.27442598
+      - index: 35
+        weight: 0.22509536
+      - index: 43
+        weight: 0.1817712
+      - index: 5
+        weight: 0.17919001
+      - index: 61
+        weight: 0.09930221
+      - index: 84
+        weight: 0.040215205
+      - index: 5
+        weight: 0.3353736
+      - index: 35
+        weight: 0.16772768
+      - index: 84
+        weight: 0.16553019
+      - index: 4
+        weight: 0.16553012
+      - index: 57
+        weight: 0.16553009
+      - index: 95
+        weight: 0.00030826166
+      - index: 48
+        weight: 0.24083859
+      - index: 39
+        weight: 0.23901026
+      - index: 42
+        weight: 0.22251375
+      - index: 43
+        weight: 0.21007356
+      - index: 38
+        weight: 0.044487324
+      - index: 47
+        weight: 0.043076493
+      - index: 38
+        weight: 0.35885984
+      - index: 42
+        weight: 0.15030092
+      - index: 34
+        weight: 0.14863311
+      - index: 36
+        weight: 0.13040353
+      - index: 44
+        weight: 0.1293967
+      - index: 39
+        weight: 0.0824059
+      - index: 36
+        weight: 0.26154956
+      - index: 37
+        weight: 0.25339442
+      - index: 31
+        weight: 0.23840605
+      - index: 40
+        weight: 0.238406
+      - index: 29
+        weight: 0.0041219294
+      - index: 38
+        weight: 0.0041219005
+      - index: 43
+        weight: 0.30532324
+      - index: 48
+        weight: 0.22473039
+      - index: 57
+        weight: 0.16290748
+      - index: 35
+        weight: 0.109276734
+      - index: 56
+        weight: 0.09888112
+      - index: 39
+        weight: 0.09888102
+      - index: 42
+        weight: 0.3393509
+      - index: 48
+        weight: 0.14893946
+      - index: 39
+        weight: 0.14569774
+      - index: 38
+        weight: 0.14242409
+      - index: 47
+        weight: 0.14074968
+      - index: 44
+        weight: 0.08283812
+      - index: 38
+        weight: 0.2604306
+      - index: 40
+        weight: 0.23123468
+      - index: 36
+        weight: 0.20981406
+      - index: 44
+        weight: 0.20848459
+      - index: 42
+        weight: 0.045661602
+      - index: 34
+        weight: 0.044374548
+      - index: 37
+        weight: 0.38766715
+      - index: 41
+        weight: 0.1514515
+      - index: 32
+        weight: 0.15145147
+      - index: 31
+        weight: 0.13131233
+      - index: 40
+        weight: 0.1313123
+      - index: 45
+        weight: 0.046805352
+      - index: 57
+        weight: 0.3093676
+      - index: 35
+        weight: 0.17289081
+      - index: 5
+        weight: 0.17171615
+      - index: 43
+        weight: 0.14183503
+      - index: 61
+        weight: 0.13858284
+      - index: 84
+        weight: 0.065607645
+      - index: 5
+        weight: 0.3353736
+      - index: 35
+        weight: 0.16772768
+      - index: 84
+        weight: 0.16553019
+      - index: 4
+        weight: 0.16553012
+      - index: 57
+        weight: 0.16553009
+      - index: 95
+        weight: 0.00030826166
+      - index: 48
+        weight: 0.34524173
+      - index: 43
+        weight: 0.1644571
+      - index: 51
+        weight: 0.14911138
+      - index: 42
+        weight: 0.1491111
+      - index: 56
+        weight: 0.09603941
+      - index: 39
+        weight: 0.096039236
+      - index: 42
+        weight: 0.25588146
+      - index: 44
+        weight: 0.24186678
+      - index: 38
+        weight: 0.20658569
+      - index: 47
+        weight: 0.2045836
+      - index: 48
+        weight: 0.04735439
+      - index: 39
+        weight: 0.04372804
+      - index: 40
+        weight: 0.39943933
+      - index: 45
+        weight: 0.13938493
+      - index: 37
+        weight: 0.13751979
+      - index: 36
+        weight: 0.13198836
+      - index: 44
+        weight: 0.1307456
+      - index: 38
+        weight: 0.060922008
+      - index: 32
+        weight: 0.27976495
+      - index: 41
+        weight: 0.27976495
+      - index: 37
+        weight: 0.23070778
+      - index: 28
+        weight: 0.089026235
+      - index: 46
+        weight: 0.089026235
+      - index: 45
+        weight: 0.031709827
+      - index: 43
+        weight: 0.19438128
+      - index: 57
+        weight: 0.19286713
+      - index: 61
+        weight: 0.19195415
+      - index: 56
+        weight: 0.18137674
+      - index: 48
+        weight: 0.17953329
+      - index: 51
+        weight: 0.05988728
+      - index: 47
+        weight: 0.25141233
+      - index: 48
+        weight: 0.23571673
+      - index: 51
+        weight: 0.21748045
+      - index: 42
+        weight: 0.21748015
+      - index: 52
+        weight: 0.038955156
+      - index: 44
+        weight: 0.038955133
+      - index: 44
+        weight: 0.3796251
+      - index: 38
+        weight: 0.14048955
+      - index: 47
+        weight: 0.13925642
+      - index: 40
+        weight: 0.12330237
+      - index: 49
+        weight: 0.1220993
+      - index: 42
+        weight: 0.09522719
+      - index: 45
+        weight: 0.24310264
+      - index: 37
+        weight: 0.24060217
+      - index: 40
+        weight: 0.2291169
+      - index: 41
+        weight: 0.22689003
+      - index: 32
+        weight: 0.03096276
+      - index: 50
+        weight: 0.029325603
+      - index: 28
+        weight: 0.20916511
+      - index: 46
+        weight: 0.20916511
+      - index: 41
+        weight: 0.18230884
+      - index: 32
+        weight: 0.18230881
+      - index: 33
+        weight: 0.1756546
+      - index: 54
+        weight: 0.04139759
+      - index: 57
+        weight: 0.3378941
+      - index: 5
+        weight: 0.16920795
+      - index: 61
+        weight: 0.16851358
+      - index: 35
+        weight: 0.13120037
+      - index: 43
+        weight: 0.09697224
+      - index: 84
+        weight: 0.09621175
+      - index: 5
+        weight: 0.3353736
+      - index: 35
+        weight: 0.16772768
+      - index: 84
+        weight: 0.16553019
+      - index: 4
+        weight: 0.16553012
+      - index: 57
+        weight: 0.16553009
+      - index: 95
+        weight: 0.00030826166
+      - index: 47
+        weight: 0.359563
+      - index: 51
+        weight: 0.14664693
+      - index: 42
+        weight: 0.14664671
+      - index: 52
+        weight: 0.13101393
+      - index: 44
+        weight: 0.1310139
+      - index: 48
+        weight: 0.08511559
+      - index: 44
+        weight: 0.25837377
+      - index: 45
+        weight: 0.25068867
+      - index: 40
+        weight: 0.24073367
+      - index: 49
+        weight: 0.23821887
+      - index: 38
+        weight: 0.006380896
+      - index: 47
+        weight: 0.0056041935
+      - index: 41
+        weight: 0.35945857
+      - index: 46
+        weight: 0.1507602
+      - index: 45
+        weight: 0.14211908
+      - index: 37
+        weight: 0.14082798
+      - index: 32
+        weight: 0.10483578
+      - index: 50
+        weight: 0.10199848
+      - index: 33
+        weight: 0.31485325
+      - index: 54
+        weight: 0.1817752
+      - index: 16
+        weight: 0.1606805
+      - index: 28
+        weight: 0.11972464
+      - index: 46
+        weight: 0.11972464
+      - index: 15
+        weight: 0.103241794
+      - index: 16
+        weight: 0.3625081
+      - index: 76
+        weight: 0.1613412
+      - index: 54
+        weight: 0.16016063
+      - index: 15
+        weight: 0.15916474
+      - index: 33
+        weight: 0.15682527
+      - index: 1
+        weight: 0
+      - index: 46
+        weight: 0.3283882
+      - index: 41
+        weight: 0.22588858
+      - index: 33
+        weight: 0.14427702
+      - index: 28
+        weight: 0.106418535
+      - index: 32
+        weight: 0.0980697
+      - index: 54
+        weight: 0.096958056
+      - index: 45
+        weight: 0.3879265
+      - index: 50
+        weight: 0.15207055
+      - index: 41
+        weight: 0.14844595
+      - index: 40
+        weight: 0.13443732
+      - index: 49
+        weight: 0.13253477
+      - index: 37
+        weight: 0.044584863
+      - index: 47
+        weight: 0.26103723
+      - index: 49
+        weight: 0.23185714
+      - index: 52
+        weight: 0.2108736
+      - index: 44
+        weight: 0.21087354
+      - index: 51
+        weight: 0.042679355
+      - index: 42
+        weight: 0.042679198
+      - index: 33
+        weight: 0.28050587
+      - index: 54
+        weight: 0.23670244
+      - index: 16
+        weight: 0.16865854
+      - index: 46
+        weight: 0.15679473
+      - index: 28
+        weight: 0.08283075
+      - index: 15
+        weight: 0.07450766
+      - index: 16
+        weight: 0.3625081
+      - index: 76
+        weight: 0.1613412
+      - index: 54
+        weight: 0.16016063
+      - index: 15
+        weight: 0.15916474
+      - index: 33
+        weight: 0.15682527
+      - index: 1
+        weight: 0
+      - index: 50
+        weight: 0.2624412
+      - index: 41
+        weight: 0.26025236
+      - index: 45
+        weight: 0.21863319
+      - index: 46
+        weight: 0.20406622
+      - index: 37
+        weight: 0.02815188
+      - index: 53
+        weight: 0.026455069
+      - index: 49
+        weight: 0.4009221
+      - index: 53
+        weight: 0.13610177
+      - index: 45
+        weight: 0.13610154
+      - index: 52
+        weight: 0.13269526
+      - index: 44
+        weight: 0.13269523
+      - index: 47
+        weight: 0.06148405
+      - index: 46
+        weight: 0.40856597
+      - index: 41
+        weight: 0.17622776
+      - index: 50
+        weight: 0.17441869
+      - index: 54
+        weight: 0.13773154
+      - index: 33
+        weight: 0.08958746
+      - index: 45
+        weight: 0.013468582
+      - index: 53
+        weight: 0.24122329
+      - index: 45
+        weight: 0.24122298
+      - index: 50
+        weight: 0.23306437
+      - index: 49
+        weight: 0.23141083
+      - index: 59
+        weight: 0.026539369
+      - index: 41
+        weight: 0.02653921
+      - index: 54
+        weight: 0.29190508
+      - index: 33
+        weight: 0.23749737
+      - index: 46
+        weight: 0.17274614
+      - index: 16
+        weight: 0.17273538
+      - index: 76
+        weight: 0.078033164
+      - index: 15
+        weight: 0.04708284
+      - index: 16
+        weight: 0.3625081
+      - index: 76
+        weight: 0.1613412
+      - index: 54
+        weight: 0.16016063
+      - index: 15
+        weight: 0.15916474
+      - index: 33
+        weight: 0.15682527
+      - index: 1
+        weight: 0
+      - index: 50
+        weight: 0.3635406
+      - index: 46
+        weight: 0.15341696
+      - index: 53
+        weight: 0.14040048
+      - index: 45
+        weight: 0.1404003
+      - index: 59
+        weight: 0.10112094
+      - index: 41
+        weight: 0.101120785
+      - index: 46
+        weight: 0.322078
+      - index: 50
+        weight: 0.21597438
+      - index: 54
+        weight: 0.17422737
+      - index: 64
+        weight: 0.103854254
+      - index: 59
+        weight: 0.09193309
+      - index: 41
+        weight: 0.09193298
+      - index: 54
+        weight: 0.32239202
+      - index: 33
+        weight: 0.17908004
+      - index: 16
+        weight: 0.16255865
+      - index: 46
+        weight: 0.1517806
+      - index: 76
+        weight: 0.10588804
+      - index: 64
+        weight: 0.07830057
+      - index: 16
+        weight: 0.3625081
+      - index: 76
+        weight: 0.1613412
+      - index: 54
+        weight: 0.16016063
+      - index: 15
+        weight: 0.15916474
+      - index: 33
+        weight: 0.15682527
+      - index: 1
+        weight: 0
+      - index: 52
+        weight: 0.37962508
+      - index: 55
+        weight: 0.14048971
+      - index: 47
+        weight: 0.13925634
+      - index: 58
+        weight: 0.12330248
+      - index: 49
+        weight: 0.12209925
+      - index: 51
+        weight: 0.09522713
+      - index: 52
+        weight: 0.2583737
+      - index: 53
+        weight: 0.2506886
+      - index: 58
+        weight: 0.24073379
+      - index: 49
+        weight: 0.23821877
+      - index: 55
+        weight: 0.0063809804
+      - index: 47
+        weight: 0.0056041637
+      - index: 53
+        weight: 0.38792637
+      - index: 50
+        weight: 0.15207046
+      - index: 59
+        weight: 0.14844601
+      - index: 58
+        weight: 0.13443746
+      - index: 49
+        weight: 0.13253473
+      - index: 63
+        weight: 0.04458498
+      - index: 50
+        weight: 0.27809677
+      - index: 59
+        weight: 0.27577764
+      - index: 53
+        weight: 0.23167558
+      - index: 46
+        weight: 0.09245877
+      - index: 64
+        weight: 0.09215987
+      - index: 63
+        weight: 0.029831354
+      - index: 46
+        weight: 0.21659635
+      - index: 64
+        weight: 0.21423413
+      - index: 54
+        weight: 0.18992814
+      - index: 59
+        weight: 0.1835488
+      - index: 50
+        weight: 0.18166445
+      - index: 53
+        weight: 0.014028128
+      - index: 51
+        weight: 0.25588137
+      - index: 52
+        weight: 0.2418668
+      - index: 55
+        weight: 0.20658587
+      - index: 47
+        weight: 0.20458357
+      - index: 48
+        weight: 0.04735422
+      - index: 56
+        weight: 0.04372814
+      - index: 54
+        weight: 0.34438357
+      - index: 16
+        weight: 0.15558994
+      - index: 76
+        weight: 0.1367553
+      - index: 33
+        weight: 0.13200112
+      - index: 46
+        weight: 0.11700181
+      - index: 64
+        weight: 0.114268236
+      - index: 16
+        weight: 0.3625081
+      - index: 76
+        weight: 0.1613412
+      - index: 54
+        weight: 0.16016063
+      - index: 15
+        weight: 0.15916474
+      - index: 33
+        weight: 0.15682527
+      - index: 1
+        weight: 0
+      - index: 51
+        weight: 0.33935085
+      - index: 48
+        weight: 0.1489393
+      - index: 56
+        weight: 0.14569786
+      - index: 55
+        weight: 0.14242426
+      - index: 47
+        weight: 0.14074966
+      - index: 52
+        weight: 0.08283814
+      - index: 48
+        weight: 0.25807258
+      - index: 56
+        weight: 0.25611383
+      - index: 51
+        weight: 0.23843679
+      - index: 43
+        weight: 0.10009123
+      - index: 61
+        weight: 0.09961463
+      - index: 55
+        weight: 0.04767095
+      - index: 61
+        weight: 0.29071653
+      - index: 56
+        weight: 0.21872622
+      - index: 57
+        weight: 0.20335233
+      - index: 66
+        weight: 0.097776525
+      - index: 43
+        weight: 0.09566182
+      - index: 48
+        weight: 0.09376647
+      - index: 56
+        weight: 0.341237
+      - index: 61
+        weight: 0.16406876
+      - index: 51
+        weight: 0.1504205
+      - index: 60
+        weight: 0.14875638
+      - index: 66
+        weight: 0.09911635
+      - index: 48
+        weight: 0.096400954
+      - index: 55
+        weight: 0.25071815
+      - index: 56
+        weight: 0.231302
+      - index: 51
+        weight: 0.2210289
+      - index: 60
+        weight: 0.21863395
+      - index: 66
+        weight: 0.039547183
+      - index: 62
+        weight: 0.0387697
+      - index: 57
+        weight: 0.32284832
+      - index: 61
+        weight: 0.19493736
+      - index: 5
+        weight: 0.18246223
+      - index: 84
+        weight: 0.14246376
+      - index: 35
+        weight: 0.10326439
+      - index: 78
+        weight: 0.054023974
+      - index: 5
+        weight: 0.3353736
+      - index: 35
+        weight: 0.16772768
+      - index: 84
+        weight: 0.16553019
+      - index: 4
+        weight: 0.16553012
+      - index: 57
+        weight: 0.16553009
+      - index: 95
+        weight: 0.00030826166
+      - index: 61
+        weight: 0.38255632
+      - index: 57
+        weight: 0.18891656
+      - index: 66
+        weight: 0.18283364
+      - index: 56
+        weight: 0.18283352
+      - index: 60
+        weight: 0.059129238
+      - index: 78
+        weight: 0.0037306629
+      - index: 55
+        weight: 0.35885978
+      - index: 51
+        weight: 0.15030068
+      - index: 60
+        weight: 0.14863323
+      - index: 62
+        weight: 0.13040365
+      - index: 52
+        weight: 0.12939674
+      - index: 56
+        weight: 0.08240589
+      - index: 66
+        weight: 0.24143237
+      - index: 56
+        weight: 0.24143223
+      - index: 60
+        weight: 0.22035895
+      - index: 61
+        weight: 0.21148892
+      - index: 65
+        weight: 0.042643808
+      - index: 55
+        weight: 0.04264372
+      - index: 57
+        weight: 0.27431387
+      - index: 84
+        weight: 0.18569916
+      - index: 5
+        weight: 0.18297142
+      - index: 61
+        weight: 0.18222056
+      - index: 78
+        weight: 0.10486021
+      - index: 35
+        weight: 0.069934785
+      - index: 5
+        weight: 0.3353736
+      - index: 35
+        weight: 0.16772768
+      - index: 84
+        weight: 0.16553019
+      - index: 4
+        weight: 0.16553012
+      - index: 57
+        weight: 0.16553009
+      - index: 95
+        weight: 0.00030826166
+      - index: 61
+        weight: 0.30679226
+      - index: 66
+        weight: 0.23082127
+      - index: 57
+        weight: 0.15929987
+      - index: 56
+        weight: 0.1031832
+      - index: 78
+        weight: 0.10095181
+      - index: 73
+        weight: 0.09895168
+      - index: 60
+        weight: 0.33972955
+      - index: 66
+        weight: 0.1486977
+      - index: 56
+        weight: 0.1486976
+      - index: 65
+        weight: 0.1398197
+      - index: 55
+        weight: 0.13981956
+      - index: 62
+        weight: 0.0832359
+      - index: 55
+        weight: 0.26043057
+      - index: 58
+        weight: 0.23123467
+      - index: 62
+        weight: 0.2098142
+      - index: 52
+        weight: 0.20848456
+      - index: 51
+        weight: 0.04566137
+      - index: 60
+        weight: 0.044374604
+      - index: 84
+        weight: 0.23620895
+      - index: 57
+        weight: 0.23042469
+      - index: 5
+        weight: 0.18646558
+      - index: 78
+        weight: 0.15401804
+      - index: 61
+        weight: 0.15048629
+      - index: 35
+        weight: 0.04239635
+      - index: 5
+        weight: 0.3353736
+      - index: 35
+        weight: 0.16772768
+      - index: 84
+        weight: 0.16553019
+      - index: 4
+        weight: 0.16553012
+      - index: 57
+        weight: 0.16553009
+      - index: 95
+        weight: 0.00030826166
+      - index: 66
+        weight: 0.34123704
+      - index: 61
+        weight: 0.16406867
+      - index: 69
+        weight: 0.15042065
+      - index: 60
+        weight: 0.14875631
+      - index: 56
+        weight: 0.099116206
+      - index: 73
+        weight: 0.09640107
+      - index: 60
+        weight: 0.25727773
+      - index: 62
+        weight: 0.24279681
+      - index: 65
+        weight: 0.2034372
+      - index: 55
+        weight: 0.20343702
+      - index: 66
+        weight: 0.046525706
+      - index: 56
+        weight: 0.046525635
+      - index: 58
+        weight: 0.3994392
+      - index: 53
+        weight: 0.13938473
+      - index: 63
+        weight: 0.13751993
+      - index: 62
+        weight: 0.13198848
+      - index: 52
+        weight: 0.1307456
+      - index: 55
+        weight: 0.060921993
+      - index: 78
+        weight: 0.20247798
+      - index: 61
+        weight: 0.19994944
+      - index: 66
+        weight: 0.18893158
+      - index: 73
+        weight: 0.18701155
+      - index: 84
+        weight: 0.11405864
+      - index: 57
+        weight: 0.10757078
+      - index: 65
+        weight: 0.25071824
+      - index: 66
+        weight: 0.23130204
+      - index: 69
+        weight: 0.22102912
+      - index: 60
+        weight: 0.21863388
+      - index: 56
+        weight: 0.03954705
+      - index: 62
+        weight: 0.038769618
+      - index: 62
+        weight: 0.38197055
+      - index: 65
+        weight: 0.13907044
+      - index: 55
+        weight: 0.13907032
+      - index: 67
+        weight: 0.121639706
+      - index: 58
+        weight: 0.12163959
+      - index: 60
+        weight: 0.09660937
+      - index: 53
+        weight: 0.24310233
+      - index: 63
+        weight: 0.2406023
+      - index: 58
+        weight: 0.22911695
+      - index: 59
+        weight: 0.22688998
+      - index: 68
+        weight: 0.030962786
+      - index: 50
+        weight: 0.029325524
+      - index: 84
+        weight: 0.29180813
+      - index: 78
+        weight: 0.19328478
+      - index: 5
+        weight: 0.19053985
+      - index: 57
+        weight: 0.18782975
+      - index: 61
+        weight: 0.10559197
+      - index: 73
+        weight: 0.030945545
+      - index: 5
+        weight: 0.3353736
+      - index: 35
+        weight: 0.16772768
+      - index: 84
+        weight: 0.16553019
+      - index: 4
+        weight: 0.16553012
+      - index: 57
+        weight: 0.16553009
+      - index: 95
+        weight: 0.00030826166
+      - index: 73
+        weight: 0.25807276
+      - index: 66
+        weight: 0.25611374
+      - index: 69
+        weight: 0.23843688
+      - index: 78
+        weight: 0.10009129
+      - index: 61
+        weight: 0.0996145
+      - index: 65
+        weight: 0.047670912
+      - index: 65
+        weight: 0.3588598
+      - index: 69
+        weight: 0.1503008
+      - index: 60
+        weight: 0.14863312
+      - index: 62
+        weight: 0.13040356
+      - index: 70
+        weight: 0.12939687
+      - index: 66
+        weight: 0.08240588
+      - index: 62
+        weight: 0.26154965
+      - index: 63
+        weight: 0.2533945
+      - index: 67
+        weight: 0.2384061
+      - index: 58
+        weight: 0.2384059
+      - index: 65
+        weight: 0.004121902
+      - index: 55
+        weight: 0.004121816
+      - index: 59
+        weight: 0.35843793
+      - index: 64
+        weight: 0.15317151
+      - index: 53
+        weight: 0.14171542
+      - index: 63
+        weight: 0.14042817
+      - index: 68
+        weight: 0.10453814
+      - index: 50
+        weight: 0.101708815
+      - index: 78
+        weight: 0.30914164
+      - index: 73
+        weight: 0.22754091
+      - index: 84
+        weight: 0.16494463
+      - index: 83
+        weight: 0.10011775
+      - index: 66
+        weight: 0.100117624
+      - index: 61
+        weight: 0.09813744
+      - index: 69
+        weight: 0.33935082
+      - index: 73
+        weight: 0.14893934
+      - index: 66
+        weight: 0.14569777
+      - index: 65
+        weight: 0.14242418
+      - index: 72
+        weight: 0.14074978
+      - index: 70
+        weight: 0.08283817
+      - index: 65
+        weight: 0.26043057
+      - index: 67
+        weight: 0.23123467
+      - index: 62
+        weight: 0.20981403
+      - index: 70
+        weight: 0.20848475
+      - index: 69
+        weight: 0.045661423
+      - index: 60
+        weight: 0.044374503
+      - index: 63
+        weight: 0.38766715
+      - index: 68
+        weight: 0.15145147
+      - index: 59
+        weight: 0.15145136
+      - index: 67
+        weight: 0.13131243
+      - index: 58
+        weight: 0.13131231
+      - index: 71
+        weight: 0.046805292
+      - index: 64
+        weight: 0.31840676
+      - index: 59
+        weight: 0.21808188
+      - index: 54
+        weight: 0.1725343
+      - index: 46
+        weight: 0.105880804
+      - index: 68
+        weight: 0.09468049
+      - index: 50
+        weight: 0.09041575
+      - index: 84
+        weight: 0.34612837
+      - index: 78
+        weight: 0.20848452
+      - index: 5
+        weight: 0.19212036
+      - index: 57
+        weight: 0.1448733
+      - index: 95
+        weight: 0.055137668
+      - index: 61
+        weight: 0.0532558
+      - index: 5
+        weight: 0.3353736
+      - index: 35
+        weight: 0.16772768
+      - index: 84
+        weight: 0.16553019
+      - index: 4
+        weight: 0.16553012
+      - index: 57
+        weight: 0.16553009
+      - index: 95
+        weight: 0.00030826166
+      - index: 69
+        weight: 0.25588137
+      - index: 70
+        weight: 0.24186684
+      - index: 65
+        weight: 0.20658576
+      - index: 72
+        weight: 0.2045837
+      - index: 73
+        weight: 0.047354255
+      - index: 66
+        weight: 0.04372805
+      - index: 67
+        weight: 0.39943925
+      - index: 71
+        weight: 0.13938484
+      - index: 63
+        weight: 0.13751982
+      - index: 62
+        weight: 0.13198839
+      - index: 70
+        weight: 0.13074575
+      - index: 65
+        weight: 0.060922004
+      - index: 68
+        weight: 0.26099136
+      - index: 59
+        weight: 0.26099122
+      - index: 63
+        weight: 0.21522613
+      - index: 64
+        weight: 0.20362768
+      - index: 71
+        weight: 0.029581938
+      - index: 53
+        weight: 0.029581793
+      - index: 54
+        weight: 0.32146198
+      - index: 76
+        weight: 0.18410307
+      - index: 16
+        weight: 0.16285622
+      - index: 64
+        weight: 0.14931947
+      - index: 33
+        weight: 0.100917354
+      - index: 46
+        weight: 0.08134196
+      - index: 16
+        weight: 0.3625081
+      - index: 76
+        weight: 0.1613412
+      - index: 54
+        weight: 0.16016063
+      - index: 15
+        weight: 0.15916474
+      - index: 33
+        weight: 0.15682527
+      - index: 1
+        weight: 0
+      - index: 64
+        weight: 0.40634096
+      - index: 68
+        weight: 0.17730618
+      - index: 59
+        weight: 0.17730606
+      - index: 54
+        weight: 0.135558
+      - index: 76
+        weight: 0.09020811
+      - index: 63
+        weight: 0.013280789
+      - index: 71
+        weight: 0.24310257
+      - index: 63
+        weight: 0.24060217
+      - index: 67
+        weight: 0.22911699
+      - index: 68
+        weight: 0.22689
+      - index: 59
+        weight: 0.030962637
+      - index: 75
+        weight: 0.029325636
+      - index: 70
+        weight: 0.37962505
+      - index: 65
+        weight: 0.14048962
+      - index: 72
+        weight: 0.13925642
+      - index: 67
+        weight: 0.1233024
+      - index: 74
+        weight: 0.12209933
+      - index: 69
+        weight: 0.095227115
+      - index: 54
+        weight: 0.2947451
+      - index: 76
+        weight: 0.24578868
+      - index: 16
+        weight: 0.17538258
+      - index: 64
+        weight: 0.17273879
+      - index: 33
+        weight: 0.07356464
+      - index: 81
+        weight: 0.03778021
+      - index: 16
+        weight: 0.3625081
+      - index: 76
+        weight: 0.1613412
+      - index: 54
+        weight: 0.16016063
+      - index: 15
+        weight: 0.15916474
+      - index: 33
+        weight: 0.15682527
+      - index: 1
+        weight: 0
+      - index: 68
+        weight: 0.358438
+      - index: 64
+        weight: 0.15317146
+      - index: 71
+        weight: 0.14171557
+      - index: 63
+        weight: 0.14042813
+      - index: 59
+        weight: 0.10453804
+      - index: 75
+        weight: 0.101708956
+      - index: 70
+        weight: 0.25837374
+      - index: 71
+        weight: 0.25068858
+      - index: 67
+        weight: 0.24073364
+      - index: 74
+        weight: 0.23821893
+      - index: 65
+        weight: 0.0063808956
+      - index: 72
+        weight: 0.0056042215
+      - index: 64
+        weight: 0.3290884
+      - index: 68
+        weight: 0.22539806
+      - index: 76
+        weight: 0.14314528
+      - index: 81
+        weight: 0.10943299
+      - index: 59
+        weight: 0.09785666
+      - index: 54
+        weight: 0.09507854
+      - index: 71
+        weight: 0.3879264
+      - index: 75
+        weight: 0.15207054
+      - index: 68
+        weight: 0.14844593
+      - index: 67
+        weight: 0.1344374
+      - index: 74
+        weight: 0.13253486
+      - index: 63
+        weight: 0.04458487
+      - index: 76
+        weight: 0.29340348
+      - index: 54
+        weight: 0.2425738
+      - index: 16
+        weight: 0.17395127
+      - index: 64
+        weight: 0.15949231
+      - index: 81
+        weight: 0.086883806
+      - index: 33
+        weight: 0.04369523
+      - index: 16
+        weight: 0.3625081
+      - index: 76
+        weight: 0.1613412
+      - index: 54
+        weight: 0.16016063
+      - index: 15
+        weight: 0.15916474
+      - index: 33
+        weight: 0.15682527
+      - index: 1
+        weight: 0
+      - index: 75
+        weight: 0.27809697
+      - index: 68
+        weight: 0.27577755
+      - index: 71
+        weight: 0.2316757
+      - index: 81
+        weight: 0.09245882
+      - index: 64
+        weight: 0.09215974
+      - index: 63
+        weight: 0.029831233
+      - index: 81
+        weight: 0.21394543
+      - index: 64
+        weight: 0.21161185
+      - index: 68
+        weight: 0.18130222
+      - index: 75
+        weight: 0.17944112
+      - index: 76
+        weight: 0.17374472
+      - index: 54
+        weight: 0.039954584
+      - index: 76
+        weight: 0.3467926
+      - index: 54
+        weight: 0.19679607
+      - index: 16
+        weight: 0.17525986
+      - index: 81
+        weight: 0.13179353
+      - index: 64
+        weight: 0.12871422
+      - index: 33
+        weight: 0.020643651
+      - index: 16
+        weight: 0.3625081
+      - index: 76
+        weight: 0.1613412
+      - index: 54
+        weight: 0.16016063
+      - index: 15
+        weight: 0.15916474
+      - index: 33
+        weight: 0.15682527
+      - index: 1
+        weight: 0
+      - index: 72
+        weight: 0.26103723
+      - index: 74
+        weight: 0.23185717
+      - index: 79
+        weight: 0.21087366
+      - index: 70
+        weight: 0.21087348
+      - index: 69
+        weight: 0.042679254
+      - index: 77
+        weight: 0.042679228
+      - index: 74
+        weight: 0.40092212
+      - index: 71
+        weight: 0.13610171
+      - index: 80
+        weight: 0.13610163
+      - index: 79
+        weight: 0.13269535
+      - index: 70
+        weight: 0.13269523
+      - index: 72
+        weight: 0.061484043
+      - index: 71
+        weight: 0.24122319
+      - index: 80
+        weight: 0.24122311
+      - index: 75
+        weight: 0.2330643
+      - index: 74
+        weight: 0.2314109
+      - index: 86
+        weight: 0.02653924
+      - index: 68
+        weight: 0.02653924
+      - index: 75
+        weight: 0.36354053
+      - index: 81
+        weight: 0.15341692
+      - index: 71
+        weight: 0.14040047
+      - index: 80
+        weight: 0.14040044
+      - index: 86
+        weight: 0.10112085
+      - index: 68
+        weight: 0.10112083
+      - index: 81
+        weight: 0.31863478
+      - index: 75
+        weight: 0.21366552
+      - index: 76
+        weight: 0.18305553
+      - index: 64
+        weight: 0.102743775
+      - index: 86
+        weight: 0.09095029
+      - index: 68
+        weight: 0.090950154
+      - index: 72
+        weight: 0.35956296
+      - index: 69
+        weight: 0.14664681
+      - index: 77
+        weight: 0.14664677
+      - index: 79
+        weight: 0.13101399
+      - index: 70
+        weight: 0.13101389
+      - index: 73
+        weight: 0.08511554
+      - index: 76
+        weight: 0.39232102
+      - index: 16
+        weight: 0.17746948
+      - index: 81
+        weight: 0.16570301
+      - index: 54
+        weight: 0.15455754
+      - index: 64
+        weight: 0.08548273
+      - index: 15
+        weight: 0.024466187
+      - index: 16
+        weight: 0.3625081
+      - index: 76
+        weight: 0.1613412
+      - index: 54
+        weight: 0.16016063
+      - index: 15
+        weight: 0.15916474
+      - index: 33
+        weight: 0.15682527
+      - index: 1
+        weight: 0
+      - index: 72
+        weight: 0.2514124
+      - index: 73
+        weight: 0.23571666
+      - index: 69
+        weight: 0.21748036
+      - index: 77
+        weight: 0.21748021
+      - index: 79
+        weight: 0.038955204
+      - index: 70
+        weight: 0.038955133
+      - index: 73
+        weight: 0.34524176
+      - index: 78
+        weight: 0.16445707
+      - index: 69
+        weight: 0.14911136
+      - index: 77
+        weight: 0.14911123
+      - index: 83
+        weight: 0.09603931
+      - index: 66
+        weight: 0.09603931
+      - index: 78
+        weight: 0.38441747
+      - index: 84
+        weight: 0.1932065
+      - index: 83
+        weight: 0.18169607
+      - index: 73
+        weight: 0.17984945
+      - index: 77
+        weight: 0.059992693
+      - index: 95
+        weight: 0.0008377808
+      - index: 73
+        weight: 0.24083853
+      - index: 83
+        weight: 0.2390103
+      - index: 77
+        weight: 0.22251384
+      - index: 78
+        weight: 0.21007343
+      - index: 82
+        weight: 0.044487417
+      - index: 72
+        weight: 0.04307652
+      - index: 77
+        weight: 0.33935088
+      - index: 73
+        weight: 0.14893939
+      - index: 83
+        weight: 0.14569773
+      - index: 82
+        weight: 0.14242418
+      - index: 72
+        weight: 0.14074968
+      - index: 79
+        weight: 0.08283817
+      - index: 84
+        weight: 0.37511757
+      - index: 78
+        weight: 0.18969886
+      - index: 5
+        weight: 0.18784833
+      - index: 95
+        weight: 0.10600501
+      - index: 57
+        weight: 0.102336824
+      - index: 4
+        weight: 0.038993463
+      - index: 5
+        weight: 0.3353736
+      - index: 35
+        weight: 0.16772768
+      - index: 84
+        weight: 0.16553019
+      - index: 4
+        weight: 0.16553012
+      - index: 57
+        weight: 0.16553009
+      - index: 95
+        weight: 0.00030826166
+      - index: 78
+        weight: 0.29071987
+      - index: 83
+        weight: 0.21967728
+      - index: 84
+        weight: 0.20423634
+      - index: 91
+        weight: 0.09820162
+      - index: 73
+        weight: 0.09417427
+      - index: 95
+        weight: 0.092990525
+      - index: 77
+        weight: 0.2558815
+      - index: 79
+        weight: 0.24186687
+      - index: 82
+        weight: 0.20658581
+      - index: 72
+        weight: 0.20458357
+      - index: 73
+        weight: 0.047354285
+      - index: 83
+        weight: 0.043728005
+      - index: 83
+        weight: 0.34230182
+      - index: 78
+        weight: 0.16146018
+      - index: 77
+        weight: 0.15089001
+      - index: 87
+        weight: 0.14922059
+      - index: 91
+        weight: 0.09942556
+      - index: 73
+        weight: 0.09670191
+      - index: 84
+        weight: 0.34494174
+      - index: 5
+        weight: 0.19494854
+      - index: 78
+        weight: 0.1595691
+      - index: 95
+        weight: 0.15956908
+      - index: 4
+        weight: 0.07048574
+      - index: 57
+        weight: 0.07048574
+      - index: 5
+        weight: 0.3353736
+      - index: 35
+        weight: 0.16772768
+      - index: 84
+        weight: 0.16553019
+      - index: 4
+        weight: 0.16553012
+      - index: 57
+        weight: 0.16553009
+      - index: 95
+        weight: 0.00030826166
+      - index: 78
+        weight: 0.19145204
+      - index: 95
+        weight: 0.19145198
+      - index: 84
+        weight: 0.18995784
+      - index: 83
+        weight: 0.18384145
+      - index: 91
+        weight: 0.1838414
+      - index: 87
+        weight: 0.05945525
+      - index: 82
+        weight: 0.25071818
+      - index: 83
+        weight: 0.2313019
+      - index: 77
+        weight: 0.22102915
+      - index: 87
+        weight: 0.21863388
+      - index: 91
+        weight: 0.03954709
+      - index: 88
+        weight: 0.03876973
+      - index: 79
+        weight: 0.3796251
+      - index: 82
+        weight: 0.14048964
+      - index: 72
+        weight: 0.13925637
+      - index: 85
+        weight: 0.12330245
+      - index: 74
+        weight: 0.12209927
+      - index: 77
+        weight: 0.09522717
+      - index: 84
+        weight: 0.3106708
+      - index: 95
+        weight: 0.20926325
+      - index: 5
+        weight: 0.20722196
+      - index: 78
+        weight: 0.11693781
+      - index: 4
+        weight: 0.11289127
+      - index: 57
+        weight: 0.043015
+      - index: 5
+        weight: 0.3353736
+      - index: 35
+        weight: 0.16772768
+      - index: 84
+        weight: 0.16553019
+      - index: 4
+        weight: 0.16553012
+      - index: 57
+        weight: 0.16553009
+      - index: 95
+        weight: 0.00030826166
+      - index: 83
+        weight: 0.26092368
+      - index: 91
+        weight: 0.26092362
+      - index: 87
+        weight: 0.23814909
+      - index: 78
+        weight: 0.09695861
+      - index: 95
+        weight: 0.096958555
+      - index: 90
+        weight: 0.04608646
+      - index: 82
+        weight: 0.35885984
+      - index: 77
+        weight: 0.15030088
+      - index: 87
+        weight: 0.14863312
+      - index: 88
+        weight: 0.13040362
+      - index: 79
+        weight: 0.12939672
+      - index: 83
+        weight: 0.082405806
+      - index: 79
+        weight: 0.2583738
+      - index: 80
+        weight: 0.2506886
+      - index: 85
+        weight: 0.24073376
+      - index: 74
+        weight: 0.23821878
+      - index: 82
+        weight: 0.0063809254
+      - index: 72
+        weight: 0.0056041377
+      - index: 95
+        weight: 0.30686972
+      - index: 91
+        weight: 0.23188064
+      - index: 84
+        weight: 0.16003093
+      - index: 83
+        weight: 0.103656895
+      - index: 100
+        weight: 0.099405535
+      - index: 78
+        weight: 0.09815632
+      - index: 87
+        weight: 0.3397295
+      - index: 83
+        weight: 0.14869766
+      - index: 91
+        weight: 0.14869761
+      - index: 90
+        weight: 0.13981965
+      - index: 82
+        weight: 0.13981964
+      - index: 88
+        weight: 0.083235964
+      - index: 82
+        weight: 0.2604306
+      - index: 85
+        weight: 0.23123471
+      - index: 88
+        weight: 0.2098141
+      - index: 79
+        weight: 0.20848453
+      - index: 77
+        weight: 0.045661505
+      - index: 87
+        weight: 0.044374507
+      - index: 80
+        weight: 0.3879265
+      - index: 75
+        weight: 0.15207048
+      - index: 86
+        weight: 0.14844595
+      - index: 85
+        weight: 0.13443741
+      - index: 74
+        weight: 0.13253479
+      - index: 89
+        weight: 0.0445849
+      - index: 84
+        weight: 0.2663714
+      - index: 95
+        weight: 0.23391464
+      - index: 5
+        weight: 0.2155545
+      - index: 4
+        weight: 0.1625444
+      - index: 78
+        weight: 0.06186318
+      - index: 6
+        weight: 0.05975182
+      - index: 5
+        weight: 0.3353736
+      - index: 35
+        weight: 0.16772768
+      - index: 84
+        weight: 0.16553019
+      - index: 4
+        weight: 0.16553012
+      - index: 57
+        weight: 0.16553009
+      - index: 95
+        weight: 0.00030826166
+      - index: 91
+        weight: 0.34230188
+      - index: 95
+        weight: 0.16146018
+      - index: 94
+        weight: 0.15088993
+      - index: 87
+        weight: 0.14922063
+      - index: 83
+        weight: 0.099425636
+      - index: 100
+        weight: 0.096701756
+      - index: 87
+        weight: 0.25727767
+      - index: 88
+        weight: 0.24279684
+      - index: 90
+        weight: 0.2034372
+      - index: 82
+        weight: 0.20343712
+      - index: 83
+        weight: 0.046525635
+      - index: 91
+        weight: 0.04652561
+      - index: 85
+        weight: 0.3994393
+      - index: 80
+        weight: 0.13938484
+      - index: 89
+        weight: 0.1375198
+      - index: 88
+        weight: 0.13198847
+      - index: 79
+        weight: 0.1307456
+      - index: 82
+        weight: 0.060922004
+      - index: 75
+        weight: 0.2624411
+      - index: 86
+        weight: 0.26025245
+      - index: 80
+        weight: 0.21863334
+      - index: 81
+        weight: 0.20406613
+      - index: 89
+        weight: 0.028151955
+      - index: 71
+        weight: 0.026455022
+      - index: 95
+        weight: 0.42232344
+      - index: 91
+        weight: 0.19961241
+      - index: 100
+        weight: 0.19758344
+      - index: 84
+        weight: 0.11365203
+      - index: 94
+        weight: 0.06590825
+      - index: 78
+        weight: 0.00092044333
+      - index: 90
+        weight: 0.2507182
+      - index: 91
+        weight: 0.23130195
+      - index: 94
+        weight: 0.22102907
+      - index: 87
+        weight: 0.21863396
+      - index: 83
+        weight: 0.039547145
+      - index: 88
+        weight: 0.03876976
+      - index: 88
+        weight: 0.38197035
+      - index: 90
+        weight: 0.13907048
+      - index: 82
+        weight: 0.13907044
+      - index: 92
+        weight: 0.121639706
+      - index: 85
+        weight: 0.121639684
+      - index: 87
+        weight: 0.09660937
+      - index: 80
+        weight: 0.24310258
+      - index: 89
+        weight: 0.24060223
+      - index: 85
+        weight: 0.22911699
+      - index: 86
+        weight: 0.22688998
+      - index: 93
+        weight: 0.030962715
+      - index: 75
+        weight: 0.029325506
+      - index: 81
+        weight: 0.43257022
+      - index: 86
+        weight: 0.18658175
+      - index: 75
+        weight: 0.1846663
+      - index: 76
+        weight: 0.1788041
+      - index: 80
+        weight: 0.014260032
+      - index: 64
+        weight: 0.0031175571
+      - index: 95
+        weight: 0.21571437
+      - index: 5
+        weight: 0.21265094
+      - index: 84
+        weight: 0.20962645
+      - index: 4
+        weight: 0.20962635
+      - index: 6
+        weight: 0.117845416
+      - index: 100
+        weight: 0.034536414
+      - index: 5
+        weight: 0.3353736
+      - index: 35
+        weight: 0.16772768
+      - index: 84
+        weight: 0.16553019
+      - index: 4
+        weight: 0.16553012
+      - index: 57
+        weight: 0.16553009
+      - index: 95
+        weight: 0.00030826166
+      - index: 90
+        weight: 0.3588598
+      - index: 94
+        weight: 0.15030077
+      - index: 87
+        weight: 0.14863315
+      - index: 88
+        weight: 0.13040364
+      - index: 96
+        weight: 0.12939675
+      - index: 91
+        weight: 0.08240581
+      - index: 88
+        weight: 0.26154965
+      - index: 89
+        weight: 0.25339437
+      - index: 92
+        weight: 0.23840605
+      - index: 85
+        weight: 0.23840599
+      - index: 90
+        weight: 0.0041219015
+      - index: 82
+        weight: 0.0041218726
+      - index: 86
+        weight: 0.35945854
+      - index: 81
+        weight: 0.1507601
+      - index: 80
+        weight: 0.14211912
+      - index: 89
+        weight: 0.14082807
+      - index: 93
+        weight: 0.10483579
+      - index: 75
+        weight: 0.10199843
+      - index: 76
+        weight: 0.38791326
+      - index: 81
+        weight: 0.19605364
+      - index: 16
+        weight: 0.19604112
+      - index: 54
+        weight: 0.12605847
+      - index: 15
+        weight: 0.053435277
+      - index: 98
+        weight: 0.040498205
+      - index: 16
+        weight: 0.3625081
+      - index: 76
+        weight: 0.1613412
+      - index: 54
+        weight: 0.16016063
+      - index: 15
+        weight: 0.15916474
+      - index: 33
+        weight: 0.15682527
+      - index: 1
+        weight: 0
+      - index: 81
+        weight: 0.32974857
+      - index: 86
+        weight: 0.2268245
+      - index: 76
+        weight: 0.14405118
+      - index: 98
+        weight: 0.10685938
+      - index: 93
+        weight: 0.09847606
+      - index: 75
+        weight: 0.094040394
+      - index: 89
+        weight: 0.38766712
+      - index: 86
+        weight: 0.15145142
+      - index: 93
+        weight: 0.1514514
+      - index: 92
+        weight: 0.13131239
+      - index: 85
+        weight: 0.13131236
+      - index: 80
+        weight: 0.046805292
+      - index: 90
+        weight: 0.26043057
+      - index: 92
+        weight: 0.23123467
+      - index: 88
+        weight: 0.2098141
+      - index: 96
+        weight: 0.20848455
+      - index: 94
+        weight: 0.045661498
+      - index: 87
+        weight: 0.04437452
+      - index: 76
+        weight: 0.3378487
+      - index: 16
+        weight: 0.20030168
+      - index: 81
+        weight: 0.18621229
+      - index: 98
+        weight: 0.098371364
+      - index: 54
+        weight: 0.0887794
+      - index: 15
+        weight: 0.08848648
+      - index: 16
+        weight: 0.3625081
+      - index: 76
+        weight: 0.1613412
+      - index: 54
+        weight: 0.16016063
+      - index: 15
+        weight: 0.15916474
+      - index: 33
+        weight: 0.15682527
+      - index: 1
+        weight: 0
+      - index: 86
+        weight: 0.27976498
+      - index: 93
+        weight: 0.27976495
+      - index: 89
+        weight: 0.2307079
+      - index: 98
+        weight: 0.08902614
+      - index: 81
+        weight: 0.08902614
+      - index: 80
+        weight: 0.031709857
+      - index: 92
+        weight: 0.39943928
+      - index: 97
+        weight: 0.1393848
+      - index: 89
+        weight: 0.13751985
+      - index: 88
+        weight: 0.13198848
+      - index: 96
+        weight: 0.13074563
+      - index: 90
+        weight: 0.060922004
+      - index: 98
+        weight: 0.23518686
+      - index: 81
+        weight: 0.23518686
+      - index: 86
+        weight: 0.20498958
+      - index: 93
+        weight: 0.20498955
+      - index: 76
+        weight: 0.10429263
+      - index: 89
+        weight: 0.01535448
+      - index: 97
+        weight: 0.24310248
+      - index: 89
+        weight: 0.24060227
+      - index: 92
+        weight: 0.22911699
+      - index: 93
+        weight: 0.22688998
+      - index: 86
+        weight: 0.030962741
+      - index: 102
+        weight: 0.029325532
+      - index: 76
+        weight: 0.2914106
+      - index: 16
+        weight: 0.20793606
+      - index: 98
+        weight: 0.15493546
+      - index: 81
+        weight: 0.15493546
+      - index: 15
+        weight: 0.13360482
+      - index: 54
+        weight: 0.057177585
+      - index: 16
+        weight: 0.3625081
+      - index: 76
+        weight: 0.1613412
+      - index: 54
+        weight: 0.16016063
+      - index: 15
+        weight: 0.15916474
+      - index: 33
+        weight: 0.15682527
+      - index: 1
+        weight: 0
+      - index: 93
+        weight: 0.3594585
+      - index: 98
+        weight: 0.15076008
+      - index: 97
+        weight: 0.142119
+      - index: 89
+        weight: 0.1408281
+      - index: 86
+        weight: 0.10483581
+      - index: 102
+        weight: 0.10199847
+      - index: 98
+        weight: 0.36729303
+      - index: 93
+        weight: 0.25265026
+      - index: 81
+        weight: 0.11902617
+      - index: 86
+        weight: 0.10968834
+      - index: 102
+        weight: 0.10474769
+      - index: 76
+        weight: 0.04659449
+      - index: 76
+        weight: 0.24770285
+      - index: 16
+        weight: 0.2191161
+      - index: 98
+        weight: 0.20370325
+      - index: 15
+        weight: 0.19093476
+      - index: 81
+        weight: 0.10761141
+      - index: 54
+        weight: 0.030931644
+      - index: 16
+        weight: 0.3625081
+      - index: 76
+        weight: 0.1613412
+      - index: 54
+        weight: 0.16016063
+      - index: 15
+        weight: 0.15916474
+      - index: 33
+        weight: 0.15682527
+      - index: 1
+        weight: 0
+      - index: 96
+        weight: 0.37962505
+      - index: 90
+        weight: 0.14048961
+      - index: 99
+        weight: 0.13925642
+      - index: 92
+        weight: 0.12330242
+      - index: 101
+        weight: 0.1220993
+      - index: 94
+        weight: 0.09522723
+      - index: 96
+        weight: 0.25837377
+      - index: 97
+        weight: 0.25068867
+      - index: 92
+        weight: 0.24073367
+      - index: 101
+        weight: 0.2382189
+      - index: 90
+        weight: 0.0063808677
+      - index: 99
+        weight: 0.0056041935
+      - index: 97
+        weight: 0.38792643
+      - index: 102
+        weight: 0.15207046
+      - index: 93
+        weight: 0.14844595
+      - index: 92
+        weight: 0.13443735
+      - index: 101
+        weight: 0.13253483
+      - index: 89
+        weight: 0.044584937
+      - index: 102
+        weight: 0.26244113
+      - index: 93
+        weight: 0.2602525
+      - index: 97
+        weight: 0.21863326
+      - index: 98
+        weight: 0.20406613
+      - index: 89
+        weight: 0.02815198
+      - index: 105
+        weight: 0.026454996
+      - index: 98
+        weight: 0.50103784
+      - index: 93
+        weight: 0.21611407
+      - index: 102
+        weight: 0.21389548
+      - index: 15
+        weight: 0.04882475
+      - index: 97
+        weight: 0.016516998
+      - index: 14
+        weight: 0.003610852
+      - index: 94
+        weight: 0.25588146
+      - index: 96
+        weight: 0.2418668
+      - index: 90
+        weight: 0.20658566
+      - index: 99
+        weight: 0.20458362
+      - index: 100
+        weight: 0.04735429
+      - index: 91
+        weight: 0.04372804
+      - index: 15
+        weight: 0.2550981
+      - index: 98
+        weight: 0.22689939
+      - index: 16
+        weight: 0.22688493
+      - index: 76
+        weight: 0.19941984
+      - index: 81
+        weight: 0.04686992
+      - index: 14
+        weight: 0.044827774
+      - index: 16
+        weight: 0.3625081
+      - index: 76
+        weight: 0.1613412
+      - index: 54
+        weight: 0.16016063
+      - index: 15
+        weight: 0.15916474
+      - index: 33
+        weight: 0.15682527
+      - index: 1
+        weight: 0
+      - index: 94
+        weight: 0.33935088
+      - index: 100
+        weight: 0.14893933
+      - index: 91
+        weight: 0.14569777
+      - index: 90
+        weight: 0.1424241
+      - index: 99
+        weight: 0.14074975
+      - index: 96
+        weight: 0.08283818
+      - index: 100
+        weight: 0.24083836
+      - index: 91
+        weight: 0.23901038
+      - index: 94
+        weight: 0.22251378
+      - index: 95
+        weight: 0.21007347
+      - index: 90
+        weight: 0.044487372
+      - index: 99
+        weight: 0.043076612
+      - index: 95
+        weight: 0.34838587
+      - index: 100
+        weight: 0.25642607
+      - index: 91
+        weight: 0.112827286
+      - index: 107
+        weight: 0.11282712
+      - index: 6
+        weight: 0.11059561
+      - index: 84
+        weight: 0.058937974
+      - index: 100
+        weight: 0.34524176
+      - index: 95
+        weight: 0.16445711
+      - index: 103
+        weight: 0.14911124
+      - index: 94
+        weight: 0.14911124
+      - index: 91
+        weight: 0.09603937
+      - index: 107
+        weight: 0.09603928
+      - index: 99
+        weight: 0.25141233
+      - index: 100
+        weight: 0.23571678
+      - index: 94
+        weight: 0.21748032
+      - index: 103
+        weight: 0.21748023
+      - index: 96
+        weight: 0.03895522
+      - index: 104
+        weight: 0.038955055
+      - index: 4
+        weight: 0.25478172
+      - index: 5
+        weight: 0.20617598
+      - index: 95
+        weight: 0.17029852
+      - index: 6
+        weight: 0.16639355
+      - index: 84
+        weight: 0.15547238
+      - index: 35
+        weight: 0.046877883
+      - index: 5
+        weight: 0.3353736
+      - index: 35
+        weight: 0.16772768
+      - index: 84
+        weight: 0.16553019
+      - index: 4
+        weight: 0.16553012
+      - index: 57
+        weight: 0.16553009
+      - index: 95
+        weight: 0.00030826166
+      - index: 95
+        weight: 0.21351162
+      - index: 6
+        weight: 0.2108453
+      - index: 107
+        weight: 0.19922699
+      - index: 100
+        weight: 0.19720225
+      - index: 4
+        weight: 0.113432616
+      - index: 103
+        weight: 0.065781124
+      - index: 99
+        weight: 0.35956287
+      - index: 94
+        weight: 0.14664689
+      - index: 103
+        weight: 0.14664677
+      - index: 96
+        weight: 0.13101399
+      - index: 104
+        weight: 0.1310138
+      - index: 100
+        weight: 0.08511568
+      - index: 100
+        weight: 0.25807288
+      - index: 107
+        weight: 0.25611368
+      - index: 103
+        weight: 0.23843676
+      - index: 95
+        weight: 0.100091346
+      - index: 6
+        weight: 0.09961446
+      - index: 106
+        weight: 0.04767088
+      - index: 4
+        weight: 0.3001308
+      - index: 5
+        weight: 0.20019175
+      - index: 6
+        weight: 0.19937028
+      - index: 95
+        weight: 0.114729084
+      - index: 84
+        weight: 0.109061405
+      - index: 35
+        weight: 0.076516695
+      - index: 5
+        weight: 0.3353736
+      - index: 35
+        weight: 0.16772768
+      - index: 84
+        weight: 0.16553019
+      - index: 4
+        weight: 0.16553012
+      - index: 57
+        weight: 0.16553009
+      - index: 95
+        weight: 0.00030826166
+      - index: 6
+        weight: 0.30679226
+      - index: 107
+        weight: 0.23082125
+      - index: 4
+        weight: 0.15929982
+      - index: 7
+        weight: 0.103183195
+      - index: 95
+        weight: 0.10095183
+      - index: 100
+        weight: 0.09895165
+      - index: 103
+        weight: 0.3393508
+      - index: 100
+        weight: 0.14893952
+      - index: 107
+        weight: 0.14569774
+      - index: 106
+        weight: 0.1424241
+      - index: 99
+        weight: 0.14074966
+      - index: 104
+        weight: 0.0828381
+      - index: 99
+        weight: 0.26103717
+      - index: 101
+        weight: 0.23185714
+      - index: 96
+        weight: 0.21087365
+      - index: 104
+        weight: 0.21087341
+      - index: 94
+        weight: 0.04267938
+      - index: 103
+        weight: 0.04267925
+      - index: 4
+        weight: 0.3495892
+      - index: 6
+        weight: 0.21108373
+      - index: 5
+        weight: 0.19757526
+      - index: 35
+        weight: 0.11181761
+      - index: 84
+        weight: 0.07143555
+      - index: 95
+        weight: 0.058498666
+      - index: 5
+        weight: 0.3353736
+      - index: 35
+        weight: 0.16772768
+      - index: 84
+        weight: 0.16553019
+      - index: 4
+        weight: 0.16553012
+      - index: 57
+        weight: 0.16553009
+      - index: 95
+        weight: 0.00030826166
+      - index: 6
+        weight: 0.38255638
+      - index: 4
+        weight: 0.18891656
+      - index: 107
+        weight: 0.18283361
+      - index: 7
+        weight: 0.1828335
+      - index: 8
+        weight: 0.059129238
+      - index: 95
+        weight: 0.00373071
+      - index: 107
+        weight: 0.341237
+      - index: 6
+        weight: 0.16406861
+      - index: 103
+        weight: 0.1504206
+      - index: 8
+        weight: 0.1487563
+      - index: 7
+        weight: 0.0991162
+      - index: 100
+        weight: 0.09640119
+      - index: 107
+        weight: 0.2414324
+      - index: 7
+        weight: 0.24143225
+      - index: 8
+        weight: 0.22035897
+      - index: 6
+        weight: 0.21148889
+      - index: 106
+        weight: 0.04264379
+      - index: 9
+        weight: 0.0426437
+      - index: 106
+        weight: 0.2507182
+      - index: 107
+        weight: 0.23130204
+      - index: 103
+        weight: 0.22102918
+      - index: 8
+        weight: 0.21863386
+      - index: 7
+        weight: 0.039547045
+      - index: 10
+        weight: 0.038769685
+      - index: 8
+        weight: 0.33972958
+      - index: 107
+        weight: 0.1486977
+      - index: 7
+        weight: 0.14869763
+      - index: 106
+        weight: 0.13981965
+      - index: 9
+        weight: 0.13981955
+      - index: 10
+        weight: 0.08323593
+      - index: 103
+        weight: 0.2558814
+      - index: 104
+        weight: 0.24186678
+      - index: 106
+        weight: 0.2065857
+      - index: 99
+        weight: 0.20458354
+      - index: 100
+        weight: 0.047354486
+      - index: 107
+        weight: 0.04372806
+      - index: 106
+        weight: 0.35885978
+      - index: 103
+        weight: 0.15030085
+      - index: 8
+        weight: 0.14863308
+      - index: 10
+        weight: 0.13040355
+      - index: 104
+        weight: 0.12939686
+      - index: 107
+        weight: 0.08240588
+      - index: 8
+        weight: 0.25727764
+      - index: 10
+        weight: 0.24279676
+      - index: 106
+        weight: 0.20343713
+      - index: 9
+        weight: 0.20343696
+      - index: 107
+        weight: 0.046525743
+      - index: 7
+        weight: 0.04652567
+      - index: 104
+        weight: 0.37962517
+      - index: 106
+        weight: 0.14048961
+      - index: 99
+        weight: 0.13925636
+      - index: 108
+        weight: 0.1233024
+      - index: 101
+        weight: 0.12209928
+      - index: 103
+        weight: 0.09522716
+      - index: 106
+        weight: 0.26043057
+      - index: 108
+        weight: 0.23123468
+      - index: 10
+        weight: 0.20981403
+      - index: 104
+        weight: 0.20848477
+      - index: 103
+        weight: 0.0456615
+      - index: 8
+        weight: 0.044374477
+      - index: 10
+        weight: 0.3819704
+      - index: 106
+        weight: 0.13907045
+      - index: 9
+        weight: 0.13907033
+      - index: 108
+        weight: 0.12163973
+      - index: 11
+        weight: 0.12163961
+      - index: 8
+        weight: 0.09660935
+      - index: 101
+        weight: 0.4009221
+      - index: 97
+        weight: 0.13610177
+      - index: 105
+        weight: 0.13610168
+      - index: 96
+        weight: 0.13269533
+      - index: 104
+        weight: 0.13269515
+      - index: 99
+        weight: 0.06148401
+      - index: 104
+        weight: 0.2583738
+      - index: 105
+        weight: 0.25068867
+      - index: 108
+        weight: 0.2407337
+      - index: 101
+        weight: 0.2382189
+      - index: 106
+        weight: 0.006380897
+      - index: 99
+        weight: 0.0056041377
+      - index: 108
+        weight: 0.39943928
+      - index: 105
+        weight: 0.13938488
+      - index: 12
+        weight: 0.13751978
+      - index: 10
+        weight: 0.1319884
+      - index: 104
+        weight: 0.13074575
+      - index: 106
+        weight: 0.060922004
+      - index: 10
+        weight: 0.2615497
+      - index: 12
+        weight: 0.25339445
+      - index: 108
+        weight: 0.23840614
+      - index: 11
+        weight: 0.23840596
+      - index: 106
+        weight: 0.0041219024
+      - index: 9
+        weight: 0.0041218163
+      - index: 97
+        weight: 0.24122322
+      - index: 105
+        weight: 0.24122308
+      - index: 102
+        weight: 0.23306423
+      - index: 101
+        weight: 0.23141086
+      - index: 93
+        weight: 0.026539315
+      - index: 109
+        weight: 0.02653926
+      - index: 105
+        weight: 0.38792643
+      - index: 102
+        weight: 0.15207055
+      - index: 109
+        weight: 0.14844595
+      - index: 108
+        weight: 0.13443738
+      - index: 101
+        weight: 0.13253486
+      - index: 12
+        weight: 0.044584874
+      - index: 105
+        weight: 0.24310261
+      - index: 12
+        weight: 0.2406022
+      - index: 108
+        weight: 0.22911702
+      - index: 109
+        weight: 0.22688995
+      - index: 13
+        weight: 0.030962612
+      - index: 102
+        weight: 0.029325638
+      - index: 12
+        weight: 0.38766718
+      - index: 109
+        weight: 0.15145141
+      - index: 13
+        weight: 0.15145132
+      - index: 108
+        weight: 0.13131244
+      - index: 11
+        weight: 0.1313123
+      - index: 105
+        weight: 0.046805322
+      - index: 102
+        weight: 0.3635405
+      - index: 98
+        weight: 0.15341695
+      - index: 105
+        weight: 0.14040044
+      - index: 97
+        weight: 0.14040044
+      - index: 109
+        weight: 0.1011209
+      - index: 93
+        weight: 0.101120874
+      - index: 102
+        weight: 0.27809688
+      - index: 109
+        weight: 0.2757775
+      - index: 105
+        weight: 0.23167562
+      - index: 98
+        weight: 0.092458844
+      - index: 14
+        weight: 0.092159815
+      - index: 12
+        weight: 0.02983125
+      - index: 109
+        weight: 0.35843778
+      - index: 14
+        weight: 0.15317161
+      - index: 105
+        weight: 0.14171557
+      - index: 12
+        weight: 0.14042814
+      - index: 13
+        weight: 0.10453802
+      - index: 102
+        weight: 0.10170894
+      - index: 109
+        weight: 0.26099122
+      - index: 13
+        weight: 0.26099107
+      - index: 12
+        weight: 0.21522608
+      - index: 14
+        weight: 0.20362784
+      - index: 105
+        weight: 0.029581951
+      - index: 19
+        weight: 0.029581806
+      - index: 98
+        weight: 0.35027486
+      - index: 102
+        weight: 0.2348823
+      - index: 14
+        weight: 0.11294604
+      - index: 15
+        weight: 0.10193365
+      - index: 109
+        weight: 0.099981576
+      - index: 93
+        weight: 0.099981554
+      - index: 98
+        weight: 0.22713213
+      - index: 14
+        weight: 0.22465464
+      - index: 109
+        weight: 0.19247706
+      - index: 102
+        weight: 0.19050112
+      - index: 15
+        weight: 0.15052454
+      - index: 105
+        weight: 0.014710566
+      - index: 14
+        weight: 0.31795856
+      - index: 109
+        weight: 0.21777518
+      - index: 15
+        weight: 0.17369841
+      - index: 98
+        weight: 0.10573195
+      - index: 13
+        weight: 0.09454721
+      - index: 102
+        weight: 0.09028866
+      - index: 14
+        weight: 0.4223092
+      - index: 15
+        weight: 0.18946299
+      - index: 109
+        weight: 0.18427393
+      - index: 13
+        weight: 0.18427381
+      - index: 12
+        weight: 0.013802769
+      - index: 98
+        weight: 0.005877372
+      - index: 15
+        weight: 0.29513693
+      - index: 16
+        weight: 0.2112764
+      - index: 98
+        weight: 0.19726847
+      - index: 76
+        weight: 0.13762198
+      - index: 14
+        weight: 0.10176646
+      - index: 33
+        weight: 0.056929816
+      - index: 16
+        weight: 0.3625081
+      - index: 76
+        weight: 0.1613412
+      - index: 54
+        weight: 0.16016063
+      - index: 15
+        weight: 0.15916474
+      - index: 33
+        weight: 0.15682527
+      - index: 1
+        weight: 0
+      - index: 15
+        weight: 0.33254707
+      - index: 16
+        weight: 0.19748044
+      - index: 98
+        weight: 0.14850314
+      - index: 14
+        weight: 0.14503318
+      - index: 76
+        weight: 0.08921175
+      - index: 33
+        weight: 0.08722447
+      - index: 16
+        weight: 0.3625081
+      - index: 76
+        weight: 0.1613412
+      - index: 54
+        weight: 0.16016063
+      - index: 15
+        weight: 0.15916474
+      - index: 33
+        weight: 0.15682527
+      - index: 1
+        weight: 0
+      - index: 15
+        weight: 0.37158975
+      - index: 16
+        weight: 0.18784615
+      - index: 14
+        weight: 0.17223197
+      - index: 33
+        weight: 0.12125326
+      - index: 98
+        weight: 0.09382388
+      - index: 76
+        weight: 0.05325492
+      - index: 16
+        weight: 0.3625081
+      - index: 76
+        weight: 0.1613412
+      - index: 54
+        weight: 0.16016063
+      - index: 15
+        weight: 0.15916474
+      - index: 33
+        weight: 0.15682527
+      - index: 1
+        weight: 0
+      - index: 15
+        weight: 0.4021106
+      - index: 16
+        weight: 0.18155791
+      - index: 14
+        weight: 0.17882074
+      - index: 33
+        weight: 0.15929008
+      - index: 98
+        weight: 0.039110463
+      - index: 28
+        weight: 0.039110314
+      - index: 16
+        weight: 0.3625081
+      - index: 76
+        weight: 0.1613412
+      - index: 54
+        weight: 0.16016063
+      - index: 15
+        weight: 0.15916474
+      - index: 33
+        weight: 0.15682527
+      - index: 1
+        weight: 0
+      m_AlignBytes: 16
+    influenceOffsets:
+      serializedContents: 00000000060000000c00000012000000180000001e000000240000002a00000030000000360000003c00000042000000480000004e000000540000005a00000060000000660000006c00000072000000780000007e000000840000008a00000090000000960000009c000000a2000000a8000000ae000000b4000000ba000000c0000000c6000000cc000000d2000000d8000000de000000e4000000ea000000f0000000f6000000fc00000002010000080100000e010000140100001a01000020010000260100002c01000032010000380100003e010000440100004a01000050010000560100005c01000062010000680100006e010000740100007a01000080010000860100008c01000092010000980100009e010000a4010000aa010000b0010000b6010000bc010000c2010000c8010000ce010000d4010000da010000e0010000e6010000ec010000f2010000f8010000fe010000040200000a02000010020000160200001c02000022020000280200002e020000340200003a02000040020000460200004c02000052020000580200005e020000640200006a02000070020000760200007c02000082020000880200008e020000940200009a020000a0020000a6020000ac020000b2020000b8020000be020000c4020000ca020000d0020000d6020000dc020000e2020000e8020000ee020000f4020000fa02000000030000060300000c03000012030000180300001e030000240300002a03000030030000360300003c03000042030000480300004e030000540300005a03000060030000660300006c03000072030000780300007e030000840300008a03000090030000960300009c030000a2030000a8030000ae030000b4030000ba030000c0030000c6030000cc030000d2030000d8030000de030000e4030000ea030000f0030000f6030000fc03000002040000080400000e040000140400001a04000020040000260400002c04000032040000380400003e040000440400004a04000050040000560400005c04000062040000680400006e040000740400007a04000080040000860400008c04000092040000980400009e040000a4040000aa040000b0040000b6040000bc040000c2040000c8040000ce040000d4040000da040000e0040000e6040000ec040000f2040000f8040000fe040000040500000a05000010050000160500001c05000022050000280500002e050000340500003a05000040050000460500004c05000052050000580500005e050000640500006a05000070050000760500007c05000082050000880500008e050000940500009a050000a0050000a6050000ac050000b2050000b8050000be050000c4050000ca050000d0050000d6050000dc050000e2050000e8050000ee050000f4050000fa05000000060000060600000c06000012060000180600001e060000240600002a06000030060000360600003c06000042060000480600004e060000540600005a06000060060000660600006c06000072060000780600007e060000840600008a06000090060000960600009c060000a2060000a8060000ae060000b4060000ba060000c0060000c6060000cc060000d2060000d8060000de060000e4060000ea060000f0060000f6060000fc06000002070000080700000e070000140700001a07000020070000260700002c07000032070000380700003e070000440700004a07000050070000560700005c07000062070000680700006e070000740700007a07000080070000860700008c07000092070000
+      m_AlignBytes: 16
+  bonesOnParticles:
+    influences:
+      serializedContents: []
+      m_AlignBytes: 16
+    influenceOffsets:
+      serializedContents: 
+      m_AlignBytes: 16
+  bindPoses:
+    serializedContents:
+    - e00: 0.0026089917
+      e01: -0.13447613
+      e02: 0
+      e03: -0.0006181646
+      e10: 0.13447614
+      e11: 0.0026089917
+      e12: 0
+      e13: 0.0003476117
+      e20: 0
+      e21: 0
+      e22: 0.13450144
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.003091171
+      e01: -0.13446592
+      e02: 2.9704185e-26
+      e03: 0.0677437
+      e10: -0.13446592
+      e11: 0.0030911707
+      e12: 1.6471676e-17
+      e13: -0.0032208378
+      e20: -1.6467325e-17
+      e21: 3.7855926e-19
+      e22: -0.13450144
+      e23: -3.9443885e-19
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.13450144
+      e01: -1.58207e-40
+      e02: -1.6467326e-17
+      e03: -0.000009598821
+      e10: -3.09267e-40
+      e11: 0.13450144
+      e12: -1.6093118e-17
+      e13: -0.14056101
+      e20: 1.6467326e-17
+      e21: 1.609312e-17
+      e22: 0.13450144
+      e23: -1.6819323e-17
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.0026089917
+      e01: -0.13447613
+      e02: 0
+      e03: -0.0684939
+      e10: 0.13447614
+      e11: 0.0026089917
+      e12: 0
+      e13: 0.0021557526
+      e20: 0
+      e21: 0
+      e22: 0.13450144
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.30271855
+      e01: -0.011718333
+      e02: -0.95300794
+      e03: 0.0015475183
+      e10: 0.9460478
+      e11: -0.11755004
+      e12: 0.3019531
+      e13: 0.19387236
+      e20: -0.115564436
+      e21: -0.9929978
+      e22: -0.02449852
+      e23: -0.55621463
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 2.2669586e-10
+      e01: -1.1809975e-10
+      e02: 0.99999994
+      e03: 0.00000009876167
+      e10: -1
+      e11: 7.081831e-11
+      e12: -2.2669586e-10
+      e13: -0.000000033351508
+      e20: 7.081831e-11
+      e21: -0.99999994
+      e22: 1.1809975e-10
+      e23: -0.5616641
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.000000030104104
+      e01: -0.000000029608946
+      e02: -0.99999994
+      e03: -0.00000006746921
+      e10: 0.99539024
+      e11: -0.09590673
+      e12: -0.000000029672728
+      e13: 0.4469126
+      e20: -0.09590676
+      e21: -0.99539024
+      e22: 0.0000000894813
+      e23: -0.5501598
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.8696395
+      e01: -0.44980583
+      e02: 0.20347434
+      e03: 0.434077
+      e10: -0.23259954
+      e11: -0.009769187
+      e12: 0.9725236
+      e13: 0.011899699
+      e20: -0.435459
+      e21: -0.8930731
+      e22: -0.11312031
+      e23: -0.6849123
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.00000027555885
+      e01: -0.000000029851503
+      e02: 1.0000001
+      e03: -0.000000075302516
+      e10: -0.5491462
+      e11: 0.83572626
+      e12: -0.00000008972671
+      e13: -0.23109955
+      e20: -0.8357264
+      e21: -0.5491461
+      e22: -0.00000026100952
+      e23: -0.8679147
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.29544538
+      e01: 0.52758634
+      e02: 0.7964702
+      e03: -0.005335539
+      e10: -0.103690654
+      e11: 0.8110529
+      e12: -0.5757094
+      e13: -0.13293932
+      e20: -0.94971603
+      e21: -0.25267708
+      e22: -0.18491611
+      e23: -0.9444687
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.0000023542477
+      e01: -0.70710754
+      e02: 0.7071059
+      e03: 0.04944279
+      e10: -0.0000010131806
+      e11: 0.7071059
+      e12: 0.70710754
+      e13: -0.049446296
+      e20: -0.99999994
+      e21: 0.0000010133575
+      e22: -0.0000023546468
+      e23: -0.9791668
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.2676254
+      e01: -0.7996215
+      e02: 0.5375706
+      e03: 0.12343361
+      e10: -0.03381926
+      e11: 0.56537366
+      e12: 0.8241412
+      e13: 0.006846031
+      e20: -0.9629293
+      e21: 0.20238085
+      e22: -0.17835099
+      e23: -0.98202384
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.0000045711163
+      e01: 0.000010877694
+      e02: 1
+      e03: -0.0000016674877
+      e10: 0.39484704
+      e11: 0.9187468
+      e12: -0.000011831401
+      e13: -0.12907822
+      e20: -0.9187469
+      e21: 0.394847
+      e22: -0.000000104480684
+      e23: -0.9818695
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.79187375
+      e01: 0.531453
+      e02: -0.3008213
+      e03: 0.11323598
+      e10: -0.15326598
+      e11: -0.3038757
+      e12: -0.9403026
+      e13: -0.060377464
+      e20: -0.591139
+      e21: 0.7907067
+      e22: -0.15917756
+      e23: -0.9641851
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.87326705
+      e01: 0.48724177
+      e02: -0.000000014677364
+      e03: 0.028734546
+      e10: -0.000000015108956
+      e11: 0.0000000076061735
+      e12: -0.99999994
+      e13: -0.000000002574673
+      e20: -0.4872418
+      e21: 0.873267
+      e22: 0.000000022202991
+      e23: -0.9591816
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.9231977
+      e01: 0.3843254
+      e02: 1.5124274e-10
+      e03: -0.14354016
+      e10: -0.000000030054718
+      e11: 0.000000082149626
+      e12: -0.99999994
+      e13: -0.00000038017944
+      e20: -0.38432544
+      e21: 0.92319757
+      e22: 0.00000008928194
+      e23: -0.9942017
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 2.2669586e-10
+      e01: -1.1809975e-10
+      e02: 0.99999994
+      e03: 0.00000009876167
+      e10: 1
+      e11: -7.081831e-11
+      e12: 2.2669586e-10
+      e13: 0.000000033351508
+      e20: -7.081831e-11
+      e21: 0.99999994
+      e22: -1.1809975e-10
+      e23: -1.0986485
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.7211168
+      e01: -0.48921117
+      e02: -0.49057406
+      e03: 0.18652238
+      e10: 0.14168964
+      e11: -0.5889856
+      e12: 0.7956253
+      e13: 0.27438217
+      e20: -0.67817
+      e21: -0.64324814
+      e22: -0.35541126
+      e23: -0.8338365
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.09903416
+      e01: -0.95863146
+      e02: -0.2668669
+      e03: 0.019686691
+      e10: -0.36279324
+      e11: -0.28450987
+      e12: 0.8873754
+      e13: 0.14830536
+      e20: -0.92659235
+      e21: 0.008936971
+      e22: -0.37596124
+      e23: -0.97285527
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.62421316
+      e01: -0.4148136
+      e02: 0.66203284
+      e03: 0.029066294
+      e10: 0.1658293
+      e11: 0.7577383
+      e12: 0.6311364
+      e13: 0.0059162667
+      e20: -0.7634517
+      e21: 0.5037482
+      e22: -0.404202
+      e23: -0.98919135
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.7071058
+      e01: -0.00000038018732
+      e02: 0.7071076
+      e03: 0.0000013571803
+      e10: -0.22238964
+      e11: 0.9492555
+      e12: -0.22238854
+      e13: -0.17648204
+      e20: -0.6712258
+      e21: -0.31450567
+      e22: -0.67122424
+      e23: -0.9381659
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.70707124
+      e01: 0.000025182946
+      e02: -0.70714235
+      e03: -0.000024499144
+      e10: 0.6292665
+      e11: -0.4562319
+      e12: 0.62918705
+      e13: 0.4335418
+      e20: -0.322605
+      e21: -0.889861
+      e22: -0.32260433
+      e23: -0.6890856
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.70710486
+      e01: 0.0000031067814
+      e02: 0.7071087
+      e03: 0.000001943644
+      e10: 0.18617271
+      e11: 0.9647182
+      e12: 0.18616745
+      e13: -0.03360836
+      e20: -0.6821601
+      e21: 0.26328427
+      e22: -0.6821576
+      e23: -0.98982674
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.70710564
+      e01: -0.0000011622345
+      e02: -0.70710784
+      e03: -0.000000548717
+      e10: -0.5590923
+      e11: -0.61223745
+      e12: -0.55908954
+      e13: -0.13204026
+      e20: -0.43291724
+      e21: 0.790674
+      e22: -0.43291727
+      e23: -0.9658476
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.49060676
+      e01: 0.48918757
+      e02: -0.7211105
+      e03: -0.18651073
+      e10: 0.79560554
+      e11: -0.58900553
+      e12: 0.14171933
+      e13: 0.27438986
+      e20: -0.3554108
+      e21: -0.643248
+      e22: -0.6781705
+      e23: -0.83383703
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.9508017
+      e01: -0.02454154
+      e02: -0.3088266
+      e03: 0.092295915
+      e10: 0.3038941
+      e11: -0.11983784
+      e12: 0.9451388
+      e13: 0.41803142
+      e20: -0.060204234
+      e21: -0.9924901
+      e22: -0.106484
+      e23: -0.56211287
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.2668303
+      e01: 0.9586432
+      e02: -0.09901921
+      e03: -0.019692866
+      e10: 0.8873865
+      e11: -0.2844705
+      e12: -0.36279738
+      e13: 0.14830492
+      e20: -0.37596124
+      e21: 0.00893706
+      e22: -0.92659247
+      e23: -0.9728554
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.6620191
+      e01: 0.41482893
+      e02: 0.6242179
+      e03: -0.029065
+      e10: 0.6311501
+      e11: 0.7577299
+      e12: 0.1658155
+      e13: 0.0059159133
+      e20: -0.40420362
+      e21: 0.5037483
+      e22: -0.76345104
+      e23: -0.9891927
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.50232977
+      e01: -0.5117913
+      e02: -0.69694644
+      e03: 0.0037728648
+      e10: -0.8237953
+      e11: 0.03836018
+      e12: 0.5655879
+      e13: 0.0045384555
+      e20: -0.26272804
+      e21: 0.8582529
+      e22: -0.4408808
+      e23: -0.9592264
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.7964635
+      e01: -0.52759594
+      e02: 0.29544628
+      e03: 0.005337262
+      e10: -0.5757188
+      e11: 0.81104666
+      e12: -0.10368704
+      e13: -0.13293868
+      e20: -0.18491589
+      e21: -0.25267693
+      e22: -0.9497161
+      e23: -0.94446903
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.20347342
+      e01: 0.44980413
+      e02: -0.8696406
+      e03: -0.4340781
+      e10: 0.9725236
+      e11: -0.009769588
+      e12: -0.23259856
+      e13: 0.011899894
+      e20: -0.1131198
+      e21: -0.8930738
+      e22: -0.4354574
+      e23: -0.68491113
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.5375266
+      e01: 0.7996517
+      e02: 0.2676234
+      e03: -0.12343371
+      e10: 0.82416993
+      e11: 0.5653309
+      e12: -0.03383377
+      e13: 0.0068523176
+      e20: -0.17835104
+      e21: 0.2023806
+      e22: -0.9629295
+      e23: -0.98202395
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.3008294
+      e01: -0.5314513
+      e02: -0.791872
+      e03: -0.11323514
+      e10: -0.9403001
+      e11: -0.30388045
+      e12: -0.1532727
+      e13: -0.060378388
+      e20: -0.15917733
+      e21: 0.7907063
+      e22: -0.59114
+      e23: -0.9641849
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.6313324
+      e01: -0.33800337
+      e02: -0.69797784
+      e03: 0.11530431
+      e10: -0.76908994
+      e11: 0.15729359
+      e12: 0.6194832
+      e13: -0.05559374
+      e20: -0.09959996
+      e21: 0.9279075
+      e22: -0.35925955
+      e23: -0.9962962
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -1
+      e01: 0.00000006934927
+      e02: -0.000000041149587
+      e03: -0.00000006380346
+      e10: 0.000000080075225
+      e11: 0.83572614
+      e12: -0.54914635
+      e13: -0.23109996
+      e20: -0.0000000041788417
+      e21: -0.54914635
+      e22: -0.8357262
+      e23: -0.86791486
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 1
+      e01: -0.000000012781014
+      e02: 0.00000012808337
+      e03: 0.00000008401313
+      e10: -0.00000012850532
+      e11: -0.11104702
+      e12: 0.9938152
+      e13: 0.19446199
+      e20: 0.0000000016779058
+      e21: -0.9938151
+      e22: -0.11104702
+      e23: -0.5546836
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.00000011922397
+      e01: -1.0000001
+      e02: 0.000000008068613
+      e03: 0.06992588
+      e10: -1.0000001
+      e11: -0.00000011907139
+      e12: -6.579703e-10
+      e13: -0.000000028753044
+      e20: 2.9682165e-10
+      e21: -0.000000007711833
+      e22: -1.0000002
+      e23: -0.97916716
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -1.0000001
+      e01: 0.000004509853
+      e02: 0.0000019104316
+      e03: -0.00000067141224
+      e10: 0.0000048977367
+      e11: 0.91874695
+      e12: 0.39484677
+      e13: -0.12907799
+      e20: 0.000000024964736
+      e21: 0.3948468
+      e22: -0.918747
+      e23: -0.98186946
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.79648453
+      e01: 0.5275667
+      e02: -0.29544228
+      e03: -0.0053311572
+      e10: 0.57569003
+      e11: 0.8110658
+      e12: -0.10369823
+      e13: -0.1329397
+      e20: 0.1849154
+      e21: -0.25267717
+      e22: -0.94971615
+      e23: -0.94446886
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.20345521
+      e01: 0.44980386
+      e02: -0.869645
+      e03: -0.4340785
+      e10: 0.97252756
+      e11: 0.009778321
+      e12: 0.2325825
+      e13: -0.011907666
+      e20: 0.11312022
+      e21: -0.8930738
+      e22: -0.43545726
+      e23: -0.6849112
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.5375702
+      e01: 0.7996221
+      e02: 0.26762444
+      e03: -0.123435244
+      e10: 0.82414174
+      e11: -0.56537336
+      e12: 0.033819266
+      e13: -0.006846653
+      e20: 0.1783503
+      e21: 0.2023802
+      e22: -0.9629298
+      e23: -0.982024
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.30082405
+      e01: -0.53145325
+      e02: -0.79187286
+      e03: -0.11323588
+      e10: -0.9403019
+      e11: 0.3038772
+      e12: 0.15326804
+      e13: 0.060377818
+      e20: 0.15917738
+      e21: 0.7907061
+      e22: -0.59114003
+      e23: -0.96418566
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.49059513
+      e01: 0.48919562
+      e02: -0.7211134
+      e03: -0.18651575
+      e10: 0.79561275
+      e11: 0.5889983
+      e12: -0.14170878
+      e13: -0.27438667
+      e20: 0.35541135
+      e21: -0.6432485
+      e22: -0.67817
+      e23: -0.83383644
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.9508047
+      e01: 0.024542613
+      e02: 0.30881727
+      e03: -0.09230003
+      e10: -0.30388469
+      e11: -0.11983752
+      e12: 0.9451419
+      e13: 0.41803044
+      e20: 0.060204126
+      e21: -0.9924902
+      e22: -0.10648395
+      e23: -0.5621132
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.26688504
+      e01: 0.95862556
+      e02: -0.099041775
+      e03: -0.01968317
+      e10: 0.8873698
+      e11: 0.28452945
+      e12: 0.36279172
+      e13: -0.14830527
+      e20: 0.37596178
+      e21: 0.008937016
+      e22: -0.9265921
+      e23: -0.9728552
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.66202974
+      e01: -0.414816
+      e02: -0.624215
+      e03: 0.029065
+      e10: -0.6311395
+      e11: 0.75773627
+      e12: 0.16582733
+      e13: 0.005917297
+      e20: 0.40420255
+      e21: 0.5037494
+      e22: -0.76345074
+      e23: -0.98919255
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.50233257
+      e01: -0.51179165
+      e02: -0.69694436
+      e03: 0.0037734252
+      e10: -0.82379377
+      e11: -0.038362846
+      e12: -0.5655901
+      e13: -0.004537437
+      e20: 0.2627276
+      e21: 0.85825276
+      e22: -0.44088173
+      e23: -0.95922613
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.7071077
+      e01: -0.0000020637376
+      e02: -0.70710576
+      e03: 0.0000010542186
+      e10: 0.22238757
+      e11: 0.9492554
+      e12: -0.22239102
+      e13: -0.17648147
+      e20: 0.6712245
+      e21: -0.314506
+      e22: -0.6712254
+      e23: -0.93816614
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.70714974
+      e01: 0.00002983199
+      e02: 0.7070637
+      e03: -0.000030094008
+      e10: -0.629179
+      e11: -0.45623127
+      e12: 0.6292749
+      e13: 0.4335425
+      e20: 0.3226033
+      e21: -0.8898612
+      e22: -0.3226051
+      e23: -0.6890851
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.70710784
+      e01: 0.0000020191264
+      e02: -0.7071059
+      e03: 0.00000084856714
+      e10: -0.1861688
+      e11: 0.9647181
+      e12: 0.18617207
+      e13: -0.033607595
+      e20: 0.68215823
+      e21: 0.26328477
+      e22: -0.6821595
+      e23: -0.98982674
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.7071155
+      e01: -0.000008851373
+      e02: 0.70709807
+      e03: -0.0000025039476
+      e10: 0.5590805
+      e11: -0.612237
+      e12: -0.55910194
+      e13: -0.13204029
+      e20: 0.43291655
+      e21: 0.7906743
+      e22: -0.4329174
+      e23: -0.9658475
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.72111255
+      e01: -0.48918912
+      e02: -0.49060258
+      e03: 0.18651342
+      e10: 0.14171647
+      e11: 0.5890028
+      e12: -0.795608
+      e13: -0.27438974
+      e20: 0.6781691
+      e21: -0.6432492
+      e22: -0.3554112
+      e23: -0.8338356
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.09901587
+      e01: -0.95864594
+      e02: -0.2668214
+      e03: 0.019693853
+      e10: -0.36279923
+      e11: 0.28446075
+      e12: -0.8873887
+      e13: -0.14830408
+      e20: 0.9265919
+      e21: 0.00893706
+      e22: -0.37596217
+      e23: -0.9728553
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.6242133
+      e01: -0.4148149
+      e02: 0.66203195
+      e03: 0.02906733
+      e10: 0.16582848
+      e11: -0.75773764
+      e12: -0.6311375
+      e13: -0.005916639
+      e20: 0.7634518
+      e21: 0.5037481
+      e22: -0.40420184
+      e23: -0.98919207
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.75719815
+      e01: -0.38028288
+      e02: -0.5310704
+      e03: 0.14131354
+      e10: -0.56290317
+      e11: 0.03253456
+      e12: -0.82588226
+      e13: -0.014193695
+      e20: 0.33134705
+      e21: 0.92429787
+      e22: -0.18942735
+      e23: -0.9946371
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.29544306
+      e01: 0.52756894
+      e02: 0.79648256
+      e03: -0.005332566
+      e10: -0.10369738
+      e11: -0.8110642
+      e12: 0.5756924
+      e13: 0.13294019
+      e20: 0.9497159
+      e21: -0.25267744
+      e22: -0.1849158
+      e23: -0.9444685
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.8696438
+      e01: 0.44980463
+      e02: -0.20345867
+      e03: -0.43407783
+      e10: 0.23258571
+      e11: -0.0097770495
+      e12: 0.97252685
+      e13: 0.01190612
+      e20: 0.4354579
+      e21: -0.89307356
+      e22: -0.11312069
+      e23: -0.68491155
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.30272943
+      e01: -0.0117195835
+      e02: -0.9530044
+      e03: 0.001549918
+      e10: 0.94604427
+      e11: 0.11754929
+      e12: -0.30196404
+      e13: -0.19387291
+      e20: 0.11556387
+      e21: -0.9929978
+      e22: -0.024498401
+      e23: -0.5562147
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.2676259
+      e01: -0.7996113
+      e02: 0.53758556
+      e03: 0.12343396
+      e10: -0.03381449
+      e11: -0.5653883
+      e12: -0.82413155
+      e13: -0.006844278
+      e20: 0.9629294
+      e21: 0.20238079
+      e22: -0.17835112
+      e23: -0.9820238
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.79187286
+      e01: -0.531453
+      e02: 0.3008241
+      e03: -0.113236025
+      e10: 0.15326817
+      e11: -0.30387747
+      e12: -0.9403018
+      e13: -0.060377803
+      e20: 0.5911398
+      e21: 0.79070616
+      e22: -0.15917754
+      e23: -0.96418536
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.000000022503052
+      e01: -0.00000002997654
+      e02: 0.99999994
+      e03: 0.00000016551888
+      e10: -0.5491461
+      e11: -0.8357262
+      e12: -0.000000029770533
+      e13: 0.23109956
+      e20: 0.83572626
+      e21: -0.5491462
+      e22: 0.000000022581478
+      e23: -0.8679147
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.00000020833642
+      e01: -0.000000059393606
+      e02: -0.9999999
+      e03: -0.000000097918786
+      e10: 0.99539024
+      e11: 0.09590673
+      e12: 0.000000149221
+      e13: -0.44691256
+      e20: 0.095906675
+      e21: -0.99539024
+      e22: 0.00000014911973
+      e23: -0.5501595
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 2.3425412e-10
+      e01: 0.707107
+      e02: 0.70710653
+      e03: -0.04944473
+      e10: 1.0749332e-10
+      e11: -0.70710653
+      e12: 0.707107
+      e13: 0.0494455
+      e20: 1
+      e21: -7.081831e-11
+      e22: 2.2669586e-10
+      e23: -0.9791671
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.00000086067644
+      e01: -0.0000017733557
+      e02: 1.0000001
+      e03: 0.000000180067
+      e10: 0.3948466
+      e11: -0.9187472
+      e12: -0.0000020115122
+      e13: 0.12907815
+      e20: 0.9187471
+      e21: 0.3948466
+      e22: -0.0000002717546
+      e23: -0.9818693
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.87326604
+      e01: -0.48724368
+      e02: -0.000000103987354
+      e03: -0.028732304
+      e10: -0.00000005987468
+      e11: 0.00000005980041
+      e12: -1.0000001
+      e13: -0.0000002143691
+      e20: 0.48724368
+      e21: 0.8732661
+      e22: 0.000000014881466
+      e23: -0.95918196
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.2954433
+      e01: -0.52757186
+      e02: 0.7964804
+      e03: 0.0053332574
+      e10: -0.103696376
+      e11: -0.81106216
+      e12: -0.5756953
+      e13: 0.13293977
+      e20: 0.94971585
+      e21: -0.25267747
+      e22: 0.18491565
+      e23: -0.94446844
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.8696438
+      e01: 0.44980466
+      e02: 0.20345865
+      e03: -0.4340774
+      e10: -0.23258561
+      e11: 0.009776703
+      e12: 0.9725269
+      e13: -0.011906158
+      e20: 0.43545786
+      e21: -0.89307356
+      e22: 0.11312033
+      e23: -0.68491167
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.26762566
+      e01: -0.79961574
+      e02: -0.537579
+      e03: 0.12343325
+      e10: 0.033816487
+      e11: 0.5653818
+      e12: -0.8241358
+      e13: 0.006844853
+      e20: 0.9629294
+      e21: 0.20238087
+      e22: 0.1783509
+      e23: -0.98202384
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.79187286
+      e01: -0.53145295
+      e02: -0.30082422
+      e03: -0.113235965
+      e10: -0.1532682
+      e11: 0.30387738
+      e12: -0.9403018
+      e13: 0.060377393
+      e20: 0.59113985
+      e21: 0.79070634
+      e22: 0.1591774
+      e23: -0.9641849
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.7211113
+      e01: -0.4891848
+      e02: 0.49060857
+      e03: 0.18651101
+      e10: -0.14172187
+      e11: -0.5890066
+      e12: -0.7956042
+      e13: 0.27439097
+      e20: 0.6781692
+      e21: -0.64324915
+      e22: 0.35541105
+      e23: -0.8338359
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.09902349
+      e01: -0.95864016
+      e02: 0.26683983
+      e03: 0.019690854
+      e10: 0.36279723
+      e11: -0.28448075
+      e12: -0.8873832
+      e13: 0.14830402
+      e20: 0.926592
+      e21: 0.00893703
+      e22: 0.37596214
+      e23: -0.97285515
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.62421346
+      e01: 0.41481593
+      e02: 0.66203123
+      e03: -0.02906734
+      e10: 0.16582763
+      e11: -0.75773716
+      e12: 0.6311383
+      e13: -0.005916211
+      e20: 0.7634518
+      e21: 0.50374806
+      e22: 0.40420172
+      e23: -0.98919225
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.7071077
+      e01: -0.0000020340651
+      e02: 0.7071057
+      e03: 0.0000011797526
+      e10: -0.22238761
+      e11: -0.94925547
+      e12: -0.222391
+      e13: 0.17648147
+      e20: 0.6712245
+      e21: -0.314506
+      e22: 0.67122555
+      e23: -0.93816614
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.7071534
+      e01: 0.00003251432
+      e02: -0.7070602
+      e03: -0.00003255678
+      e10: 0.62917495
+      e11: 0.45623115
+      e12: 0.6292789
+      e13: -0.43354172
+      e20: 0.32260337
+      e21: -0.8898613
+      e22: 0.32260495
+      e23: -0.68908507
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.70710766
+      e01: 0.0000018552686
+      e02: 0.7071058
+      e03: 0.00000090422816
+      e10: 0.18616897
+      e11: -0.9647181
+      e12: 0.18617195
+      e13: 0.033608273
+      e20: 0.68215823
+      e21: 0.2632848
+      e22: 0.6821592
+      e23: -0.98982674
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.70711625
+      e01: 0.000009566373
+      e02: 0.70709753
+      e03: 0.0000026371715
+      e10: 0.5590797
+      e11: -0.6122371
+      e12: 0.5591027
+      e13: -0.13204046
+      e20: 0.43291658
+      e21: 0.7906744
+      e22: 0.43291712
+      e23: -0.96584785
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.6535379
+      e01: 0.38180348
+      e02: -0.65353966
+      e03: -0.14373465
+      e10: -0.70710754
+      e11: 0.00000051030025
+      e12: 0.7071059
+      e13: -0.00000009813501
+      e20: 0.26997584
+      e21: 0.92424345
+      e22: 0.26997587
+      e23: -0.9944594
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.49059266
+      e01: 0.48919728
+      e02: 0.72111356
+      e03: -0.18651597
+      e10: -0.79561406
+      e11: -0.588997
+      e12: -0.14170672
+      e13: 0.27438644
+      e20: 0.35541123
+      e21: -0.6432484
+      e22: 0.67816985
+      e23: -0.8338361
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.9508049
+      e01: 0.024542732
+      e02: -0.30881643
+      e03: -0.09230047
+      e10: 0.30388385
+      e11: 0.11983732
+      e12: 0.94514227
+      e13: -0.41803044
+      e20: 0.06020413
+      e21: -0.99249023
+      e22: 0.10648378
+      e23: -0.5621129
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.26685947
+      e01: 0.9586339
+      e02: 0.09903121
+      e03: -0.019687472
+      e10: -0.8873777
+      e11: -0.28450185
+      e12: 0.3627945
+      e13: 0.14830512
+      e20: 0.37596166
+      e21: 0.008937015
+      e22: 0.92659205
+      e23: -0.97285503
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.66202974
+      e01: -0.4148158
+      e02: 0.624215
+      e03: 0.0290654
+      e10: 0.6311393
+      e11: -0.7577363
+      e12: 0.16582747
+      e13: -0.0059170946
+      e20: 0.40420255
+      e21: 0.5037494
+      e22: 0.76345056
+      e23: -0.98919195
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.50233275
+      e01: 0.51179165
+      e02: -0.6969443
+      e03: -0.0037739598
+      e10: -0.8237938
+      e11: -0.038362857
+      e12: 0.56559014
+      e13: -0.0045373025
+      e20: 0.26272756
+      e21: 0.85825276
+      e22: 0.44088155
+      e23: -0.9592257
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.79648936
+      e01: 0.52756
+      e02: 0.29544145
+      e03: -0.0053304983
+      e10: -0.5756834
+      e11: -0.8110703
+      e12: -0.10370061
+      e13: 0.1329397
+      e20: 0.18491548
+      e21: -0.25267717
+      e22: 0.949716
+      e23: -0.9444686
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.20345698
+      e01: -0.44980416
+      e02: -0.86964446
+      e03: 0.434078
+      e10: 0.97252727
+      e11: 0.009777471
+      e12: -0.23258398
+      e13: -0.011906972
+      e20: 0.11312022
+      e21: -0.8930738
+      e22: 0.4354574
+      e23: -0.6849111
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.9530059
+      e01: -0.011719032
+      e02: -0.302725
+      e03: 0.0015489884
+      e10: 0.30195957
+      e11: 0.11754948
+      e12: 0.9460457
+      e13: -0.1938725
+      e20: 0.024498433
+      e21: -0.9929978
+      e22: 0.115564026
+      e23: -0.5562134
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.5375702
+      e01: 0.7996221
+      e02: -0.26762438
+      e03: -0.12343504
+      e10: -0.8241417
+      e11: 0.56537306
+      e12: 0.03381927
+      e13: 0.006846525
+      e20: 0.17835027
+      e21: 0.20238014
+      e22: 0.9629296
+      e23: -0.98202384
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.30082422
+      e01: 0.531453
+      e02: -0.79187274
+      e03: 0.11323607
+      e10: -0.9403018
+      e11: 0.30387744
+      e12: -0.15326825
+      e13: 0.060377907
+      e20: 0.15917744
+      e21: 0.7907061
+      e22: 0.59113985
+      e23: -0.9641856
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -1
+      e01: 0.00000013069189
+      e02: 0.00000009163963
+      e03: -0.000000051037393
+      e10: -0.00000015980942
+      e11: -0.83572626
+      e12: -0.5491463
+      e13: 0.23109896
+      e20: 0.0000000053073625
+      e21: -0.5491463
+      e22: 0.83572614
+      e23: -0.8679139
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.00000011922397
+      e01: -1.0000001
+      e02: 0.000000008068613
+      e03: 0.06992588
+      e10: 1.0000001
+      e11: -0.00000011933906
+      e12: 0.0000000038299537
+      e13: 0.0000000132024045
+      e20: -0.0000000034785828
+      e21: 0.000000007807476
+      e22: 0.99999994
+      e23: -0.9791665
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -1.0000001
+      e01: 0.0000129828195
+      e02: -0.0000055729415
+      e03: -0.0000018976187
+      e10: -0.000014128018
+      e11: -0.918747
+      e12: 0.39484686
+      e13: 0.12907784
+      e20: 0.0000000064034396
+      e21: 0.39484686
+      e22: 0.91874695
+      e23: -0.98186934
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.79646325
+      e01: -0.5275963
+      e02: -0.29544637
+      e03: 0.0053373883
+      e10: 0.5757192
+      e11: -0.81104666
+      e12: -0.103686966
+      e13: 0.13293925
+      e20: -0.1849159
+      e21: -0.25267696
+      e22: 0.949716
+      e23: -0.94446886
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.20347291
+      e01: -0.44980422
+      e02: -0.86964077
+      e03: 0.43407857
+      e10: 0.972524
+      e11: -0.009769887
+      e12: 0.23259822
+      e13: 0.011900071
+      e20: -0.11311984
+      e21: -0.89307386
+      e22: 0.43545732
+      e23: -0.68491006
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.5375213
+      e01: 0.79965526
+      e02: -0.26762322
+      e03: -0.123433806
+      e10: -0.8241733
+      e11: -0.5653259
+      e12: -0.033835463
+      e13: -0.006853869
+      e20: -0.17835106
+      e21: 0.20238066
+      e22: 0.96292937
+      e23: -0.9820238
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.30082908
+      e01: 0.53145117
+      e02: -0.79187214
+      e03: 0.11323538
+      e10: -0.9403002
+      e11: -0.30387995
+      e12: 0.15327258
+      e13: -0.060378857
+      e20: -0.15917715
+      e21: 0.7907064
+      e22: 0.5911397
+      e23: -0.9641849
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.4906059
+      e01: 0.4891881
+      e02: 0.7211109
+      e03: -0.1865115
+      e10: -0.7956061
+      e11: 0.58900493
+      e12: 0.14171852
+      e13: -0.27438974
+      e20: -0.35541087
+      e21: -0.6432481
+      e22: 0.67817026
+      e23: -0.8338363
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.95080227
+      e01: -0.024541734
+      e02: 0.30882487
+      e03: 0.0922967
+      e10: -0.3038923
+      e11: 0.11983776
+      e12: 0.9451393
+      e13: -0.4180309
+      e20: -0.060204268
+      e21: -0.99249005
+      e22: 0.10648396
+      e23: -0.5621137
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.26684025
+      e01: 0.95864
+      e02: 0.09902324
+      e03: -0.01969002
+      e10: -0.88738346
+      e11: 0.28448105
+      e12: -0.36279625
+      e13: -0.14830506
+      e20: -0.37596124
+      e21: 0.008937075
+      e22: 0.9265923
+      e23: -0.97285485
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.6620188
+      e01: 0.414829
+      e02: -0.62421787
+      e03: -0.029065335
+      e10: -0.63115025
+      e11: -0.75772995
+      e12: 0.16581535
+      e13: -0.005916215
+      e20: -0.40420356
+      e21: 0.5037481
+      e22: 0.76345086
+      e23: -0.9891924
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.50233114
+      e01: 0.51179147
+      e02: -0.69694537
+      e03: -0.003773681
+      e10: -0.8237945
+      e11: 0.038361367
+      e12: -0.56558895
+      e13: 0.004538018
+      e20: -0.26272792
+      e21: 0.8582527
+      e22: 0.44088116
+      e23: -0.9592269
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.7071059
+      e01: 0.00000026817168
+      e02: 0.70710766
+      e03: -0.0000012907215
+      e10: -0.22238956
+      e11: 0.9492555
+      e12: 0.22238863
+      e13: -0.17648157
+      e20: -0.6712257
+      e21: -0.31450564
+      e22: 0.67122424
+      e23: -0.93816555
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.70707685
+      e01: -0.000021666116
+      e02: -0.7071368
+      e03: 0.000020533318
+      e10: 0.6292603
+      e11: -0.45623228
+      e12: -0.62919295
+      e13: 0.43354148
+      e20: -0.32260495
+      e21: -0.8898607
+      e22: 0.3226048
+      e23: -0.6890853
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.7071048
+      e01: -0.0000031219504
+      e02: 0.70710874
+      e03: -0.0000018250196
+      e10: 0.18617274
+      e11: 0.9647182
+      e12: -0.18616745
+      e13: -0.03360825
+      e20: -0.68216014
+      e21: 0.26328427
+      e22: 0.68215746
+      e23: -0.9898269
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.7071057
+      e01: 0.0000011623209
+      e02: -0.7071079
+      e03: 0.0000001947193
+      e10: -0.5590923
+      e11: -0.6122374
+      e12: 0.5590896
+      e13: -0.13203946
+      e20: -0.43291727
+      e21: 0.79067403
+      e22: 0.43291718
+      e23: -0.9658468
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.72111565
+      e01: -0.48920628
+      e02: 0.4905807
+      e03: 0.18651998
+      e10: -0.14169557
+      e11: 0.58898985
+      e12: 0.7956213
+      e13: -0.2743828
+      e20: -0.67817
+      e21: -0.6432481
+      e22: 0.3554114
+      e23: -0.83383685
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.099020414
+      e01: -0.95864224
+      e02: 0.26683328
+      e03: 0.019692577
+      e10: 0.36279696
+      e11: 0.28447348
+      e12: 0.88738555
+      e13: -0.14830455
+      e20: -0.92659235
+      e21: 0.008936971
+      e22: 0.3759611
+      e23: -0.97285503
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.6242132
+      e01: 0.4148136
+      e02: 0.6620327
+      e03: -0.029066734
+      e10: 0.16582948
+      e11: 0.75773823
+      e12: -0.6311365
+      e13: 0.0059171566
+      e20: -0.76345164
+      e21: 0.5037483
+      e22: 0.4042019
+      e23: -0.9891919
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.29544407
+      e01: -0.5275806
+      e02: 0.7964744
+      e03: 0.0053340355
+      e10: -0.10369292
+      e11: 0.8110568
+      e12: 0.5757037
+      e13: -0.13293864
+      e20: -0.94971603
+      e21: -0.252677
+      e22: 0.18491551
+      e23: -0.94446826
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.8696398
+      e01: -0.44980577
+      e02: -0.20347314
+      e03: 0.4340771
+      e10: 0.23259848
+      e11: 0.0097696325
+      e12: 0.9725238
+      e13: -0.0118998885
+      e20: -0.43545896
+      e21: -0.8930729
+      e22: 0.113120206
+      e23: -0.6849115
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: -0.2676251
+      e01: -0.79962885
+      e02: -0.53756
+      e03: 0.12343277
+      e10: 0.033822805
+      e11: -0.56536365
+      e12: 0.82414824
+      e13: -0.006847723
+      e20: -0.9629294
+      e21: 0.2023808
+      e22: 0.17835093
+      e23: -0.9820238
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.7918739
+      e01: 0.5314533
+      e02: 0.3008207
+      e03: 0.11323636
+      e10: 0.15326549
+      e11: 0.30387533
+      e12: -0.94030285
+      e13: 0.06037702
+      e20: -0.5911391
+      e21: 0.79070675
+      e22: 0.1591775
+      e23: -0.964186
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_AlignBytes: 16
+  checksum: 2596356005

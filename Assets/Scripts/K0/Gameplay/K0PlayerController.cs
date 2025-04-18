@@ -8,8 +8,6 @@ using UnityEngine.Serialization;
 
 public class K0PlayerController : ControllerBase, IAbsorbSource
 {
-    public float MaxWalSpeed = 5.0f;
-    public float MaxRotateDegree = 360;
     public PlayerInput Input;
 
     public bool isshadow;
@@ -22,19 +20,17 @@ public class K0PlayerController : ControllerBase, IAbsorbSource
 
     private bool isRotate = false;
 
-    private Vector3 velocity;
+    private Vector3 input;
 
     private void Move(Vector2 move)
     {
-        var s1 = move * MaxWalSpeed;
-        velocity = rigidBody.velocity;
-        velocity.x = s1.x;
-        velocity.z = s1.y;
+        input.x = move.x;
+        input.z = move.y;
         //转向
-        var cameraFoward = Camera.main.transform.rotation * velocity;
-        cameraFoward.y = 0;
-        velocity.x = cameraFoward.x;
-        velocity.z = cameraFoward.z;
+        // var cameraFoward = Camera.main.transform.rotation * input;
+        // cameraFoward.y = 0;
+        // input.x = cameraFoward.x;
+        // input.z = cameraFoward.z;
     }
 
     private Sequence seq;
@@ -115,7 +111,7 @@ public class K0PlayerController : ControllerBase, IAbsorbSource
     {
         rigidBody = GetComponent<Rigidbody>();
         Input.actions.FindAction("Move").performed += ctx => Move(ctx.ReadValue<Vector2>());
-        Input.actions.FindAction("Move").canceled += ctx => Move(ctx.ReadValue<Vector2>());
+        Input.actions.FindAction("Move").canceled += ctx => Move(Vector2.zero);
         Input.actions.FindAction("Jump").performed += Jump;
         Input.actions.FindAction("Interaction").performed += Interation;
         Input.actions.FindAction("Interaction").canceled += Interation;
@@ -143,6 +139,45 @@ public class K0PlayerController : ControllerBase, IAbsorbSource
         }
     }
 
+    private bool isGrounded;
+    public float moveSpeed = 5.0f;
+    public float airControlFactor = 0.5f;
+
+    private void HandleMovement()
+    {
+        var v = input;
+        
+        Vector3 moveDirection = input;
+
+        // 应用移动力
+        float currentSpeed = isGrounded ? moveSpeed : moveSpeed * airControlFactor;
+        Vector3 targetVelocity = moveDirection * currentSpeed;
+        targetVelocity.y = rigidBody.velocity.y; // 保持原有Y轴速度
+
+        // 使用VelocityChange进行更精确的速度控制
+        Vector3 velocityDelta = targetVelocity - rigidBody.velocity;
+        velocityDelta.y = 0; // Y轴由跳跃单独处理
+        rigidBody.AddForce(velocityDelta, ForceMode.VelocityChange);
+        
+    }
+
+    public float rotationSpeed;
+
+    private void HandleRotation()
+    {
+        if (input.magnitude > 0.1f)
+        {
+            // 获取摄像头方向的平面旋转
+            Quaternion targetRotation = Quaternion.LookRotation(input);
+
+            // 平滑旋转
+            rigidBody.rotation = Quaternion.RotateTowards(
+                rigidBody.rotation, 
+                targetRotation, 
+                rotationSpeed * Time.fixedDeltaTime
+            );
+        }
+    }
     private bool DetectGround()
     {
         return Physics.Raycast(transform.position, -transform.up, out RaycastHit hit, 1.0f,
@@ -151,19 +186,10 @@ public class K0PlayerController : ControllerBase, IAbsorbSource
 
     private void FixedUpdate()
     {
-        if (velocity != Vector3.zero)
-        {
-            var q = velocity - transform.forward;
-            q.y = 0;
-            if (q.magnitude >= 0.01f)
-            {
-                RotateTowards(velocity, MaxRotateDegree * Time.fixedDeltaTime, true);
-            } 
-        }           
-        var v = velocity;
-        v.y = rigidBody.velocity.y;
-        rigidBody.velocity = v;
-        
+        isGrounded = DetectGround();
+        HandleMovement();
+        HandleRotation();
+
     }
 
     private IAbsorbTarget Current;

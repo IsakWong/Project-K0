@@ -37,25 +37,27 @@ public class Seed : InteractableItem
     {
         _audio = GetComponent<AudioSource>();
         _audio.loop = false;
+        var handle = TreeAsset.AssetRef.LoadAssetAsync<GameObject>();
+        handle.WaitForCompletion();
         //_audio.playOnAwake = false;
         // this.GetComponent<Rigidbody>().e
     }
 
-  
+    public Variant TreeAsset = new Variant();
 
     public void Grow()
     {
         if (type == SeedType.PlatformTree)
         {
             _audio.Play();
-            GameObject tree = (GameObject)Instantiate(Resources.Load("生长平台树_p"));
-            tree.transform.position = hole.transform.position + new Vector3(0, -0.12f, 0);
-
+            GameObject tree = (GameObject)Instantiate(TreeAsset.AssetRef.Asset);
+            tree.transform.position = transform.position + new Vector3(0, -0.12f, 0);
+            
             GameObject pong = (GameObject)Instantiate(Resources.Load("PONG"));
-            pong.transform.position = hole.transform.position;
+            pong.transform.position = transform.position;  
 
             GameObject yw = (GameObject)Instantiate(Resources.Load("烟雾效果"));
-            yw.transform.position = hole.transform.position;
+            yw.transform.position = transform.position;
 
             Destroy(this.gameObject);
             SeedUI.Current.AddSeed();

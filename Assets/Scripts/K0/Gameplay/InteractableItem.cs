@@ -7,7 +7,7 @@ public interface IAbsorbSource
     void Absorb(IAbsorbTarget target);
     void OnTargetAbsorbed(IAbsorbTarget target);
     
-    Component GetComponent();
+    T GetComponent<T>();
     GameObject GetGameObject();
     Transform GetTransform();
 } 
@@ -60,7 +60,7 @@ public class InteractableItem : MonoBehaviour, IAbsorbTarget
             Vector3.zero, 
             0.5f);
         oldScale = transform.localScale;
-        seq.Insert(0.4f, t);
+        seq.Insert(0.0f, t);
         var scale = transform.DOScale(Vector3.zero, 0.4f)
             .SetEase(Ease.InQuart);
         seq.Insert(0.5f, scale);
@@ -69,6 +69,8 @@ public class InteractableItem : MonoBehaviour, IAbsorbTarget
         {
             isAborbing = false;
             isAborbed = true;
+            gameObject.SetActive(false);
+            absorbSource.OnTargetAbsorbed(this);
         });
         t.SetTarget(transform);
         _absorbSource = absorbSource;
@@ -91,6 +93,7 @@ public class InteractableItem : MonoBehaviour, IAbsorbTarget
 
     public void Released(IAbsorbSource absorbSource)
     {
+        gameObject.SetActive(true);
         transform.position = absorbSource.GetTransform().position;
         
         var scale = transform.DOScale(oldScale, 0.5f)

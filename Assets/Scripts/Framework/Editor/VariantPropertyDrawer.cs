@@ -2,11 +2,12 @@
 using Newtonsoft.Json;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 namespace K1.Editor
 {
     [CustomPropertyDrawer(typeof(Variant))]
-    public class SerializedVarintEditor : PropertyDrawer
+    public class SerializedVariantDrawer : PropertyDrawer
     {
         public override float GetPropertyHeight(SerializedProperty proper, GUIContent content)
         {
@@ -18,6 +19,7 @@ namespace K1.Editor
             EditorGUI.BeginProperty(rect, label, property);
             var valueString = property.FindPropertyRelative("mValueString");
             var objectProp = property.FindPropertyRelative("mObject");
+            var assetRef = property.FindPropertyRelative("AssetRef");
             var typeProperty = property.FindPropertyRelative("mType");
 
             EditorGUIUtility.wideMode = true;
@@ -93,10 +95,12 @@ namespace K1.Editor
                 }
                 case VariantType.UnityObject:
                 {
-                    var outVar = objectProp.objectReferenceValue;
-                    var newVar = EditorGUI.ObjectField(rect, "Value", outVar, typeof(Object));
-                    if (newVar != outVar)
-                        objectProp.objectReferenceValue = newVar;
+                    EditorGUI.PropertyField(rect, objectProp);                    
+                    break;
+                }
+                case VariantType.AssetRef:
+                {
+                    EditorGUI.PropertyField(rect, assetRef);
                     break;
                 }
                 case VariantType.List:

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 /// <summary>
 /// 
@@ -23,7 +24,8 @@ public enum VariantType
     Color32,
     UnityObject,
     Quaternion,
-    List
+    List,
+    AssetRef
 }
 
 public static class VariantTypeHelper
@@ -70,6 +72,7 @@ public class Variant : ISerializationCallbackReceiver, IVariant
     [SerializeField] public VariantType mType;
     [SerializeField] public string mValueString;
     [SerializeField] public UnityEngine.Object mObject;
+    [SerializeField] public AssetReference AssetRef;
 
     protected object mValue;
 
@@ -151,11 +154,22 @@ public class Variant : ISerializationCallbackReceiver, IVariant
         mType = VariantType.Vector4;
     }
 
+    public Variant(AssetReference reference)
+    {
+        mType = VariantType.AssetRef;
+        AssetRef = reference;
+    }
+
     public void Set(object b)
     {
         mValue = b;
     }
 
+    public void Set(AssetReference reference)
+    {
+        AssetRef = reference;
+        mType = VariantType.AssetRef;
+    }
     public object GetValue()
     {
         return mValue;
@@ -218,6 +232,9 @@ public class Variant : ISerializationCallbackReceiver, IVariant
             case VariantType.UnityObject:
                 mValue = mObject;
                 break;
+            case VariantType.AssetRef:
+                mValue = AssetRef;
+                break;
         }
     }
 
@@ -268,6 +285,9 @@ public class Variant : ISerializationCallbackReceiver, IVariant
             case VariantType.UnityObject:
                 mValue = mObject;
                 break;
+            case VariantType.AssetRef:
+                mValue = AssetRef;
+                break;
             case VariantType.List:
                 Deserialize<List<Variant>>();
                 break;
@@ -282,6 +302,7 @@ public class Variant : ISerializationCallbackReceiver, IVariant
         mType = v.mType;
         mValueString = v.mValueString;
         mObject = v.mObject;
+        AssetRef = v.AssetRef;
     }
 
     public void Set(bool v)

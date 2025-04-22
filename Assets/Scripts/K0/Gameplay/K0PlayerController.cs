@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using DG.Tweening;
 using K1.Gameplay;
 using UnityEngine;
@@ -11,6 +12,7 @@ public class K0PlayerController : ControllerBase, IAbsorbSource
     public PlayerInput Input;
 
     public bool isshadow;
+    public Transform ScaleTarget;
     private Rigidbody rigidBody;
 
     private float time = 0.0f;
@@ -34,44 +36,18 @@ public class K0PlayerController : ControllerBase, IAbsorbSource
     }
 
     private Sequence seq;
-    void Interation(InputAction.CallbackContext context)
+
+    void SpitOut(InputAction.CallbackContext context)
     {
-        if(context.performed)
+        if (context.performed)
         {
-            var colliders = Physics.OverlapSphere(transform.position, 1.0f, 1 << LayerMask.NameToLayer("Interactable"),
-                QueryTriggerInteraction.Collide);
-            foreach (var collider in colliders)
-            {
-                var item = collider.gameObject.GetComponent<InteractableItem>();
-                if (item is IAbsorbTarget)
-                {
-                    var interactableItem = item as IAbsorbTarget;
-                    if (!interactableItem.IsAbsorbed())
-                    {
-                        seq = DOTween.Sequence();
-                        seq.Append(interactableItem.GetTransform().DOShakeRotation(1f, 10));
-                        seq.SetLoops(-1);
-                        seq.Play();
-                    }
-                    return;
-                }
-            }
-            
-        }
-        if(context.canceled)
-        {
-            if (seq != null && seq.IsActive())
-            {
-                seq.Kill();
-                seq = null;
-            }
             if(waterCount > 0)
             {
-                var colliders2 = Physics.OverlapSphere(transform.position, 1.0f, 1 << LayerMask.NameToLayer("Seed"),
+                var colliders2 = Physics.OverlapSphere(transform.position, InteractionRange, 1 << LayerMask.NameToLayer("Interactable"),
                     QueryTriggerInteraction.Collide);
-                foreach (var collider in colliders2)
+                foreach (var c in colliders2)
                 {
-                    var item = collider.gameObject.GetComponent<Seed>();
+                    var item = c.gameObject.GetComponent<Seed>();
                     if (item is Seed)
                     {
                         var seed = item as Seed;
@@ -86,23 +62,63 @@ public class K0PlayerController : ControllerBase, IAbsorbSource
                 Current.Released(this);
                 Current = null;
             }
-            else
+        }
+    }
+
+    T[] Overlap<T>(Vector3 center, float radius, int mask) where T : class
+    {
+        var colliders = Physics.OverlapSphere(center, radius, mask, QueryTriggerInteraction.Collide);
+        List<T> result = new List<T>(); 
+        foreach (var c in colliders)
+        {
+            var item = c.gameObject.GetComponent<InteractableItem>();
+            if (item != null)
             {
-                var colliders = Physics.OverlapSphere(transform.position, 1.0f, 1 << LayerMask.NameToLayer("Interactable"),
-                    QueryTriggerInteraction.Collide);
-                foreach (var collider in colliders)
+                var t = item as T;
+                if (t is not null)
                 {
-                    var item = collider.gameObject.GetComponent<InteractableItem>();
-                    if (item is IAbsorbTarget)
-                    {
-                        var interactableItem = item as IAbsorbTarget;
-                        if(!interactableItem.IsAbsorbed())
-                            Absorb(interactableItem);
-                        return;
-                    }
+                    result.Add(t);
                 }
-            
             }
+        }
+        return result.ToArray();
+    }
+    public float InteractionRange = 1.0f;
+    void Interaction(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+        {
+            var colliders = Overlap<InteractableItem>(transform.position, InteractionRange, 1 << LayerMask.NameToLayer("Interactable"));
+            foreach (var it in colliders)
+            {
+                if (!it.IsAbsorbed())
+                {
+                    seq = DOTween.Sequence();
+                    seq.Append(it.GetTransform().DOShakeRotation(1f, 10));
+                    seq.SetLoops(-1);
+                    seq.Play();
+                }
+                return;
+            }
+        }
+        
+        if(context.canceled)
+        {
+            if (seq != null && seq.IsActive())
+            {
+                seq.Kill();
+                seq = null;
+            }
+          
+            var colliders = Overlap<IAbsorbTarget>(transform.position, InteractionRange, 1 << LayerMask.NameToLayer("Interactable"));
+            foreach (var item in colliders)
+            {
+                if(!item.IsAbsorbed())
+                    Absorb(item);
+                return;
+            }
+        
+            
         }
     }
 
@@ -113,8 +129,11 @@ public class K0PlayerController : ControllerBase, IAbsorbSource
         Input.actions.FindAction("Move").performed += ctx => Move(ctx.ReadValue<Vector2>());
         Input.actions.FindAction("Move").canceled += ctx => Move(Vector2.zero);
         Input.actions.FindAction("Jump").performed += Jump;
-        Input.actions.FindAction("Interaction").performed += Interation;
-        Input.actions.FindAction("Interaction").canceled += Interation;
+        Input.actions.FindAction("Interaction").performed += Interaction;
+        Input.actions.FindAction("Interaction").canceled += Interaction;
+        Input.actions.FindAction("Release").performed += SpitOut;
+        Input.actions.FindAction("Release").canceled += SpitOut;
+        
 
 
         //animator = GetComponent<Animator>();
@@ -135,7 +154,7 @@ public class K0PlayerController : ControllerBase, IAbsorbSource
         {
             _water = value;
             float scale = _water / 5.0f + 1.0f;
-            transform.localScale = new Vector3(scale, scale, scale);
+            //ScaleTarget.localScale = new Vector3(scale, scale, scale);
         }
     }
 

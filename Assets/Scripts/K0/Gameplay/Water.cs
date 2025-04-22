@@ -17,6 +17,7 @@ public class Water : InteractableItem, IAbsorbTarget
 
     public void GetAbsorbed(IAbsorbSource absorbSource)
     {
+        base.GetAbsorbed(absorbSource);
         if (_absorbSource != null)
             return;
         _absorbSource = absorbSource;
@@ -29,7 +30,6 @@ public class Water : InteractableItem, IAbsorbTarget
     
     public void Released(IAbsorbSource absorbSource)
     {
-        
         
     }
 

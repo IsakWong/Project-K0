@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
@@ -31,6 +32,7 @@ public class InteractableItem : MonoBehaviour, IAbsorbTarget
     protected IAbsorbSource _absorbSource = null;
     protected IAbsorbSource _realAbsorbSource = null;
     
+    public List<AudioClip> AbsorbSound;
     
     private bool isAborbing = false;
     private bool isAborbed = false;
@@ -44,9 +46,12 @@ public class InteractableItem : MonoBehaviour, IAbsorbTarget
 
     public void GetAbsorbed(IAbsorbSource absorbSource)
     {
+        KGameCore.SystemAt<AudioModule>().PlayAudioAtPosition(AbsorbSound.RandomAccess(), transform.position);
+        
         if (isAborbing || isAborbed)
             return;
         isAborbing = true;
+        
         GetComponent<Collider>().isTrigger = true;
         var rigidbody = GetComponent<Rigidbody>();
         if(rigidbody)
@@ -60,16 +65,14 @@ public class InteractableItem : MonoBehaviour, IAbsorbTarget
             Vector3.zero, 
             0.5f);
         oldScale = transform.localScale;
-        seq.Insert(0.0f, t);
-        var scale = transform.DOScale(Vector3.zero, 0.4f)
-            .SetEase(Ease.InQuart);
-        seq.Insert(0.5f, scale);
+        seq.Append(t);
         seq.Play();
         seq.AppendCallback(() =>
         {
             isAborbing = false;
             isAborbed = true;
             gameObject.SetActive(false);
+            _realAbsorbSource = absorbSource;
             absorbSource.OnTargetAbsorbed(this);
         });
         t.SetTarget(transform);

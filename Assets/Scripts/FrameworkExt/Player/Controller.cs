@@ -14,13 +14,13 @@ public class ControllerBase : MonoBehaviour
     protected void OnEnable()
     {
         controllerCmdQueue.Queue.Clear();
-        KGameCore.RequireSystem<GameplayModule>().RegisterController(this, true);
+        //KGameCore.RequireSystem<GameplayModule>().RegisterController(this, true);
     }
 
     protected void OnDisable()
     {
         controllerCmdQueue.Queue.Clear();
-        KGameCore.RequireSystem<GameplayModule>().RegisterController(this, false);
+        //KGameCore.RequireSystem<GameplayModule>().RegisterController(this, false);
     }
 
     public virtual void OnLogic()

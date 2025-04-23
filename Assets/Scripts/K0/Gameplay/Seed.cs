@@ -60,7 +60,7 @@ public class Seed : InteractableItem
             yw.transform.position = transform.position;
 
             Destroy(this.gameObject);
-            SeedUI.Current.AddSeed();
+//            SeedUI.Current.AddSeed();
         }
         if (type == SeedType.JumpTree)
         {
@@ -69,59 +69,6 @@ public class Seed : InteractableItem
             tree.transform.position = hole.transform.position;
             Destroy(this.gameObject);
             SeedUI.Current.AddSeed();
-        }
-    }
-    // Update is called once per frame
-    private Vector3 _upSpeed;
-    void Update()
-    {
-        switch (seedState)
-        {
-            case SeedState.OnGround:
-                break;
-            case SeedState.Floating:               
-                var delta = (transform.position - ObtainerCenter.position);
-                delta.y = 0;
-                if(delta.magnitude < 0.1f)
-                {
-                    seedState = SeedState.Fixed;
-                    _realAbsorbSource = _absorbSource;
-                }
-                break;
-            case SeedState.Fixed:
-                transform.position = ObtainerCenter.position;
-                
-                break;
-            default:
-                throw new ArgumentOutOfRangeException();
-        }
-        if (num_water >= need_water)
-        {
-            Grow();
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "hole")
-        {
-            hole = other.gameObject;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "hole")
-        {
-            hole = null;
-        }
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.tag == "hole")
-        {
-            hole = other.gameObject;
         }
     }
 }

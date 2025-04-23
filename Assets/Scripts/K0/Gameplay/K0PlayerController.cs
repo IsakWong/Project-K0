@@ -51,8 +51,11 @@ public class K0PlayerController : ControllerBase, IAbsorbSource
                     if (item is Seed)
                     {
                         var seed = item as Seed;
-                        if(seed.seedState == Seed.SeedState.OnGround)
+                        if (seed.seedState == Seed.SeedState.OnGround)
+                        {
+                            rigidBody.AddForce(Vector3.up * 5, ForceMode.VelocityChange);
                             seed.Grow();
+                        }
                         return;
                     }
                 }
@@ -86,6 +89,8 @@ public class K0PlayerController : ControllerBase, IAbsorbSource
     public float InteractionRange = 1.0f;
     void Interaction(InputAction.CallbackContext context)
     {
+        if(Current != null)
+            return;
         if(context.performed)
         {
             var colliders = Overlap<InteractableItem>(transform.position, InteractionRange, 1 << LayerMask.NameToLayer("Interactable"));
@@ -142,7 +147,8 @@ public class K0PlayerController : ControllerBase, IAbsorbSource
 
     private void Jump(InputAction.CallbackContext context)
     {
-        rigidBody.AddForce(new Vector3(0, 5.0f, 0), ForceMode.VelocityChange);
+        if(isGrounded)
+            rigidBody.AddForce(new Vector3(0, 5.0f, 0), ForceMode.VelocityChange);
     }
 
     private float _water;

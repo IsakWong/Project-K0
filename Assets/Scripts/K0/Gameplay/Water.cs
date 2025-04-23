@@ -30,6 +30,7 @@ public class Water : InteractableItem, IAbsorbTarget
     
     public void Released(IAbsorbSource absorbSource)
     {
+        base.Released(absorbSource);
         
     }
 

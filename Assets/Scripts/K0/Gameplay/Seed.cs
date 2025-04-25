@@ -37,13 +37,29 @@ public class Seed : InteractableItem
     {
         _audio = GetComponent<AudioSource>();
         _audio.loop = false;
-        var handle = TreeAsset.AssetRef.LoadAssetAsync<GameObject>();
-        handle.WaitForCompletion();
-        //_audio.playOnAwake = false;
-        // this.GetComponent<Rigidbody>().e
+        
+        TreeAsset.AssetRef.LoadAssetAsync<GameObject>().WaitForCompletion();
+        VFX_Pong.AssetRef.LoadAssetAsync<GameObject>().WaitForCompletion();
+        JumpTreeAsset.AssetRef.LoadAssetAsync<GameObject>().WaitForCompletion();
     }
 
+    
     public Variant TreeAsset = new Variant();
+    public Variant JumpTreeAsset = new Variant();
+    public Variant VFX_Pong = new Variant();
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.layer != LayerMask.NameToLayer("Interactable"))
+            return;
+        var otherGO = other.gameObject.GetComponent<InteractableItem>();
+        var water = otherGO as Water;
+        if (water)
+        {
+            Destroy(water.gameObject);
+            Grow();
+        }
+    }
 
     public void Grow()
     {
@@ -53,22 +69,23 @@ public class Seed : InteractableItem
             GameObject tree = (GameObject)Instantiate(TreeAsset.AssetRef.Asset);
             tree.transform.position = transform.position + new Vector3(0, -0.12f, 0);
             
-            GameObject pong = (GameObject)Instantiate(Resources.Load("PONG"));
+            GameObject pong = (GameObject)Instantiate(VFX_Pong.AssetRef.Asset);
             pong.transform.position = transform.position;  
 
-            GameObject yw = (GameObject)Instantiate(Resources.Load("烟雾效果"));
-            yw.transform.position = transform.position;
-
             Destroy(this.gameObject);
-//            SeedUI.Current.AddSeed();
         }
         if (type == SeedType.JumpTree)
         {
             _audio.Play();
-            GameObject tree = (GameObject)Instantiate(Resources.Load("弹跳棉花树"));
-            tree.transform.position = hole.transform.position;
+            
+            GameObject tree = (GameObject)Instantiate(JumpTreeAsset.AssetRef.Asset);
+            tree.transform.position = transform.position + new Vector3(0, -0.12f, 0);
+                
+            GameObject pong = (GameObject)Instantiate(VFX_Pong.AssetRef.Asset);
+            pong.transform.position = transform.position;
+            
             Destroy(this.gameObject);
-            SeedUI.Current.AddSeed();
+            //SeedUI.Current.AddSeed();
         }
     }
 }

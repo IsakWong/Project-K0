@@ -11,16 +11,10 @@ public class K0PlayerController : ControllerBase, IAbsorbSource
 {
     public PlayerInput Input;
 
-    public bool isshadow;
-    public Transform ScaleTarget;
-    private Rigidbody rigidBody;
-
     private float time = 0.0f;
     // private Animator animator;
-
-    public Transform Center;
-
     private bool isRotate = false;
+    private Rigidbody rigidBody;
 
     private Vector3 input;
 
@@ -28,11 +22,6 @@ public class K0PlayerController : ControllerBase, IAbsorbSource
     {
         input.x = move.x;
         input.z = move.y;
-        //转向
-        // var cameraFoward = Camera.main.transform.rotation * input;
-        // cameraFoward.y = 0;
-        // input.x = cameraFoward.x;
-        // input.z = cameraFoward.z;
     }
 
     private Sequence seq;
@@ -41,25 +30,6 @@ public class K0PlayerController : ControllerBase, IAbsorbSource
     {
         if (context.performed)
         {
-            if(waterCount > 0)
-            {
-                var colliders2 = Physics.OverlapSphere(transform.position, InteractionRange, 1 << LayerMask.NameToLayer("Interactable"),
-                    QueryTriggerInteraction.Collide);
-                foreach (var c in colliders2)
-                {
-                    var item = c.gameObject.GetComponent<Seed>();
-                    if (item is Seed)
-                    {
-                        var seed = item as Seed;
-                        if (seed.seedState == Seed.SeedState.OnGround)
-                        {
-                            rigidBody.AddForce(Vector3.up * 5, ForceMode.VelocityChange);
-                            seed.Grow();
-                        }
-                        return;
-                    }
-                }
-            }
             if (Current != null)
             {
                 Current.Released(this);
@@ -86,11 +56,11 @@ public class K0PlayerController : ControllerBase, IAbsorbSource
         }
         return result.ToArray();
     }
-    public float InteractionRange = 1.0f;
+    
+    public float InteractionRange = 3.0f;
+    
     void Interaction(InputAction.CallbackContext context)
     {
-        if(Current != null)
-            return;
         if(context.performed)
         {
             var colliders = Overlap<InteractableItem>(transform.position, InteractionRange, 1 << LayerMask.NameToLayer("Interactable"));
@@ -106,7 +76,6 @@ public class K0PlayerController : ControllerBase, IAbsorbSource
                 return;
             }
         }
-        
         if(context.canceled)
         {
             if (seq != null && seq.IsActive())
@@ -114,7 +83,6 @@ public class K0PlayerController : ControllerBase, IAbsorbSource
                 seq.Kill();
                 seq = null;
             }
-          
             var colliders = Overlap<IAbsorbTarget>(transform.position, InteractionRange, 1 << LayerMask.NameToLayer("Interactable"));
             foreach (var item in colliders)
             {
@@ -122,8 +90,6 @@ public class K0PlayerController : ControllerBase, IAbsorbSource
                     Absorb(item);
                 return;
             }
-        
-            
         }
     }
 
@@ -138,30 +104,11 @@ public class K0PlayerController : ControllerBase, IAbsorbSource
         Input.actions.FindAction("Interaction").canceled += Interaction;
         Input.actions.FindAction("Release").performed += SpitOut;
         Input.actions.FindAction("Release").canceled += SpitOut;
-        
-
-
-        //animator = GetComponent<Animator>();
-        // rigidbody = GetComponent<Rigidbody>();
     }
 
     private void Jump(InputAction.CallbackContext context)
     {
-        if(isGrounded)
-            rigidBody.AddForce(new Vector3(0, 5.0f, 0), ForceMode.VelocityChange);
-    }
-
-    private float _water;
-
-    public float waterCount
-    {
-        get => _water;
-        set
-        {
-            _water = value;
-            float scale = _water / 5.0f + 1.0f;
-            //ScaleTarget.localScale = new Vector3(scale, scale, scale);
-        }
+        rigidBody.AddForce(new Vector3(0, 5.0f, 0), ForceMode.VelocityChange);
     }
 
     private bool isGrounded;
@@ -228,26 +175,8 @@ public class K0PlayerController : ControllerBase, IAbsorbSource
             Current.GetAbsorbed(this);
     }
 
-    public void RotateTowards(Vector3 worldDirection, float maxDegreesDelta, bool updateYawOnly = true)
-    {
-        Vector3 characterUp = transform.up;
-
-        if (updateYawOnly)
-            worldDirection = worldDirection.projectedOnPlane(characterUp);
-
-        if (worldDirection == Vector3.zero)
-            return;
-        Quaternion targetRotation = Quaternion.LookRotation(worldDirection, characterUp);
-        transform.localRotation =
-            Quaternion.RotateTowards(transform.localRotation, targetRotation, maxDegreesDelta);
-    }
     public void OnTargetAbsorbed(IAbsorbTarget target)
     {
-        if (target is Water)
-        {
-            var w = target as Water;
-            waterCount = w.WaterAmount;
-        }
     }
 
     public Component GetComponent()

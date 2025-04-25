@@ -13,16 +13,25 @@ namespace K0.Gameplay
         public Ray End;
 
         private Dictionary<InteractableItem, Sequence> interactableItems = new ();
-        private void OnCollisionEnter(Collider other)
+        private void OnCollisionEnter(Collision other)
         {
-
             var item = other.gameObject.GetComponent<InteractableItem>();
             if (item && !interactableItems.ContainsKey(item))
             {
                 var seq = DOTween.Sequence();
+                seq.Append()
                 interactableItems[item] = seq;
             }
         }
+
+        // private void FixedUpdate()
+        // {
+        //     foreach (var it in interactableItems)
+        //     {
+        //         it.
+        //         
+        //     }
+        // }
 
         private void OnCollisionExit(Collision other)
         {

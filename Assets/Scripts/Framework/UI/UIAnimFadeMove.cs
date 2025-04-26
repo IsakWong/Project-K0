@@ -30,6 +30,7 @@ public class UIAnimFadeMove : UIAnimBase
 
     private void Awake()
     {
+        
         if (mRootTransform is null)
             mRootTransform = this.GetComponent<RectTransform>();
         if (HideWhenAwake)
@@ -44,10 +45,12 @@ public class UIAnimFadeMove : UIAnimBase
     }
 
     private Sequence _sequence;
+    public Ease MoveEase = Ease.OutQuart;
 
     public override Sequence Show(float delta = 0.3f, float lifetime = -1f)
     {
-        mRootCanvasGroup.interactable = true;
+        if(mRootCanvasGroup)
+            mRootCanvasGroup.interactable = true;
         gameObject.SetActive(true);
         if (_sequence != null)
         {
@@ -55,7 +58,8 @@ public class UIAnimFadeMove : UIAnimBase
             _sequence.Kill();
         }
 
-        mRootCanvasGroup.DOFade(1.0f, delta);
+        if(mRootCanvasGroup)
+            mRootCanvasGroup.DOFade(1.0f, delta);
 
         var start = mTargetAnchoredPosition;
         switch (mAnimDirection)
@@ -80,11 +84,12 @@ public class UIAnimFadeMove : UIAnimBase
         mRootTransform.gameObject.SetActive(true);
 
         mRootTransform.anchoredPosition = start;
-        _sequence.Append(mRootTransform.DOAnchorPos(mTargetAnchoredPosition, delta).SetEase(Ease.InOutQuad));
+        _sequence.Append(mRootTransform.DOAnchorPos(mTargetAnchoredPosition, delta).SetEase(MoveEase));
         if (lifetime > -1f)
         {
             _sequence.AppendInterval(lifetime);
-            _sequence.Append(mRootCanvasGroup.DOFade(0.0f, delta));
+            if(mRootCanvasGroup)
+                _sequence.Append(mRootCanvasGroup.DOFade(0.0f, delta));
         }
 
         _sequence.Play();
@@ -93,7 +98,8 @@ public class UIAnimFadeMove : UIAnimBase
 
     public override void Hide(float delta = 0.3f)
     {
-        mRootCanvasGroup.interactable = false;
+        if(mRootCanvasGroup)
+            mRootCanvasGroup.interactable = false;
         if (_sequence != null)
         {
             _sequence.IsActive();
@@ -101,7 +107,8 @@ public class UIAnimFadeMove : UIAnimBase
         }
 
         _sequence = DOTween.Sequence();
-        _sequence.Append(mRootCanvasGroup.DOFade(0.0f, delta));
+        if(mRootCanvasGroup)
+            _sequence.Append(mRootCanvasGroup.DOFade(0.0f, delta));
         _sequence.AppendCallback(() => { mRootTransform.gameObject.SetActive(false); });
     }
 }

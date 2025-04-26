@@ -21,7 +21,8 @@ namespace K1.Editor
             var objectProp = property.FindPropertyRelative("mObject");
             var assetRef = property.FindPropertyRelative("AssetRef");
             var typeProperty = property.FindPropertyRelative("mType");
-
+            rect = EditorGUI.PrefixLabel(rect, GUIUtility.GetControlID(FocusType.Passive), label);
+            
             EditorGUIUtility.wideMode = true;
             EditorGUIUtility.labelWidth = 70;
             float height = rect.height * 0.5f;

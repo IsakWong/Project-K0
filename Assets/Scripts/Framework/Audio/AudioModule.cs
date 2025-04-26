@@ -76,7 +76,7 @@ public class AudioModule : KModule
         }
     }
 
-    public AudioSource PlayAudio(AudioClip clip, float volume = 1.0f, bool autoDestroy = true)
+    public AudioSource PlayAudio(AudioClip clip, float volume = 1.0f, bool autoDestroy = true, bool loop=false)
     {
         if (clip == null)
             return null;
@@ -85,7 +85,9 @@ public class AudioModule : KModule
         newAudio.transform.SetParent(transform.parent);
         var audio = newAudio.GetComponent<AudioSource>();
         audio.volume = volume;
-        audio.PlayOneShot(clip);
+        audio.clip = clip;
+        audio.loop = loop;
+        audio.Play();
         newAudio.transform.SetParent(transform);
         if (autoDestroy)
         {
@@ -95,7 +97,7 @@ public class AudioModule : KModule
         return audio;
     }
 
-    public AudioSource PlayAudioAtPosition(AudioClip clip, Vector3 pos, bool autoDestroy = true)
+    public AudioSource PlayAudioAtPosition(AudioClip clip, Vector3 pos,  bool autoDestroy = true, float volume=1.0f)
     {
         if (clip == null)
             return null;
@@ -103,9 +105,9 @@ public class AudioModule : KModule
         newAudio.name = clip.name;
         newAudio.transform.SetParent(transform.parent);
         var audio = newAudio.GetComponent<AudioSource>();
-        audio.minDistance = 5.0f;
+        audio.minDistance = 2.0f;
         audio.maxDistance = 30.0f;
-        audio.volume = 1.0f;
+        audio.volume = volume;
         audio.dopplerLevel = 0;
         audio.PlayOneShot(clip);
         if (autoDestroy)

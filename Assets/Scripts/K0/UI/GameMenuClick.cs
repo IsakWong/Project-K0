@@ -14,25 +14,11 @@ public class GameMenuClick : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        _animator = GetComponent<Animator>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            _animator.SetBool("move_in", true);
-            _animator.SetBool("move_out", false);
-            GameObject.FindGameObjectWithTag("MainCamera").GetComponent<BlurOptimized>().enabled = true;
-        }
     }
 
     public void OnResumeClick()
     {
-        _animator.SetBool("move_in", false);
-        _animator.SetBool("move_out", true);
-
+        GetComponent<UIAnimFadeMove>().Hide();
         GameObject.FindGameObjectWithTag("MainCamera").GetComponent<BlurOptimized>().enabled = false;
     }
 

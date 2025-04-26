@@ -19,7 +19,7 @@ namespace K0.Gameplay
             if (item && !interactableItems.ContainsKey(item))
             {
                 var seq = DOTween.Sequence();
-                seq.Append()
+                
                 interactableItems[item] = seq;
             }
         }

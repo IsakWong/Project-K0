@@ -19,7 +19,7 @@ public class LoadingScene : MonoBehaviour
     private float _loadingTime = 0;
 
     // Use this for initialization
-    void Start()
+    public void BeginLoad()
     {
         StartCoroutine(Load());
     }

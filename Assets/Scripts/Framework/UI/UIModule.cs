@@ -1,5 +1,6 @@
 using K1.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIModule : KModule
 {
@@ -23,9 +24,24 @@ public class UIModule : KModule
 
     public Canvas OverlayCanvas;
 
+    private void InitCanvas()
+    {
+        if(OverlayCanvas is null)
+        {
+            var roots = SceneManager.GetActiveScene().GetRootGameObjects();
+            foreach (var it in roots)
+            {
+                OverlayCanvas = it.GetComponent<Canvas>();
+                if(OverlayCanvas)
+                    break;
+            }
+        }
+        DontDestroyOnLoad(OverlayCanvas.gameObject);
+    }
     protected void Awake()
     {
         base.Awake();
+        InitCanvas();
         for (int idx = 0; idx < OverlayCanvas.transform.childCount; idx++)
         {
             UIPanel p = OverlayCanvas.transform.GetChild(idx).GetComponent<UIPanel>();

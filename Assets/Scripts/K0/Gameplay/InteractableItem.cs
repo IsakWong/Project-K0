@@ -66,7 +66,6 @@ public class InteractableItem : MonoBehaviour, IAbsorbTarget
             0.5f);
         oldScale = transform.localScale;
         seq.Append(t);
-        seq.Play();
         seq.AppendCallback(() =>
         {
             isAborbing = false;
@@ -75,6 +74,7 @@ public class InteractableItem : MonoBehaviour, IAbsorbTarget
             _realAbsorbSource = absorbSource;
             absorbSource.OnTargetAbsorbed(this);
         });
+        seq.Play();
         t.SetTarget(transform);
         _absorbSource = absorbSource;
     }
@@ -98,7 +98,6 @@ public class InteractableItem : MonoBehaviour, IAbsorbTarget
     {
         gameObject.SetActive(true);
         transform.position = absorbSource.GetTransform().position;
-        
         var scale = transform.DOScale(oldScale, 0.5f)
             .SetEase(Ease.InQuart);
         scale.Play();
@@ -109,11 +108,13 @@ public class InteractableItem : MonoBehaviour, IAbsorbTarget
             rigidbody.isKinematic = false;
             rigidbody.WakeUp();
             if(_realAbsorbSource != null)
-                rigidbody.velocity = _realAbsorbSource.GetTransform().forward * 3;
+                rigidbody.AddForce(_realAbsorbSource.GetTransform().forward * 5, ForceMode.VelocityChange);
         }else
         {
             transform.DOMove(transform.position + _realAbsorbSource.GetTransform().forward * 2, 0.5f);            
         }
+        isAborbed = false;
+        isAborbing = false;
         _realAbsorbSource = null;
         _absorbSource = null;
     }

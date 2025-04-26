@@ -66,6 +66,11 @@ public class Seed : InteractableItem
         if (type == SeedType.PlatformTree)
         {
             _audio.Play();
+            var ret = SlimeCharacter.Overlap<SlimeCharacter>(transform.position, 2.0f, 1 << LayerMask.NameToLayer("Player"));
+            foreach (var it in ret)
+            {
+                it.SlimeRigidBody.AddForce(Vector3.up * 5.0f, ForceMode.VelocityChange);
+            }
             GameObject tree = (GameObject)Instantiate(TreeAsset.AssetRef.Asset);
             tree.transform.position = transform.position + new Vector3(0, -0.12f, 0);
             

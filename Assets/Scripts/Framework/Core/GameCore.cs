@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Newtonsoft.Json.UnityConverters.Math;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
 using QuaternionConverter = Newtonsoft.Json.UnityConverters.Math.QuaternionConverter;
 using Vector2Converter = Newtonsoft.Json.UnityConverters.Math.Vector2Converter;
@@ -103,8 +104,21 @@ public class KGameCore
                 break;
         }
 
-        var modulePrefab = proxy.ModulePrefab[name];
-        inst ??= GameObject.Instantiate(modulePrefab).GetComponent<T>();
+        GameObject modulePrefab =null;
+        if (proxy.ModulePrefab.ContainsKey(name))
+        {
+            modulePrefab = proxy.ModulePrefab[name];
+        }
+        if (modulePrefab == null)
+        {
+            var GO = new GameObject();
+            inst = GO.AddComponent<T>();
+        }
+        else
+        {
+            inst ??= GameObject.Instantiate(modulePrefab).GetComponent<T>();    
+        }
+        
         if (inst is not null)
         {
             Modules[name] = inst;
@@ -164,6 +178,10 @@ public class KGameCore
         };
     }
 
+    public void LoadScene(AssetReference reference)
+    {
+        
+    }
     void Init()
     {
 #if !UNITY_EDITOR

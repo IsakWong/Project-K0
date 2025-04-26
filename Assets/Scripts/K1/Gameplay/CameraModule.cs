@@ -67,7 +67,7 @@ public class CameraModule : KModule
         Brain.ManualUpdate();
     }
 
-    protected void Awake()
+    protected new void Awake()
     {
         base.Awake();
         foreach (var cam in Cameras)

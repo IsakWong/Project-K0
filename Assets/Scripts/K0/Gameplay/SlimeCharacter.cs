@@ -10,9 +10,7 @@ using UnityEngine.Serialization;
 
 public class SlimeCharacter : MonoBehaviour, IAbsorbSource
 {
-    private float time = 0.0f;
-    // private Animator animator;
-    private bool isRotate = false;
+    // private Animator animator
     public Rigidbody SlimeRigidBody;
     public ObiSoftbody Softbody;
     
@@ -22,11 +20,19 @@ public class SlimeCharacter : MonoBehaviour, IAbsorbSource
     public List<AudioClip> JumpSFX = new List<AudioClip>();   
     public List<AudioClip> OnGroundSFX = new List<AudioClip>();
     public Vector3 InputMove;
-    
+    public ObiEmitter Emitter;
     private Sequence seq;
 
     public void SpitOut(InputAction.CallbackContext context)
     {
+        if(context.canceled)
+        {
+            Emitter.speed = 0.0f;
+        }
+        else
+        {
+            Emitter.speed = 2.5f;
+        }
         if (context.performed)
         {
             if (Current != null)
@@ -156,7 +162,7 @@ public class SlimeCharacter : MonoBehaviour, IAbsorbSource
 
             // 平滑旋转
             transform.rotation = Quaternion.RotateTowards(
-                SlimeRigidBody.rotation, 
+                transform.rotation, 
                 targetRotation, 
                 rotationSpeed * Time.fixedDeltaTime
             );

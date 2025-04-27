@@ -103,7 +103,13 @@ public class KGameCore
             if (inst is not null)
                 break;
         }
-
+        
+        if (inst is not null)
+        {
+            Modules[name] = inst;
+            return inst;
+        }
+        
         GameObject modulePrefab =null;
         if (proxy.ModulePrefab.ContainsKey(name))
         {

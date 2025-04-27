@@ -368,8 +368,6 @@ namespace K1.Gameplay
             }
         }
 
-        private int PatternCount = 5;
-
         public void PatternCooldownConfrontation()
         {
             using (new ScopeSequence(CurrentBuilder, "CooldownConfrontation"))

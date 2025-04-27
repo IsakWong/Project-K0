@@ -23,7 +23,7 @@ namespace K1.Gameplay
 
         private float _remainTime = 0.0f;
 
-        protected void Awake()
+        protected new void Awake()
         {
             var layer = LayerMask.NameToLayer("FuncUnit");
             gameObject.layer = layer;

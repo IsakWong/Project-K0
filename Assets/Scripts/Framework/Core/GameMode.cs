@@ -13,6 +13,7 @@ public class GameMode : MonoBehaviour
     void Awake()
     {
         OnAwake();
+        KGameCore.Instance.SwitchGameMode(this);
     }
 
     public virtual void OnAwake()
@@ -38,6 +39,5 @@ public class GameMode : MonoBehaviour
 
     private void Start()
     {
-        KGameCore.Instance.SwitchGameMode(this);
     }
 }

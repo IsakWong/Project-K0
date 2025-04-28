@@ -1,4 +1,5 @@
-﻿using UnityEngine.AddressableAssets;
+﻿using Obi;
+using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
@@ -13,6 +14,8 @@ namespace K0
 //            LocalPlayerController.enabled = false;
             
         }
+
+        public ObiSolver Solver;
 
         public AssetReference LoadingLevel;
         public void Win(AssetReference NextLevel)

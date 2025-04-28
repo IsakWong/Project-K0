@@ -13,7 +13,7 @@ public class SlimeCharacter : MonoBehaviour, IAbsorbSource
     // private Animator animator
     public Rigidbody SlimeRigidBody;
     public ObiSoftbody Softbody;
-    
+    public AudioSource SpitSFX;
     public AudioSource Walk;
     public AudioClip GrabSFX;
     public AudioClip GrabFinishSFX;
@@ -27,6 +27,7 @@ public class SlimeCharacter : MonoBehaviour, IAbsorbSource
     {
         if(context.canceled)
         {
+            SpitSFX.Pause();
             Emitter.speed = 0.0f;
         }
         else
@@ -35,6 +36,11 @@ public class SlimeCharacter : MonoBehaviour, IAbsorbSource
         }
         if (context.performed)
         {
+            if(!SpitSFX.isPlaying)
+            {
+                SpitSFX.Play();
+            }
+            SpitSFX.UnPause();
             if (Current != null)
             {
                 Current.Released(this);

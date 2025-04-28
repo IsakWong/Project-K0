@@ -2,14 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using K0;
+using Obi;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 
 public class Seed : InteractableItem
 {
-    public float need_water = 10.0f;
-    public float num_water = 0;
     public SeedType type;
     //public bool IsSelected = false;
 
@@ -31,7 +31,10 @@ public class Seed : InteractableItem
         Fixed
     }
 
-    [FormerlySerializedAs("seed_state")] public SeedState seedState = SeedState.OnGround;
+    public SeedState seedState = SeedState.OnGround;
+    private float waterCount;
+    public float MaxWaterCount = 10.0f;
+
 
     void Start()
     {

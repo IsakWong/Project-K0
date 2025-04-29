@@ -11,24 +11,6 @@ public class StartGameClick : MonoBehaviour
     public AssetReference Level2;
     public AssetReference Level3;
 
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
-    public void OnBackClick()
-    {
-        var mainMenu = transform.parent.GetChild(0).gameObject.GetComponent<MainMenuClick>();
-        mainMenu._target = mainMenu.TargetCameras[0];
-        mainMenu.gameObject.GetComponent<Animator>().SetBool("move_in", true);
-        mainMenu.gameObject.GetComponent<Animator>().SetBool("move_out", false);
-        GetComponent<Animator>().SetBool("move_out", true);
-        GetComponent<Animator>().SetBool("move_in", false);
-    }
 
     public void OnLevel1Click()
     {

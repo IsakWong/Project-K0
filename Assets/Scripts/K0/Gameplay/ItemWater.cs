@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class Water : InteractableItem, IAbsorbTarget
+public class ItemWater : ItemInteractable, IAbsorbTarget
 {
     
 }

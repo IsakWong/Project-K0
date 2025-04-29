@@ -12,10 +12,10 @@ namespace K0.Gameplay
         public Ray Start;
         public Ray End;
 
-        private Dictionary<InteractableItem, Sequence> interactableItems = new ();
+        private Dictionary<ItemInteractable, Sequence> interactableItems = new ();
         private void OnCollisionEnter(Collision other)
         {
-            var item = other.gameObject.GetComponent<InteractableItem>();
+            var item = other.gameObject.GetComponent<ItemInteractable>();
             if (item && !interactableItems.ContainsKey(item))
             {
                 var seq = DOTween.Sequence();
@@ -35,7 +35,7 @@ namespace K0.Gameplay
 
         private void OnCollisionExit(Collision other)
         {
-            var item = other.gameObject.GetComponent<InteractableItem>();
+            var item = other.gameObject.GetComponent<ItemInteractable>();
             if (item && interactableItems.ContainsKey(item))
             {
                 interactableItems.Remove(item);

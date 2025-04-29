@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using DG.Tweening;
@@ -8,11 +9,21 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 
-public class K0PlayerController : ControllerBase
+public class PlayerControllerK0 : ControllerBase
 {
-    public PlayerInput Input;
+    private PlayerInput Input;
     public SlimeCharacter Slime;
-    private Vector3 input;
+
+    public override bool IsLocalPlayerController()
+    {
+        return true;
+    } 
+    
+    private void Awake()
+    {
+        Input = GetComponent<PlayerInput>();
+    }
+
     private void Move(Vector2 move)
     {
         Slime.InputMove.x = move.x;

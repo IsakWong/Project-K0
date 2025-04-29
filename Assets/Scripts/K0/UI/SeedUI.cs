@@ -32,8 +32,5 @@ public class SeedUI : MonoBehaviour
         i++;
         //_audio.clip = bombSFX;
         _audio.PlayOneShot(bombSFX);
-        GetComponent<Text>().text = i.ToString();
-        if (i >= MaxSeed)
-            VictoryMenuClick.Current.Victory();
     }
 }

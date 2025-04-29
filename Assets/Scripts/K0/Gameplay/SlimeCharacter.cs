@@ -55,7 +55,7 @@ public class SlimeCharacter : MonoBehaviour, IAbsorbSource
         List<T> result = new List<T>(); 
         foreach (var c in colliders)
         {
-            var item = c.gameObject.GetComponent<InteractableItem>();
+            var item = c.gameObject.GetComponent<ItemInteractable>();
             if (item != null)
             {
                 var t = item as T;
@@ -75,7 +75,7 @@ public class SlimeCharacter : MonoBehaviour, IAbsorbSource
     {
         if(context.performed)
         {
-            var colliders = Overlap<InteractableItem>(transform.position, InteractionRange, 1 << LayerMask.NameToLayer("Interactable"));
+            var colliders = Overlap<ItemInteractable>(transform.position, InteractionRange, 1 << LayerMask.NameToLayer("Interactable"));
             foreach (var it in colliders)
             {
                 if (!it.IsAbsorbed())

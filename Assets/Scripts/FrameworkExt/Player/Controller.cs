@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ControllerBase : MonoBehaviour
 {
@@ -26,5 +27,17 @@ public class ControllerBase : MonoBehaviour
     public virtual void OnLogic()
     {
         controllerCmdQueue.ProcessOnce();
+    }
+
+    public virtual bool IsLocalPlayerController()
+    {
+        return false;
+    }
+
+    public virtual PlayerInput GetLocalPlayerInput()
+    {
+        if (!IsLocalPlayerController())
+            return null;
+        return GetComponent<PlayerInput>();
     }
 }

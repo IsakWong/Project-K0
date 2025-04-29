@@ -22,7 +22,7 @@ public interface IAbsorbTarget
     Transform GetTransform();
 
 }
-public class InteractableItem : MonoBehaviour, IAbsorbTarget
+public class ItemInteractable : MonoBehaviour, IAbsorbTarget
 {
     public void Interaction()
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraFollow : MonoBehaviour
+public class PlayerCameraFollow : MonoBehaviour
 {
     // Use this for initialization
 

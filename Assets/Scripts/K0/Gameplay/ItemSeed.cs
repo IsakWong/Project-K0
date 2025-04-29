@@ -3,12 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using K0;
+using K0.Gameplay;
 using Obi;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 
-public class Seed : InteractableItem
+public class ItemSeed : ItemInteractable
 {
     public SeedType type;
     //public bool IsSelected = false;
@@ -32,9 +33,6 @@ public class Seed : InteractableItem
     }
 
     public SeedState seedState = SeedState.OnGround;
-    private float waterCount;
-    public float MaxWaterCount = 10.0f;
-
 
     void Start()
     {
@@ -55,8 +53,8 @@ public class Seed : InteractableItem
     {
         if (other.gameObject.layer != LayerMask.NameToLayer("Interactable"))
             return;
-        var otherGO = other.gameObject.GetComponent<InteractableItem>();
-        var water = otherGO as Water;
+        var otherGO = other.gameObject.GetComponent<ItemInteractable>();
+        var water = otherGO as ItemWater;
         if (water)
         {
             Destroy(water.gameObject);
@@ -69,7 +67,7 @@ public class Seed : InteractableItem
         if (type == SeedType.PlatformTree)
         {
             _audio.Play();
-            var ret = SlimeCharacter.Overlap<SlimeCharacter>(transform.position, 2.0f, 1 << LayerMask.NameToLayer("Player"));
+            var ret = SlimeCharacter.Overlap<SlimeCharacter>(transform.position, 2.0f, 1 << ProjectConstantK0.kLayerPlayer);
             foreach (var it in ret)
             {
                 it.SlimeRigidBody.AddForce(Vector3.up * 5.0f, ForceMode.VelocityChange);
@@ -95,5 +93,7 @@ public class Seed : InteractableItem
             Destroy(this.gameObject);
             //SeedUI.Current.AddSeed();
         }
+        var gameMode = KGameCore.Instance.CurrentGameMode as K0GameMode;
+        gameMode.SeedGrow();
     }
 }

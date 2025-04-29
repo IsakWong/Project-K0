@@ -1,16 +1,34 @@
 ﻿using System;
+using K0;
 using K1.UI;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class K0UILevelMain : UIPanel
 {
     public GameObject Menu;
+    public Text SeedCount;
 
-    protected void FixedUpdate()
+    private void OnBack(InputAction.CallbackContext ctx)
     {
-        if (Input.GetKey(KeyCode.Escape) && !Menu.activeInHierarchy)
-        {
-            Menu.GetComponent<UIAnimFadeMove>().Show(1.0f);
-        }
+        if(!Menu.activeInHierarchy)
+            Menu.GetComponent<UIAnimFade>().Show(0.5f);
+        else
+            Menu.GetComponent<UIAnimFade>().Hide(0.5f);
+        
+
     }
+    private void Start()
+    {
+        var controller = KGameCore.SystemAt<PlayerModule>().LocalPlayerController as PlayerControllerK0;
+        var actionMap = controller.GetLocalPlayerInput().actions.FindActionMap("UI");
+        actionMap.FindAction("Menu").performed += OnBack;
+        var gameMode = KGameCore.Instance.CurrentGameMode as K0GameMode;
+        gameMode.OnSeedGrowEvent += () =>
+        {
+            SeedCount.text = gameMode.GrowSeedCount.ToString();
+        };
+    }
+
 }

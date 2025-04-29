@@ -6,15 +6,20 @@ using UnityEngine.InputSystem;
 
     public class PlayerModule : KModule
     {
-        public PlayerInput PlayerInput;
         public ControllerBase LocalPlayerController;
         public T GetLocalPlayerController<T>() where T : ControllerBase
         {
             return LocalPlayerController as T;
         }
+
+        public PlayerInput GetLocalPlayerInput()
+        {
+            return LocalPlayerController.GetLocalPlayerInput();
+        }
+        
         public void SwitchInputMode(string inputMode)
         {
-            PlayerInput.SwitchCurrentActionMap(inputMode);
+            LocalPlayerController.GetLocalPlayerInput().SwitchCurrentActionMap(inputMode);
         }
 
         public void FixedUpdate()

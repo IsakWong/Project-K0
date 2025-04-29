@@ -21,5 +21,6 @@ namespace Framework.Config
         {
             base.OnInit();
         }
+        
     }
 }

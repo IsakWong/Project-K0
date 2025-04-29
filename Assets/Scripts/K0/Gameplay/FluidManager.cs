@@ -7,7 +7,6 @@ using UnityEngine;
 public class FluidManager : MonoBehaviour
 {
     public static FluidManager Instance;
-    public GameObject SplashPrefab;
     private List<GameObject> SplashPool = new List<GameObject>();
     public ObiSolver Solver;
     // Start is called before the first frame update
@@ -36,28 +35,9 @@ public class FluidManager : MonoBehaviour
                     hole.ReceiveWater(1.0f);
                    
                 }
-                
-                if (col.gameObject.layer == LayerMask.NameToLayer("Ground"))
-                {
-                    // do something with the particle, for instance get its position:
-                    var position = solver.transform.localToWorldMatrix.MultiplyPoint3x4(contact.pointB);
-                    Vector3 pos = position;
-                    bool found = false;
-                    foreach (var it in SplashPool)
-                    {
-                        if ((pos - it.transform.position).magnitude < 1.0f)
-                        {
-                            found = true;
-                        }
-                    }
-                    if (!found)
-                    {
-                        var newSplash = GameObject.Instantiate(SplashPrefab);
-                        SplashPool.Add(newSplash);
-                        newSplash.transform.position = pos;    
-                    }
-                    
-                }
+                // do something with the particle, for instance get its position:
+                var position = solver.transform.localToWorldMatrix.MultiplyPoint3x4(contact.pointB);
+                SplashManager.Instance.GenerateSplash(position, contact.bodyB, world);
 
             }
         }
@@ -67,12 +47,6 @@ public class FluidManager : MonoBehaviour
         Solver = GetComponent<ObiSolver>();
         Instance = this;
         Solver.OnCollision += Solver_OnCollision;
-    
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

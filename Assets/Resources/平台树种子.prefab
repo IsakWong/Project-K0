@@ -5022,11 +5022,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80387459386aac049a73b603f3288988, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  need_water: 10
-  num_water: 0
+  AbsorbSound:
+  - {fileID: 8300000, guid: b6b4b6ce220d491489f3cd1474e23206, type: 3}
+  - {fileID: 8300000, guid: 893a627a914508a4ba85c82a688cedcf, type: 3}
+  - {fileID: 8300000, guid: 1403ff25722b5064b8d3e69a07ac5250, type: 3}
+  - {fileID: 8300000, guid: e75d84f01d1931d4ea1b3f039f36f43c, type: 3}
   type: 0
   hole: {fileID: 0}
   seedState: 0
+  TreeAsset:
+    mType: 14
+    mValueString: 
+    mObject: {fileID: 0}
+    AssetRef:
+      m_AssetGUID: 6e7482c4399b1504fa49870e476497ce
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+  JumpTreeAsset:
+    mType: 14
+    mValueString: 
+    mObject: {fileID: 0}
+    AssetRef:
+      m_AssetGUID: c92747af7e01bd54eb259af7395dc5e4
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+  VFX_Pong:
+    mType: 14
+    mValueString: 
+    mObject: {fileID: 0}
+    AssetRef:
+      m_AssetGUID: c92747af7e01bd54eb259af7395dc5e4
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
 --- !u!82 &82653967835772868
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5148,5 +5178,5 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0

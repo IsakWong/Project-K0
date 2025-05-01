@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityStandardAssets.ImageEffects;
 
 public class GameMenuClick : MonoBehaviour
 {
@@ -19,7 +18,6 @@ public class GameMenuClick : MonoBehaviour
     public void OnResumeClick()
     {
         GetComponent<UIAnimFadeMove>().Hide();
-        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<BlurOptimized>().enabled = false;
     }
 
     public void OnRestartClick()

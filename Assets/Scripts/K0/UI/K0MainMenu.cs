@@ -1,5 +1,4 @@
-﻿using K1.UI;
-using Unity.Cinemachine;
+﻿using Unity.Cinemachine;
 using UnityEngine;
 
 namespace K0

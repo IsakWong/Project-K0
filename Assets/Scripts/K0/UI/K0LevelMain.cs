@@ -1,6 +1,5 @@
 ﻿using System;
 using K0;
-using K1.UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -13,9 +12,9 @@ public class K0UILevelMain : UIPanel
     private void OnBack(InputAction.CallbackContext ctx)
     {
         if(!Menu.activeInHierarchy)
-            Menu.GetComponent<UIAnimFade>().Show(0.5f);
+            Menu.GetComponent<UIAnimBase>().Show(0.5f);
         else
-            Menu.GetComponent<UIAnimFade>().Hide(0.5f);
+            Menu.GetComponent<UIAnimBase>().Hide(0.5f);
         
 
     }

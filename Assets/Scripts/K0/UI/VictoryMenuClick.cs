@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityStandardAssets.ImageEffects;
 
 public class VictoryMenuClick : MonoBehaviour
 {
@@ -31,9 +30,6 @@ public class VictoryMenuClick : MonoBehaviour
     public void Victory()
     {
         _audio.PlayOneShot(VictorySFX);
-        _animator.SetBool("move_in", true);
-        _animator.SetBool("move_out", false);
-        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<BlurOptimized>().enabled = true;
         transform.parent.GetChild(1).gameObject.SetActive(false);
     }
 

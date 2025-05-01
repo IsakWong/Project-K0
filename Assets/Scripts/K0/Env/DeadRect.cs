@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using K0;
 using UnityEngine;
 
 public class DeadRect : MonoBehaviour
@@ -16,9 +17,11 @@ public class DeadRect : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<PlayerControllerK0>() != null)
+        if (other.GetComponent<SlimeCharacter>() != null)
         {
-            DefeatClick.Current.Defeat();
+            var gameMode = KGameCore.Instance.CurrentGameMode as K0GameMode;
+            gameMode.Lose();
+
         }
     }
 }

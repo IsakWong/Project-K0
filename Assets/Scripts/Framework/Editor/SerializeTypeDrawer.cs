@@ -56,7 +56,6 @@ public class SerializeTypeDrawer : PropertyDrawer
 
     static Type[] FindAllDerivedTypes(Type baseType)
     {
-        var t = typeof(AIYasuoBossController);
         var assemblies = System.AppDomain.CurrentDomain.GetAssemblies();
         var types = baseType.Assembly.GetTypes();
         var typesEnum = types.Where(t => t != baseType && baseType.IsAssignableFrom(t));

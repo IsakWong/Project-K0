@@ -21,7 +21,7 @@ public class PlayerControllerK0 : ControllerBase
     
     private void Awake()
     {
-        Input = GetComponent<PlayerInput>();
+        Input = KGameCore.SystemAt<PlayerModule>().GetLocalPlayerInput();
     }
 
     private void Move(Vector2 move)
@@ -47,6 +47,8 @@ public class PlayerControllerK0 : ControllerBase
         Input.actions.FindAction("Move").performed += ctx => Move(ctx.ReadValue<Vector2>());
         Input.actions.FindAction("Move").canceled += ctx => Move(Vector2.zero);
         Input.actions.FindAction("Jump").performed += Jump;
+        Input.actions.FindAction("Jump").started += Jump;
+        Input.actions.FindAction("Jump").canceled += Jump;
         Input.actions.FindAction("Interaction").performed += Interaction;
         Input.actions.FindAction("Interaction").canceled += Interaction;
         Input.actions.FindAction("Release").performed += SpitOut;

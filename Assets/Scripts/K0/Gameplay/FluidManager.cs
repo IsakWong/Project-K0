@@ -37,7 +37,7 @@ public class FluidManager : MonoBehaviour
                 }
                 // do something with the particle, for instance get its position:
                 var position = solver.transform.localToWorldMatrix.MultiplyPoint3x4(contact.pointB);
-                SplashManager.Instance.GenerateSplash(position, contact.bodyB, world);
+                SplashManager.Instance.GenerateSplash(position, Quaternion.LookRotation(-contact.normal));
 
             }
         }

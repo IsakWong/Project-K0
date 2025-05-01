@@ -7,9 +7,7 @@ public class Floating : MonoBehaviour
 {
     public float y = 0.1f;
 
-
     public float SmoothTime = 1f;
-    public float MaxSpeed = 1.5f;
 	public Ease EaseType = Ease.InOutQuart;
     private bool up = true;
     private Sequence sequence;
@@ -21,9 +19,10 @@ public class Floating : MonoBehaviour
 	    endPos.y += y;
 	    var startPos = transform.localPosition;
 	    startPos.y -= y;
+	    transform.localPosition = startPos;
 	    sequence = DOTween.Sequence();
-	    sequence.Append(transform.DOMoveY(endPos.y, SmoothTime).SetEase(EaseType));
-	    sequence.Append(transform.DOMoveY(startPos.y, SmoothTime).SetEase(EaseType));
+	    sequence.Append(transform.DOLocalMoveY(endPos.y, SmoothTime).SetEase(EaseType));
+	    sequence.Append(transform.DOLocalMoveY(startPos.y, SmoothTime).SetEase(EaseType));
 	    sequence.SetLoops(-1);
 	    sequence.Play();
 	}

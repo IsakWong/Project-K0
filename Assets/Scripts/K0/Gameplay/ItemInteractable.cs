@@ -64,8 +64,9 @@ public class ItemInteractable : MonoBehaviour, IAbsorbTarget
             x => transform.position = x + ObtainerCenter.position, // Value setter
             Vector3.zero, 
             0.5f);
-        oldScale = transform.localScale;
+        oldScale = transform.lossyScale;
         seq.Append(t);
+        seq.Insert(0.2f, transform.DOScale(Vector3.zero, 0.3f));
         seq.AppendCallback(() =>
         {
             isAborbing = false;
@@ -111,7 +112,8 @@ public class ItemInteractable : MonoBehaviour, IAbsorbTarget
                 rigidbody.AddForce(_realAbsorbSource.GetTransform().forward * 5, ForceMode.VelocityChange);
         }else
         {
-            transform.DOMove(transform.position + _realAbsorbSource.GetTransform().forward * 2, 0.5f);            
+            transform.DOMove(transform.position + _realAbsorbSource.GetTransform().forward * 2, 0.5f);
+            transform.DOScale(oldScale, 0.2f);
         }
         isAborbed = false;
         isAborbing = false;

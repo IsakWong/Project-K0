@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 136470560386514238}
   - component: {fileID: 114606422463999578}
   m_Layer: 0
-  m_Name: hole
+  m_Name: Hole
   m_TagString: hole
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

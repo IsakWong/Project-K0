@@ -94,6 +94,6 @@ public class ItemSeed : ItemInteractable
             //SeedUI.Current.AddSeed();
         }
         var gameMode = KGameCore.Instance.CurrentGameMode as K0GameMode;
-        gameMode.SeedGrow();
+        gameMode.GrowSeed();
     }
 }

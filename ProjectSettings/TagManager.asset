@@ -5,11 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - water
-  - hole
-  - seed
   - character
+  - seed
+  - hole
   - shadow
-  - seed_in
   layers:
   - Default
   - TransparentFX
@@ -17,13 +16,13 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - PostProcessing
-  - Containable
-  - Slime
-  - Item
-  - 
+  - PostProcess
+  - Interactable
+  - Ground
+  - Player
+  - WaterInteractable
+  - Fluid
+  - Env
   - 
   - 
   - 
